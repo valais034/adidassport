@@ -64,10 +64,10 @@ require_once 'sections/header.php';
                 <h3 class="title">ورود به آدیداس اسپورت</h3>
                 <form class="account-form">
                     <div class="form-group">
-                        <input type="text" placeholder="نام کاربری" name="username">
+                        <input type="text" placeholder="نام کاربری" name="username22">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="رمز عبور" name="password">
+                        <input type="password" placeholder="رمز عبور" name="password22">
                     </div>
                     <div class="form-group">
                         <div class="d-flex justify-content-between flex-wrap pt-sm-2">
@@ -80,10 +80,13 @@ require_once 'sections/header.php';
                     </div>
                     <div class="form-group">
                         <button class="d-block lab-btn"><span>ورود</span></button>
+                        <br>
+
                     </div>
                 </form>
+
                 <div class="account-bottom">
-                    <span class="d-block cate pt-10">اکانت ندارید؟ <a href="registration.html"> ثبت نام</a></span>
+                    <span class="d-block cate pt-10">اکانت ندارید؟ <a href="registration.php"> ثبت نام</a></span>
                     <span class="or"><span>یا</span></span>
                     <h5 class="subtitle">لوگین با شبکه های اجتماعی</h5>
                     <ul class="social-media social-color lab-ul d-flex justify-content-center">
@@ -108,7 +111,29 @@ require_once 'sections/header.php';
         </div>
     </div>
     <!-- Login Section Section Ends Here -->
-
+    <div class="forms-box">
+        <?php
+        if ($message) {
+            ?>
+            <div class="success-message"><?php echo $message ?></div>
+            <?php
+        }
+        if ($error) {
+            ?>
+            <div class="error-message"><?php echo $error ?></div>
+            <?php
+        }
+        ?>
+        <form action="login.php" method="post">
+            <p>ایمیل</p>
+            <input type="email" name="email" autocomplete="off" autofocus required><br>
+            <p>کلمه عبور</p>
+            <input type="password" name="password"><br>
+            <input type="submit" name="do-login" value="ورود به حساب کاربری">
+        </form>
+        <p class="note">حساب کاربری ندارید؟ <a href="register.php">یکی بسازید :)</a></p>
+        <p class="note"><a href="reset.php">کلمه عبورم را فراموش کرده‌ام :(</a></p>
+    </div>
 
 
 
