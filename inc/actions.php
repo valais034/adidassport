@@ -11,7 +11,7 @@ if (isset($_POST['do-register'])) {
     if ($password != $password_conf) {
         $error = 'کلمه عبور و تکرار آن با هم برابر نیستند.';
     } else {
-        if (register_user($username, $email, md5($password), $hash)) {
+        if (register_user($username, $email, md5($password))) {
             $message = 'ثبت نام شما با موفقیت انجام شد. هم اکنون میتوانید وارد حساب کاربری خود شوید.';
         } else {
             $error = 'مشکلی پیش امده است';
