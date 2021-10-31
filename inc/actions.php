@@ -7,7 +7,7 @@ if (isset($_POST['do-register'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_conf = $_POST['password-conf'];
-   // $hash = 'xblhash' . time();
+//    $hash = 'xblhash' . time();
     if ($password != $password_conf) {
         $error = 'کلمه عبور و تکرار آن با هم برابر نیستند.';
     } else {

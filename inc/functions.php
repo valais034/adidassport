@@ -1,11 +1,10 @@
 <?php
 require_once 'config.php';
 
-function register_user($username, $email, $password, $hash){
+function register_user($username, $email, $password){
     global $db;
-    $query = mysqli_query($db, "INSERT INTO users (display_name, email, password, hash) VALUES ('$username', '$email', '$password', '$hash')");
+    $query = mysqli_query($db, "INSERT INTO users (display_name, email, password) VALUES ('$username', '$email', '$password')");
     if ($query) {
-
         return true;
     } else {
         return false;

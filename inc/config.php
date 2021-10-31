@@ -16,7 +16,7 @@ session_start();
 
 define("ADMIN_USERNAME","admin");
 define("ADMIN_PASSWORD","135790");
-define("PATH","https://es92.ir/ecommerce/");
+define("PATH","https://localhost:8080/adidassport");
 //define("PATH","http://localhost:8888/myFiles/ecommerce/");
 
 require_once 'functions.php';
