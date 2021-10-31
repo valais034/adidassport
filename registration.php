@@ -12,7 +12,7 @@ require_once 'sections/header.php';
 <html lang="zxx">
 
 <head>
-    <title>Kagont</title>
+    <title>آدیداس اسپورت</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -49,11 +49,11 @@ require_once 'sections/header.php';
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h4 class="ph-title">Registration Page</h4>
+                <h4 class="ph-title">ثبت نام کابران</h4>
                 <ul class="lab-ul">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a class="active">Registration</a></li>
+                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a class="active">ثبت نام</a></li>
                 </ul>
             </div>
         </div>
@@ -74,97 +74,70 @@ require_once 'sections/header.php';
 //        ?>
 <!--    </div>-->
     <!-- Registration section start Here -->
+
     <div class="login-section padding-tb">
         <div class="container">
             <div class="account-wrapper">
+                <div class="forms-box">
+                    <?php
+                    if ($message) {
+                        ?>
+                        <div class="success-message"><?php echo $message ?></div>
+                        <?php
+                    }
+                    if ($error) {
+                        ?>
+                        <div class="error-message"><?php echo $error ?></div>
+                        <?php
+                    }
+                    ?>
                 <h3 class="title">ثبت نام کاربران</h3>
                 <form class="account-form" action="registration.php" method="post">
                     <div class="form-group">
-                        <input type="text" placeholder="User Name" name="name" autofocus required>
+                        <input type="text" placeholder="نام کاربری" name="name" autofocus required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email"  required placeholder="email">
+                        <input type="email" name="email"  required placeholder="ایمیل">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password"  required placeholder="Password" >
+                        <input type="password" name="password"  required placeholder="رمز عبور" >
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password-conf"  required placeholder="Confirm Password">
+                        <input type="password" name="password-conf"  required placeholder="تکرار رمز عبور">
                     </div>
                     <div class="form-group">
 <!--                        <button class="d-block lab-btn"><span>Get Started Now</span></button>-->
-                        <input type="submit" name="do-register" value="ساخت حساب کاربری جدید">
+<!--                        <input type="submit" name="do-register" value="ساخت حساب کاربری جدید">-->
+                        <button class="d-block lab-btn" name="do-register"><span>ورود</span></button>
                     </div>
                 </form>
                 <div class="account-bottom">
-                    <span class="d-block cate pt-10">Are you a member? <a href="login.php">Login</a></span>
-                    <span class="or"><span>or</span></span>
-                    <h5 class="subtitle">Register With Social Media</h5>
-                    <ul class="social-media social-color justify-content-center d-flex lab-ul">
-                        <li>
-                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>
-                        </li>
-                    </ul>
+                    <span class="d-block cate pt-10">قبلا ثبت نام کرده اید؟ <a href="login.php">ورود</a></span>
+<!--                    <span class="or"><span>یا</span></span>-->
+<!--                    <h5 class="subtitle">ورود توسط شبکه اجتماعی</h5>-->
+<!--                    <ul class="social-media social-color justify-content-center d-flex lab-ul">-->
+<!--                        <li>-->
+<!--                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
                 </div>
             </div>
         </div>
     </div>
     <!-- Registration section end Here -->
 
-    <div id="main">
-        <div id="login-page">
-            <h1>ورود به بخش مدیریت</h1>
-            <?php
-            if ($error) {
-                ?>
-                <div class="error-message"><?php echo $error ?></div>
-                <?php
-            }
-            ?>
-
-
-
-
-            <div class="forms-box">
-                <?php
-                if ($message) {
-                    ?>
-                    <div class="success-message"><?php echo $message ?></div>
-                    <?php
-                }
-                if ($error) {
-                    ?>
-                    <div class="error-message"><?php echo $error ?></div>
-                    <?php
-                }
-                ?>
-                <form action="registration.php" method="post">
-                    <p>نام و نام خانوادگی (به فارسی)</p>
-                    <input type="text" name="name"  required><br>
-                    <p>ایمیل</p>
-                    <input type="email" name="email"  required><br>
-                    <p>کلمه عبور</p>
-                    <input type="password" name="password"  required><br>
-                    <p>تکرار کلمه عبور</p>
-                    <input type="password" name="password-conf"  required><br>
-                    <input type="submit" name="do-register" value="ساخت حساب کاربری جدید">
-                </form>
-                <p class="note">قبلا ثبت‌نام کرده‌اید؟ <a href="login.php">وارد شوید.</a></p>
-            </div>
-
-            <div class="clear"></div>
 
 
     <!-- scrollToTop start here -->

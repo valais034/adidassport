@@ -2174,6 +2174,15 @@ ul li {
   }
 }
 /*Account Section Starts Here*/
+
+.forms-box .success-message {
+  background-color: #005f00;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+
+}
 .account-wrapper {
   border-radius: 8px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
