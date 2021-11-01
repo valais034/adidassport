@@ -108,7 +108,7 @@ require_once 'sections/header.php';
                     <div class="form-group">
 <!--                        <button class="d-block lab-btn"><span>Get Started Now</span></button>-->
 <!--                        <input type="submit" name="do-register" value="ساخت حساب کاربری جدید">-->
-                        <button class="d-block lab-btn" name="do-register"><span>ورود</span></button>
+                        <button class="d-block lab-btn" name="do-register"><span>ثبت نام</span></button>
                     </div>
                 </form>
                 <div class="account-bottom">
