@@ -9,7 +9,7 @@ require_once 'sections/header.php';
 <html lang="zxx">
 
 <head>
-    <title>Kagont</title>
+    <title>ورود کاربران</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -62,12 +62,12 @@ require_once 'sections/header.php';
         <div class=" container">
             <div class="account-wrapper">
                 <h3 class="title">ورود به آدیداس اسپورت</h3>
-                <form class="account-form">
+                <form class="account-form" action="login.php" method="post">
                     <div class="form-group">
-                        <input type="text" placeholder="نام کاربری" name="username22">
+                        <input type="email" name="email" placeholder="نام کاربری"  autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="رمز عبور" name="password22">
+                        <input type="password" name="password" placeholder="رمز عبور">
                     </div>
                     <div class="form-group">
                         <div class="d-flex justify-content-between flex-wrap pt-sm-2">
@@ -79,7 +79,7 @@ require_once 'sections/header.php';
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="d-block lab-btn"><span>ورود</span></button>
+                        <button class="d-block lab-btn" name="do-login"><span>ورود</span></button>
                         <br>
 
                     </div>
@@ -126,7 +126,7 @@ require_once 'sections/header.php';
         ?>
         <form action="login.php" method="post">
             <p>ایمیل</p>
-            <input type="email" name="email" autocomplete="off" autofocus required><br>
+            <input type="email" name="email" autocomplete="off"  required><br>
             <p>کلمه عبور</p>
             <input type="password" name="password"><br>
             <input type="submit" name="do-login" value="ورود به حساب کاربری">
