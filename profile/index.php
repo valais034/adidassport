@@ -55,7 +55,7 @@ $user_data = get_userdata();
 
 
 <header class="navbar navbar-dark bg-dark flex-md-nowrap p-0 shadow" >
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">آدیداس اسپورت</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -75,7 +75,7 @@ $user_data = get_userdata();
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">
                             <span data-feather="home"></span>
-                            Dashboard
+                            داشبورد
                         </a>
                     </li>
                     <li class="nav-item">
@@ -147,7 +147,7 @@ $user_data = get_userdata();
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Dashboard</h1>
+                <h1 class="h2">سلام، <?php echo $user_data['display_name'] ?></h1>
                 <div class="user-image">
                     <?php if ($user_data['user_image']) { ?>
                         <img src="../../images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">

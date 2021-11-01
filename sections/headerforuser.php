@@ -27,13 +27,13 @@ function myFunction() {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <header class="header-section">
+    <header class="header-section" style="position: relative">
         <div class="header-bottom">
             <div class="container">
                 <div class="header-wrapper">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="assets/images/logo/01.png" alt="logo">
+                            <img src="../assets/images/logo/01.png" alt="logo">
                         </a>
                     </div>
                     <div class="menu-area">
@@ -46,8 +46,8 @@ function myFunction() {
                                 <a href="#0">صفحات</a>
                                 <ul class="submenu">
                                     <li><a href="gallery.html">گالری</a></li>
-                                    <li><a href="login.php">ورود کاربران</a></li>
-                                    <li><a href="registration.html">ثبت نام کاربران</a></li>
+                                    <li><a href="../login.php">ورود کاربران</a></li>
+                                    <li><a href="../registration.php">ثبت نام کاربران</a></li>
                                     <li><a href="pricing-plan.html">قیمت ها</a></li>
                                     <li><a href="shop.html">فروشگاه</a></li>
                                     <li><a href="shop-single.html">صفحه تکی محصول</a></li>
