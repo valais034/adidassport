@@ -3,7 +3,6 @@
 if (!is_login()) {
     redirect('../login.php');
 }
-require_once '../sections/header.php';
 $user_data = get_userdata();
 ?>
 <!doctype html>
@@ -30,14 +29,14 @@ $user_data = get_userdata();
 
 <div id="header">
     <div id="top-nav">
-        <?php require_once '../sections/header.php' ?>
     </div>
+   <?php require_once '../sections/headerforuser.php'; ?>
 
-    <div id="logo">
-        <h1>سلام، <?php echo $user_data['display_name'] ?></h1>
-    </div>
 </div>
 
+<div id="logo">
+    <h1>سلام، <?php echo $user_data['display_name'] ?></h1>
+</div>
 
 <div id="main" class="profile">
 
