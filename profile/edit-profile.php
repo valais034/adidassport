@@ -1,4 +1,4 @@
-<?php require_once '../../inc/config.php'; ?>
+<?php require_once '../inc/config.php'; ?>
 <?php
 if (!is_login()) {
     redirect('../login.php');
@@ -17,7 +17,7 @@ $user_data = get_userdata();
 
 <div id="header">
     <div id="top-nav">
-        <?php require_once '../../sections/nav.php' ?>
+
     </div>
     <div id="logo">
         <h1>ویرایش پروفایل <?php echo $user_data['display_name'] ?></h1>
