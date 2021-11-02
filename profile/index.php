@@ -62,7 +62,7 @@ $user_data = get_userdata();
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="#">Sign out</a>
+            <a class="nav-link px-3" href="http://localhost/adidassport/profile/index.php?logout=1">Sign out</a>
         </div>
     </div>
 </header>
@@ -73,15 +73,15 @@ $user_data = get_userdata();
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link active" aria-current="page" href="edit-profile.php">
                             <span data-feather="home"></span>
                             داشبورد
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="edit-profile.php">
                             <span data-feather="file"></span>
-                            Orders
+                            ویرایش پروفایل
                         </a>
                     </li>
                     <li class="nav-item">
@@ -177,7 +177,6 @@ $user_data = get_userdata();
             </div>
 
             <div id="logo">
-                <h1>سلام، <?php echo $user_data['display_name'] ?></h1>
             </div>
 
             <div id="main" class="profile">
@@ -187,9 +186,9 @@ $user_data = get_userdata();
                     <div class="profile-info">
                         <div class="user-image">
                             <?php if ($user_data['user_image']) { ?>
-                                <img src="../../images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">
+                                <img src="../assets/images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">
                             <?php } else { ?>
-                                <img src="../../images/profile/profile.jpg" alt="پروفایل کاربری">
+                                <img src="../assets/images/profile/profile.jpg" alt="پروفایل کاربری">
                             <?php } ?>
 
                         </div>

@@ -230,7 +230,7 @@ function update_profile($display_name, $user_address, $user_number, $user_email,
         $query = mysqli_query($db, "UPDATE users SET display_name='$display_name', user_address='$user_address', user_number='$user_number', user_image='$user_image' WHERE email='$user_email'");
 
     } else {
-        move_uploaded_file($image_tmp, '../../images/profile/' . $user_image);
+        move_uploaded_file($image_tmp, '../assets/images/profile/' . $user_image);
         $query = mysqli_query($db, "UPDATE users SET display_name='$display_name', user_address='$user_address', user_number='$user_number', user_image='$user_image' WHERE email='$user_email'");
 
     }
