@@ -62,7 +62,7 @@ $user_data = get_userdata();
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="http://localhost/adidassport/profile/index.php?logout=1">Sign out</a>
+            <a class="nav-link px-3" href="?logout=1">خروج از حساب کاربری</a>
         </div>
     </div>
 </header>
@@ -73,7 +73,7 @@ $user_data = get_userdata();
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="edit-profile.php">
+                        <a class="nav-link active" aria-current="page" href="index.php">
                             <span data-feather="home"></span>
                             داشبورد
                         </a>
@@ -85,9 +85,9 @@ $user_data = get_userdata();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="orders.php">
                             <span data-feather="shopping-cart"></span>
-                            Products
+                            سفارشات
                         </a>
                     </li>
                     <li class="nav-item">
@@ -148,14 +148,7 @@ $user_data = get_userdata();
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">سلام، <?php echo $user_data['display_name'] ?></h1>
-                <div class="user-image">
-                    <?php if ($user_data['user_image']) { ?>
-                        <img src="../../images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">
-                    <?php } else { ?>
-                        <img src="../assets/images/del.png" alt="پروفایل کاربری">
-                    <?php } ?>
 
-                </div>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -169,71 +162,54 @@ $user_data = get_userdata();
             </div>
 
 
+            <section class="event-gift-section padding-tb padding-b bg-image">
+                <div class="container">
+                    <div class="row flex-lg-row-reverse">
+                        <div class="col-lg-6 col-12">
+                            <div class="section-header">
+                                <h2>نام کاربر: <?php echo $user_data['display_name'] ?></h2>
+                                <p>آدرس ایمیل: <?php echo $user_data['email'] ?></p>
+                            </div>
+                            <div class="section-wrapper">
+                                <div class="gift-content">
+                                    <p>
+                                        در فروشگاه اینترنتی آدیداس اسپورت میتوانید از مزایای عضویت ویژه ای بهره مند شوید. در این پنل کاربری شما می توانید انواع محصولات
+                                        آدیداس را با قیمتی عالی بصورت آنلاین خریداری نمایید.
+                                        هر هفته کوپن های تخفیف ویژه در این پنل برای شما کاربران به نمایش در می آید.
+                                    </p>
+                                    <p>مزایای عضویت در آدیداس اسپورت:</p>
+                                    <ul class="gift-list">
+                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </span> خرید لباس های خاص اسپورت</li>
+                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </span> استفاده از تخفیفات ویژه هر فصل</li>
+                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </span> مشاهده محصولات جدید در پنل کاربری</li>
 
-            <div id="header">
-                <div id="top-nav">
-                </div>
-
-            </div>
-
-            <div id="logo">
-            </div>
-
-            <div id="main" class="profile">
-
-
-                <div class="box">
-                    <div class="profile-info">
-                        <div class="user-image">
-                            <?php if ($user_data['user_image']) { ?>
-                                <img src="../assets/images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">
-                            <?php } else { ?>
-                                <img src="../assets/images/profile/profile.jpg" alt="پروفایل کاربری">
-                            <?php } ?>
-
+                                    </ul>
+                                    <div class="register-button">
+                                        <a href="edit-profile.php" class="lab-btn"><span>ویرایش پروفایل</span> </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="user-info">
-                            <ul>
-                                <li>نام کاربر: <?php echo $user_data['display_name'] ?></li>
-                                <li>آدرس ایمیل: <?php echo $user_data['email'] ?></li>
-                                <li>آدرس:
+                        <div class="col-lg-6 col-12">
+                            <div class="image-part">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <?php if ($user_data['user_image']) { ?>
+                                            <img src="../assets/images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">
+                                        <?php } else { ?>
+                                            <img src="../assets/images/profile/profile.jpg" alt="پروفایل کاربری">
+                                        <?php } ?>
+                                    </div>
+                                </div>
 
-                                    <?php
-                                    if ($user_data['user_address']) {
-                                        echo $user_data['user_address'];
-                                    } else {
-                                        echo "<span class='red-text'>از قسمت ویرایش، آدرس خود را وارد کنید ...</span>";
-                                    } ?>
-
-                                </li>
-                                <li>شماره تماس:
-
-                                    <?php
-                                    if ($user_data['user_number']) {
-                                        echo $user_data['user_number'];
-                                    } else {
-                                        echo "<span class='red-text'>از قسمت ویرایش، شماره‌ی تماس خود را وارد کنید ...</span>";
-                                    } ?>
-
-                                </li>
-                            </ul>
-                            <a href="edit-profile.php">ویرایش پروفایل</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div id="sidebar">
-                    <div class="sidebar-item">
-                        <ul>
-                            <li><a href="index.php">پروفایل</a></li>
-                            <li><a href="orders.php">سفارش ها</a></li>
-                            <li><a href="edit-profile.php">ویرایش</a></li>
-                            <li><a href="?logout=1">خروج</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
+            </section>
 
 
 

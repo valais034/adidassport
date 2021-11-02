@@ -1,4 +1,4 @@
-<?php require_once '../../inc/config.php'; ?>
+<?php require_once '../inc/config.php'; ?>
 <?php
 if (!is_login()) {
     redirect('../login.php');
@@ -12,19 +12,42 @@ $user_orders = get_user_orders();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>سفارش‌ها</title>
-    <link rel="stylesheet" href="../../styles/styles.css">
-</head>
-<body>
+    <title>سفارشات</title>
+    <!--    <link rel="stylesheet" href="../assets/css/styles.css">-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div id="header">
-    <div id="top-nav">
-        <?php require_once '../../sections/nav.php' ?>
-    </div>
-    <div id="logo">
-        <h1>سفارش‌ها</h1>
-    </div>
-</div>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/x-icon/01.png">
+
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/icofont.min.css">
+    <link rel="stylesheet" href="../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<?php require_once '../sections/headerforuser.php'; ?>
 
 
 <div id="main" class="profile">

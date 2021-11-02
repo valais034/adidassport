@@ -149,14 +149,7 @@ $user_data = get_userdata();
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">سلام، <?php echo $user_data['display_name'] ?></h1>
-                <div class="user-image">
-                    <?php if ($user_data['user_image']) { ?>
-                        <img src="../../images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">
-                    <?php } else { ?>
-                        <img src="../assets/images/del.png" alt="پروفایل کاربری">
-                    <?php } ?>
 
-                </div>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -175,15 +168,15 @@ $user_data = get_userdata();
                 <div class="box" style="padding: 10px;box-sizing: border-box">
                     <div class="update-profile">
                         <form action="edit-profile.php" method="post" enctype="multipart/form-data">
-                            <input type="text" name="display-name" value="<?php echo $user_data['display_name'] ?>" placeholder="نام نمایشی شما ..."><br>
-                            <input type="text" name="user-address" value="<?php echo $user_data['user_address'] ?>" placeholder="آدرس پستی شما ..."><br>
-                            <input type="text" name="user-number" value="<?php echo $user_data['user_number'] ?>" placeholder="شماره تماس شما ..."><br>
+                            <a style="color: black">نام :</a><input type="text" name="display-name" value="<?php echo $user_data['display_name'] ?>" placeholder="نام نمایشی شما ..."><br>
+                            <a style="color: black">آدرس :</a><input type="text" name="user-address" value="<?php echo $user_data['user_address'] ?>" placeholder="آدرس پستی شما ..."><br>
+                            <a style="color: black">شماره تماس :</a><input type="text" name="user-number" value="<?php echo $user_data['user_number'] ?>" placeholder="شماره تماس شما ..."><br>
                             <?php if ($user_data['user_image']) { ?>
-                                <img src="../../images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
+                                <img src="../assets/images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
                             <?php } else { ?>
-                                <img src="../../images/profile/profile.jpg" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
+                                <img src="../assets/images/profile/profile.jpg" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
                             <?php } ?>
-                            <span>تصویر حساب کاربری شما: </span><br>
+                            <span style="color: black">تصویر حساب کاربری شما: </span><br>
                             <input type="file" name="new-user-image"><br>
                             <input type="hidden" value="<?php echo $user_data['user_image'] ?>" name="user-image">
 

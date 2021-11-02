@@ -32,14 +32,14 @@ function myFunction() {
             <div class="container">
                 <div class="header-wrapper">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="../assets/images/logo/01.png" alt="logo">
                         </a>
                     </div>
                     <div class="menu-area">
                         <ul class="menu">
                             <li>
-                                <a href="index.html">صفحه اصلی</a>
+                                <a href="index.php">صفحه اصلی</a>
                             </li>
 
                             <li>

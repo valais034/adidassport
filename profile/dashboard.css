@@ -98,3 +98,84 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+.box {
+  width: 800px;
+  background-color: #fff;
+  margin: 0 auto;
+  top: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(97, 97, 97, 1);
+  float: right;
+}
+
+
+.profile-info .user-image {
+  padding: 10px;
+  float: right;
+}
+
+.profile-info .user-image img {
+  width: 250px;
+  height: 250px;
+}
+
+.profile-info .user-info {
+  margin: 15px 5px;
+  position: relative;
+  float: right;
+}
+
+.profile-info .user-info ul {
+  padding: 0;
+  margin: 0;
+}
+
+.profile-info .user-info ul li {
+  list-style: none;
+}
+
+.profile-info .user-info a {
+  font-size: 13px;
+  color: #fff;
+  background-color: #2E7D32;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.profile-info .user-info a:hover {
+  background-color: #246228;
+}
+
+.profile-info .red-text {
+  font-size: 11px;
+  color: #b60000;
+}
+
+.update-profile input[type=text] {
+  width: 96%;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-family: iSans;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.update-profile span {
+  font-size: 13px;
+}
+
+.update-profile input[type=submit] {
+  background-color: #2E7D32;
+  color: #ffff;
+  padding: 5px;
+  border: 0;
+  font-family: iSans;
+  font-size: 13px;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+.update-profile input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #245f27;
+}
