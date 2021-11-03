@@ -1,0 +1,14 @@
+id
+product_name
+product_price
+product_cat
+product_image
+product_desc
+plus:
+product_off_price
+product_serial
+product_num_in_stock
+product_visibility
+
+product_second_image
+product_third_image
