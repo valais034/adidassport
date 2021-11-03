@@ -48,8 +48,6 @@ $user_data = get_userdata();
 <?php require_once '../sections/headerforuser.php'; ?>
 
 
-
-
 <body>
 <link href="dashboard.css" rel="stylesheet">
 </head>
@@ -63,7 +61,7 @@ $user_data = get_userdata();
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="http://localhost/adidassport/profile/index.php?logout=1">Sign out</a>
+            <a class="nav-link px-3" href="http://localhost/adidassport/profile/index.php?logout=1">خروج از حساب کاربری</a>
         </div>
     </div>
 </header>
@@ -74,21 +72,21 @@ $user_data = get_userdata();
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../profile/index.php">
+                        <a class="nav-link" href="../profile/index.php">
                             <span data-feather="home"></span>
                             داشبورد
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="edit-profile.php">
-                            <span data-feather="file"></span>
+                        <a class="nav-link active" aria-current="page" href="edit-profile.php">
+                            <span data-feather="file" ></span>
                             ویرایش پروفایل
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="orders.php">
                             <span data-feather="shopping-cart"></span>
-                            Products
+                            سفارشات
                         </a>
                     </li>
                     <li class="nav-item">
