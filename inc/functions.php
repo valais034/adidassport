@@ -68,12 +68,12 @@ function admin_logout(){
 }
 
 
-function add_product($product_name, $product_price, $product_cat, $product_desc, $image_name, $image_tmp){
+function add_product($product_name, $product_price, $product_cat, $product_off_price, $product_desc, $image_name, $image_tmp){
     global $db;
 
-    move_uploaded_file($image_tmp, '../images/' . $image_name);
+    move_uploaded_file($image_tmp, '../assets/images/product/' . $image_name);
 
-    $query = mysqli_query($db, "INSERT INTO products (product_name, product_price, product_cat, product_desc, product_image) VALUES ('$product_name','$product_price', '$product_cat', '$product_desc', '$image_name')");
+    $query = mysqli_query($db, "INSERT INTO products (product_name, product_price, product_cat, product_off_price, product_desc, product_image) VALUES ('$product_name','$product_price', '$product_cat','$product_off_price', '$product_desc', '$image_name')");
     if ($query) {
         return true;
     } else {
@@ -204,13 +204,13 @@ function add_answer($answer, $comment_id){
 }
 
 
-function update_product($product_name, $product_price, $product_cat, $product_desc, $product_id, $product_image, $image_tmp = null){
+function update_product($product_name, $product_price, $product_cat, $product_off_price,$product_serial, $product_desc, $product_id, $product_image, $image_tmp = null){
     global $db;
     if (!isset($image_tmp)) {
-        $query = mysqli_query($db, "UPDATE products set product_name='$product_name', product_price='$product_price', product_cat='$product_cat', product_desc='$product_desc', product_image='$product_image' WHERE id='$product_id'");
+        $query = mysqli_query($db, "UPDATE products set product_name='$product_name', product_price='$product_price', product_serial='$product_serial', product_cat='$product_cat',product_off_price='$product_off_price', product_desc='$product_desc', product_image='$product_image' WHERE id='$product_id'");
     } else {
-        move_uploaded_file($image_tmp, '../images/' . $product_image);
-        $query = mysqli_query($db, "UPDATE products set product_name='$product_name', product_price='$product_price', product_cat='$product_cat', product_desc='$product_desc', product_image='$product_image' WHERE id='$product_id'");
+        move_uploaded_file($image_tmp, '../assets/images/product/' . $product_image);
+        $query = mysqli_query($db, "UPDATE products set product_name='$product_name', product_price='$product_price', product_serial='$product_serial', product_cat='$product_cat',product_off_price='$product_off_price', product_desc='$product_desc', product_image='$product_image' WHERE id='$product_id'");
     }
 
     if ($query) {

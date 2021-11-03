@@ -47,6 +47,7 @@ $product = mysqli_fetch_array($get_product);
         <form action="edit-product.php?edit-product-id=<?php echo $product['id'] ?>" method="post" enctype="multipart/form-data">
             <input type="text" name="product-name" placeholder="نام محصول" value="<?php echo $product['product_name'] ?>"><br>
             <input type="text" name="product-price" placeholder="قیمت محصول" value="<?php echo $product['product_price'] ?>"><br>
+            <input type="text" name="product-offer-price" placeholder="قیمت ویژه" value="<?php echo $product['product_off_price'] ?>"><br>
             <input type="hidden" name="product-id" value="<?php echo $product['id'] ?>">
 
             <span style="font-size: 11px;margin-right: 5px">دسته‌بندی محصول: <?php echo $product['product_cat'] ?></span>
@@ -58,11 +59,12 @@ $product = mysqli_fetch_array($get_product);
                 <?php } ?>
             </select>
             <br>
-            <img src="../images/<?php echo $product['product_image'] ?>" alt="<?php echo $product['product_name'] ?>" width="120" style="margin-right: 5px"><br>
+            <img src="../assets/images/product/<?php echo $product['product_image'] ?>" alt="<?php echo $product['product_name'] ?>" width="120" style="margin-right: 5px"><br>
             <span style="font-size: 11px;margin-right: 5px">عکس محصول:</span>
             <input type="file" name="new-product-image">
             <input type="hidden" name="product-image" value="<?php echo $product['product_image'] ?>">
-
+            <br>
+            <span>کد محصول:</span><input type="text" name="product-serial" placeholder="قیمت ویژه" value="<?php echo $product['product_serial'] ?>"><br>
 
             <textarea name="product-desc" placeholder="توضیحات محصول"><?php echo $product['product_desc'] ?></textarea><br>
             

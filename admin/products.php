@@ -46,7 +46,9 @@ $products = get_products();
             <tr>
                 <th>نام محصول</th>
                 <th>قیمت محصول</th>
+                <th>قیمت ویژه</th>
                 <th>دسته بندی</th>
+                <th>کد محصول</th>
                 <th>ویرایش</th>
                 <th>حذف</th>
             </tr>
@@ -57,7 +59,9 @@ $products = get_products();
                 <tr>
                     <td><?php echo $product['product_name'] ?></td>
                     <td><?php echo $product['product_price'] ?></td>
+                    <td><?php echo $product['product_off_price'] ?></td>
                     <td><?php echo $product['product_cat'] ?></td>
+                    <td><?php echo $product['product_serial'] ?></td>
                     <td><a href="edit-product.php?edit-product-id=<?php echo $product['id'] ?>">ویرایش</a></td>
                     <td><a href="?delete-product-id=<?php echo $product['id'] ?>" onclick="return confirm('آیا میخواهید این محصول را حذف کنید؟')">حذف</a></td>
                 </tr>

@@ -44,6 +44,7 @@ $cats = get_cats();
         <form action="add-product.php" method="post" enctype="multipart/form-data">
             <input type="text" name="product-name" placeholder="نام محصول"><br>
             <input type="text" name="product-price" placeholder="قیمت محصول"><br>
+            <input type="text" name="product-offer-price" placeholder="قیمت ویژه"><br>
 
             <span style="font-size: 11px;margin-right: 5px">دسته‌بندی محصول:</span>
             <select name="product-cat">
