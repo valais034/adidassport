@@ -57,10 +57,13 @@ if (isset($_POST['add-product'])) {
     $product_price = $_POST['product-price'];
     $product_cat = $_POST['product-cat'];
     $product_off_price = $_POST['product-offer-price'];
+    $product_serial = $_POST['product-serial'];
+    $product_num_in_stock = $_POST['product-num-in-stock'];
+    $product_visibility = $_POST['product-visibility'];
     $image_name = $_FILES['product-image']['name'];
     $image_tmp = $_FILES['product-image']['tmp_name'];
     $product_desc = $_POST['product-desc'];
-    if (add_product($product_name, $product_price, $product_cat, $product_off_price, $product_desc, $image_name, $image_tmp)) {
+    if (add_product($product_name, $product_price, $product_cat, $product_off_price, $product_serial, $product_num_in_stock, $product_visibility, $product_desc, $image_name, $image_tmp)) {
         $message = 'محصول با موفقیت اضافه شد.';
     } else {
         $error = 'هنگام افزودن محصول مشکلی پیش آمد.';
@@ -151,6 +154,8 @@ if (isset($_POST['update-product'])) {
     $product_cat = $_POST['product-cat'];
     $product_off_price = $_POST['product-offer-price'];
     $product_serial = $_POST['product-serial'];
+    $product_num_in_stock = $_POST['product-num-in-stock'];
+    $product_visibility = $_POST['product-visibility'];
     $product_desc = $_POST['product-desc'];
     $product_id = $_POST['product-id'];
 
@@ -159,12 +164,12 @@ if (isset($_POST['update-product'])) {
 
         $image_name = $_FILES['new-product-image']['name'];
         $image_tmp = $_FILES['new-product-image']['tmp_name'];
-        $update_product = update_product($product_name, $product_price, $product_cat,$product_off_price, $product_serial, $product_desc, $product_id, $image_name, $image_tmp);
+        $update_product = update_product($product_name, $product_price, $product_cat,$product_off_price, $product_serial, $product_num_in_stock, $product_visibility, $product_desc, $product_id, $image_name, $image_tmp);
 
     } else {
 
         $product_image = $_POST['product-image'];
-        $update_product = update_product($product_name, $product_price, $product_cat,$product_off_price, $product_serial, $product_desc, $product_id, $product_image);
+        $update_product = update_product($product_name, $product_price, $product_cat,$product_off_price, $product_serial, $product_num_in_stock, $product_visibility, $product_desc, $product_id, $product_image);
 
 
     }

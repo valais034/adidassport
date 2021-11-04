@@ -54,7 +54,14 @@ $cats = get_cats();
                 <?php } ?>
             </select>
             <br>
+            <input type="text" name="product-serial" placeholder="کد محصول"><br>
+            <input type="text" name="product-num-in-stock" placeholder="موجودی در انبار"><br>
+            <span style="font-size: 11px;margin-right: 5px">وضعیت محصول:</span><select name="product-visibility">
+                <option value="active" >فعال</option>
+                <option value="not active" >غیرفعال</option>
 
+            </select>
+            <br>
             <span style="font-size: 11px;margin-right: 5px">عکس محصول:</span>
             <input type="file" name="product-image"> <br>
 

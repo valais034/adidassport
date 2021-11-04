@@ -64,7 +64,19 @@ $product = mysqli_fetch_array($get_product);
             <input type="file" name="new-product-image">
             <input type="hidden" name="product-image" value="<?php echo $product['product_image'] ?>">
             <br>
-            <span>کد محصول:</span><input type="text" name="product-serial" placeholder="قیمت ویژه" value="<?php echo $product['product_serial'] ?>"><br>
+            <span>کد محصول:</span><input type="text" name="product-serial" placeholder="کد محصول" value="<?php echo $product['product_serial'] ?>"><br>
+            <span>موجودی در انبار:</span><input type="text" name="product-num-in-stock" placeholder="موجودی در انبار" value="<?php echo $product['product_num_in_stock'] ?>"><br>
+            <span style="font-size: 11px;margin-right: 5px">وضعیت محصول: <?php echo $product['product_visibility'] ?></span>
+            <br>
+            <select name="product-visibility">
+                <option value="<?php echo $product['product_visibility'] ?>"><?php echo $product['product_visibility'] ?></option>
+<!--                --><?php //while ($cat = mysqli_fetch_array($cats)) { ?>
+<!--                    <option value="--><?php //echo $cat['cat_name'] ?><!--">--><?php //echo $cat['cat_name'] ?><!--</option>-->
+<!--                --><?php //} ?>
+                <option value="active" >فعال</option>
+                <option value="not active" >غیرفعال</option>
+
+            </select>
 
             <textarea name="product-desc" placeholder="توضیحات محصول"><?php echo $product['product_desc'] ?></textarea><br>
             
