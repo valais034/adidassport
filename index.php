@@ -37,14 +37,14 @@
             <div class="container">
                 <div class="header-wrapper">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="assets/images/logo/01.png" alt="logo">
                         </a>
                     </div>
                     <div class="menu-area">
                         <ul class="menu">
                             <li>
-                                <a href="index.html">صفحه اصلی</a>
+                                <a href="index.php">صفحه اصلی</a>
                             </li>
 
                             <li>
@@ -54,7 +54,7 @@
                                     <li><a href="login.php">ورود کاربران</a></li>
                                     <li><a href="registration.php">ثبت نام کاربران</a></li>
                                     <li><a href="pricing-plan.html">قیمت ها</a></li>
-                                    <li><a href="shop.html">فروشگاه</a></li>
+                                    <li><a href="shop.php">فروشگاه</a></li>
                                     <li><a href="shop-single.html">صفحه تکی محصول</a></li>
                                     <li><a href="cart.html">سبد خرید</a></li>
                                     <li><a href="404.html">صفحه 404</a></li>

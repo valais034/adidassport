@@ -51,7 +51,7 @@ require_once 'sections/header.php';
             <div class="page-header-content-area">
                 <h4 class="ph-title">ثبت نام کابران</h4>
                 <ul class="lab-ul">
-                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="index.php">صفحه اصلی</a></li>
                     <li><a href="#"></a></li>
                     <li><a class="active">ثبت نام</a></li>
                 </ul>
