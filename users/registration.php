@@ -1,11 +1,11 @@
 
-<?php require_once 'inc/config.php';
+<?php require_once '../inc/config.php';
 
 //mysqli_query($db,"INSERT INTO `users`(`display_name`, `email`, `password`) VALUES ('reza','reza@gmail.com','123456')");
 if (is_login()) {
   redirect('profile');
 }
-require_once 'sections/header.php';
+require_once '../sections/header.php';
 
 ?>
 <!DOCTYPE html>
@@ -17,15 +17,15 @@ require_once 'sections/header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/x-icon/01.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/x-icon/01.png">
 
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/icofont.min.css">
-    <link rel="stylesheet" href="assets/css/lightcase.css">
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/icofont.min.css">
+    <link rel="stylesheet" href="../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
@@ -51,7 +51,7 @@ require_once 'sections/header.php';
             <div class="page-header-content-area">
                 <h4 class="ph-title">ثبت نام کابران</h4>
                 <ul class="lab-ul">
-                    <li><a href="index.php">صفحه اصلی</a></li>
+                    <li><a href="../index.php">صفحه اصلی</a></li>
                     <li><a href="#"></a></li>
                     <li><a class="active">ثبت نام</a></li>
                 </ul>
@@ -145,18 +145,18 @@ require_once 'sections/header.php';
             class="pluse_2"></span></a>
     <!-- scrollToTop ending here -->
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/fontawesome.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/swiper.min.js"></script>
-    <script src="assets/js/circularProgressBar.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/lightcase.js"></script>
-    <script src="assets/js/functions.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/fontawesome.min.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <script src="../assets/js/circularProgressBar.min.js"></script>
+    <script src="../assets/js/isotope.pkgd.min.js"></script>
+    <script src="../assets/js/lightcase.js"></script>
+    <script src="../assets/js/functions.js"></script>
 
     <div class="clear"></div>
-    <?php require_once 'sections/footer.php' ?>
+    <?php require_once '../sections/footer.php' ?>
 </body>
 
 </html>

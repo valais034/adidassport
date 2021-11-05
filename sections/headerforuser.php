@@ -46,8 +46,8 @@ function myFunction() {
                                 <a href="#0">صفحات</a>
                                 <ul class="submenu">
                                     <li><a href="gallery.html">گالری</a></li>
-                                    <li><a href="../login.php">ورود کاربران</a></li>
-                                    <li><a href="../registration.php">ثبت نام کاربران</a></li>
+                                    <li><a href="../users/login.php">ورود کاربران</a></li>
+                                    <li><a href="../users/registration.php">ثبت نام کاربران</a></li>
                                     <li><a href="pricing-plan.html">قیمت ها</a></li>
                                     <li><a href="shop.html">فروشگاه</a></li>
                                     <li><a href="shop-single.html">صفحه تکی محصول</a></li>

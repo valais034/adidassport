@@ -1,4 +1,4 @@
-<?php require_once '../inc/config.php'; ?>
+<?php require_once '../../inc/config.php'; ?>
 <?php
 if (!is_login()) {
     redirect('../login.php');
@@ -16,15 +16,15 @@ $user_data = get_userdata();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/x-icon/01.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/x-icon/01.png">
 
-    <link rel="stylesheet" href="../assets/css/animate.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/icofont.min.css">
-    <link rel="stylesheet" href="../assets/css/lightcase.css">
-    <link rel="stylesheet" href="../assets/css/swiper.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/animate.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/icofont.min.css">
+    <link rel="stylesheet" href="../../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
     <style>
         .bd-placeholder-img {
@@ -45,11 +45,10 @@ $user_data = get_userdata();
 </head>
 <body>
 
-<?php require_once '../sections/headerforuser.php'; ?>
 
 
 <body>
-<link href="dashboard.css" rel="stylesheet">
+<link href="../dashboard.css" rel="stylesheet">
 </head>
 
 
@@ -61,7 +60,7 @@ $user_data = get_userdata();
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="http://localhost/adidassport/profile/index.php?logout=1">خروج از حساب کاربری</a>
+            <a class="nav-link px-3" href="?logout=1">خروج از حساب کاربری</a>
         </div>
     </div>
 </header>
@@ -72,7 +71,7 @@ $user_data = get_userdata();
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="../profile/index.php">
+                        <a class="nav-link" href="index.php">
                             <span data-feather="home"></span>
                             داشبورد
                         </a>
@@ -170,9 +169,9 @@ $user_data = get_userdata();
                             <a style="color: black">آدرس :</a><input type="text" name="user-address" value="<?php echo $user_data['user_address'] ?>" placeholder="آدرس پستی شما ..."><br>
                             <a style="color: black">شماره تماس :</a><input type="text" name="user-number" value="<?php echo $user_data['user_number'] ?>" placeholder="شماره تماس شما ..."><br>
                             <?php if ($user_data['user_image']) { ?>
-                                <img src="../assets/images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
+                                <img src="../../assets/images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
                             <?php } else { ?>
-                                <img src="../assets/images/profile/profile.jpg" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
+                                <img src="../../assets/images/profile/profile.jpg" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
                             <?php } ?>
                             <span style="color: black">تصویر حساب کاربری شما: </span><br>
                             <input type="file" name="new-user-image"><br>
@@ -190,6 +189,43 @@ $user_data = get_userdata();
 
             <div class="clear"></div>
 
+
+            <div id="main" class="profile">
+
+
+                <div class="box" style="padding: 10px;box-sizing: border-box">
+                    <div class="update-profile">
+                        <form action="edit-profile.php" method="post" enctype="multipart/form-data">
+                            <input type="text" name="display-name" value="<?php echo $user_data['display_name'] ?>" placeholder="نام نمایشی شما ..."><br>
+                            <input type="text" name="user-address" value="<?php echo $user_data['user_address'] ?>" placeholder="آدرس پستی شما ..."><br>
+                            <input type="text" name="user-number" value="<?php echo $user_data['user_number'] ?>" placeholder="شماره تماس شما ..."><br>
+                            <?php if ($user_data['user_image']) { ?>
+                                <img src="../../images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
+                            <?php } else { ?>
+                                <img src="../../images/profile/profile.jpg" alt="<?php echo $user_data['display_name'] ?>" width="80"><br>
+                            <?php } ?>
+                            <span>تصویر حساب کاربری شما: </span><br>
+                            <input type="file" name="new-user-image"><br>
+                            <input type="hidden" value="<?php echo $user_data['user_image'] ?>" name="user-image">
+
+                            <input type="hidden" name="user-email" value="<?php echo $user_data['email'] ?>">
+                            <input type="submit" name="update-profile" value="بروزرسانی پروفایل">
+                        </form>
+                    </div>
+                </div>
+
+                <div id="sidebar">
+                    <div class="sidebar-item">
+                        <ul>
+                            <li><a href="index.php">پروفایل</a></li>
+                            <li><a href="orders.php">سفارش ها</a></li>
+                            <li><a href="edit-profile.php">ویرایش</a></li>
+                            <li><a href="?logout=1">خروج</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
 
 
 </body>

@@ -1,3 +1,7 @@
+<?php require_once 'inc/config.php';
+require_once 'sections/header.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,125 +36,6 @@
 
 
     <!-- ==========Header Section Starts Here========== -->
-    <header class="header-section">
-        <div class="header-bottom">
-            <div class="container">
-                <div class="header-wrapper">
-                    <div class="logo">
-                        <a href="index.php">
-                            <img src="assets/images/logo/01.png" alt="logo">
-                        </a>
-                    </div>
-                    <div class="menu-area">
-                        <ul class="menu">
-                            <li>
-                                <a href="index.php">صفحه اصلی</a>
-                            </li>
-
-                            <li>
-                                <a href="#0">صفحات</a>
-                                <ul class="submenu">
-                                    <li><a href="gallery.html">گالری</a></li>
-                                    <li><a href="login.php">ورود کاربران</a></li>
-                                    <li><a href="registration.php">ثبت نام کاربران</a></li>
-                                    <li><a href="pricing-plan.html">قیمت ها</a></li>
-                                    <li><a href="shop.php">فروشگاه</a></li>
-                                    <li><a href="shop-single.html">صفحه تکی محصول</a></li>
-                                    <li><a href="cart.html">سبد خرید</a></li>
-                                    <li><a href="404.html">صفحه 404</a></li>
-                                    <li><a href="coming-soon.html">به زودی</a></li>
-
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#0">مدل های جدید</a>
-                                <ul class="submenu">
-                                    <li><a href="speakers.html">تمامی مدل های 2021</a></li>
-                                    <li><a href="speaker-details.html">جزئیات مدل های جدید</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#0">بلاگ</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">بلاگ</a></li>
-                                    <li><a href="blog-single.html">صفحه تکی بلاگ</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">تماس با ما</a></li>
-                        </ul>
-                        <div class="cart-ticket">
-                            <div class="cart-icon">
-                                <a href="#">
-                                    <i class="icofont-bag"></i>
-                                    <span>3</span>
-                                </a>
-
-                                <div class="cart-content">
-                                    <ul class="cart-list">
-                                        <li class="cart-item">
-                                            <div class="cart-inner">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_01.jpg" alt="product">
-                                                </div>
-                                                <div class="cart-details">
-                                                    <h6><a href="#">نام محصول</a></h6>
-                                                    <p>تعداد: 1 <span>56000</span></p>
-                                                    <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="cart-item">
-                                            <div class="cart-inner">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_02.jpg" alt="product">
-                                                </div>
-                                                <div class="cart-details">
-                                                    <h6><a href="#">نام محصول</a></h6>
-                                                    <p>تعداد: 1 <span>60000</span></p>
-                                                    <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="cart-item">
-                                            <div class="cart-inner">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_03.jpg" alt="product">
-                                                </div>
-                                                <div class="cart-details">
-                                                    <h6><a href="#">نام محصول</a></h6>
-                                                    <p>تعداد: 1 <span>62000</span></p>
-                                                    <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <a href="#" class="lab-btn">
-                                        ادامه خرید
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="pricing-plan.html" class="ticket-btn lab-btn ">
-                                <span>ثبت نام/ورود</span>
-                            </a>
-                        </div>
-
-                        <!-- toggle icons -->
-                        <div class="header-bar d-lg-none">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
     <!-- ==========Header Section Ends Here========== -->
 
 
@@ -181,7 +66,7 @@
                             <h1>حراجی  پاییزی آدیداس
                                  تا 30 آبان</h1>
                             <p>در شعبات استان تهران</p>
-                            <a href="registration.php" class="lab-btn"><span>همین حالا ثبت نام کنید</span> </a>
+                            <a href="users/registration.php" class="lab-btn"><span>همین حالا ثبت نام کنید</span> </a>
                             <!--<div class="event-sponsored">
                                 <p>اسپانسر توسط </p>
                                 <img src="assets/images/banner/02.png" alt="sponsor">
@@ -221,7 +106,7 @@
                         <p>در این گردهمایی انواع محصولات آدیداس عرضه و رونمایی می گردند. در این گردهمایی عموم مردم می توانند ثبت نام و سپس شرکت کنند. نمایشگاه فروش محصولات آدیداس در انتهای هر فصل بصورت تجمیعی برگزار
                         می شود. ما می توانیم بهترین محصولاتمان را در این نمایشگاه برای شما نمایش دهیم.</p>
                         <div class="about-btn-grp">
-                            <a href="registration.php" class="lab-btn "><span>ثبت نام فروشندگان</span> </a>
+                            <a href="users/registration.php" class="lab-btn "><span>ثبت نام فروشندگان</span> </a>
                             <a href="pricing-plan.html" class="lab-btn"><span>ثبت نام بازدیدکنندگان</span></a>
                         </div>
                     </div>

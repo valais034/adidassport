@@ -1,10 +1,12 @@
-<?php require_once 'inc/config.php';
+<?php require_once '../inc/config.php';
 if (is_login()) {
     redirect('profile');
 }
-require_once 'sections/header.php';
 ?>
-
+<?php
+require_once '../sections/header.php';
+?>
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -14,28 +16,28 @@ require_once 'sections/header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/x-icon/01.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/x-icon/01.png">
 
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/icofont.min.css">
-    <link rel="stylesheet" href="assets/css/lightcase.css">
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/icofont.min.css">
+    <link rel="stylesheet" href="../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
 
     <!-- preloader start here -->
-    <div class="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-icon">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </div>
+<!--    <div class="preloader">-->
+<!--        <div class="preloader-inner">-->
+<!--            <div class="preloader-icon">-->
+<!--                <span></span>-->
+<!--                <span></span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <!-- preloader ending here -->
 
     <!-- ==========Header Section Starts Here========== -->
@@ -59,6 +61,18 @@ require_once 'sections/header.php';
 
     <!-- Login Section Section Starts Here -->
     <div class="login-section padding-tb">
+        <?php
+        if ($message) {
+            ?>
+            <div class="success-message"><?php echo $message ?></div>
+            <?php
+        }
+        if ($error) {
+            ?>
+            <div class="error-message"><?php echo $error ?></div>
+            <?php
+        }
+        ?>
         <div class=" container">
             <div class="account-wrapper">
                 <h3 class="title">ورود به آدیداس اسپورت</h3>
@@ -111,34 +125,11 @@ require_once 'sections/header.php';
         </div>
     </div>
     <!-- Login Section Section Ends Here -->
-    <div class="forms-box">
-        <?php
-        if ($message) {
-            ?>
-            <div class="success-message"><?php echo $message ?></div>
-            <?php
-        }
-        if ($error) {
-            ?>
-            <div class="error-message"><?php echo $error ?></div>
-            <?php
-        }
-        ?>
-        <form action="login.php" method="post">
-            <p>ایمیل</p>
-            <input type="email" name="email" autocomplete="off"  required><br>
-            <p>کلمه عبور</p>
-            <input type="password" name="password"><br>
-            <input type="submit" name="do-login" value="ورود به حساب کاربری">
-        </form>
-        <p class="note">حساب کاربری ندارید؟ <a href="register.php">یکی بسازید :)</a></p>
-        <p class="note"><a href="reset.php">کلمه عبورم را فراموش کرده‌ام :(</a></p>
-    </div>
 
 
 
 
-    <?php require_once 'sections/footer.php' ?>
+    <?php require_once '../sections/footer.php' ?>
 </body>
 
 </html>

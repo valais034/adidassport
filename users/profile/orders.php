@@ -1,4 +1,4 @@
-<?php require_once '../inc/config.php'; ?>
+<?php require_once '../../inc/config.php'; ?>
 <?php
 if (!is_login()) {
     redirect('../login.php');
@@ -18,15 +18,15 @@ $user_orders = get_user_orders();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/x-icon/01.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/x-icon/01.png">
 
-    <link rel="stylesheet" href="../assets/css/animate.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/icofont.min.css">
-    <link rel="stylesheet" href="../assets/css/lightcase.css">
-    <link rel="stylesheet" href="../assets/css/swiper.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/animate.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/icofont.min.css">
+    <link rel="stylesheet" href="../../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
     <style>
         .bd-placeholder-img {
@@ -47,18 +47,16 @@ $user_orders = get_user_orders();
 </head>
 
 <body>
-<?php require_once '../sections/headerforuser.php'; ?>
 
 
 <div id="main" class="profile">
 
     <body>
 
-    <?php require_once '../sections/headerforuser.php'; ?>
 
 
     <body>
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="../dashboard.css" rel="stylesheet">
     </head>
 
 
@@ -70,7 +68,7 @@ $user_orders = get_user_orders();
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="http://localhost/adidassport/profile/index.php?logout=1">خروج از حساب کاربری</a>
+                <a class="nav-link px-3" href="?logout=1">خروج از حساب کاربری</a>
             </div>
         </div>
     </header>
@@ -81,7 +79,7 @@ $user_orders = get_user_orders();
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="../profile/index.php">
+                            <a class="nav-link" href="index.php">
                                 <span data-feather="home"></span>
                                 داشبورد
                             </a>

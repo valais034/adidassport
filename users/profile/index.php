@@ -1,4 +1,4 @@
-<?php require_once '../inc/config.php'; ?>
+<?php require_once '../../inc/config.php'; ?>
 <?php
 if (!is_login()) {
     redirect('../login.php');
@@ -15,15 +15,15 @@ $user_data = get_userdata();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/x-icon/01.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/x-icon/01.png">
 
-    <link rel="stylesheet" href="../assets/css/animate.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/icofont.min.css">
-    <link rel="stylesheet" href="../assets/css/lightcase.css">
-    <link rel="stylesheet" href="../assets/css/swiper.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/animate.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/icofont.min.css">
+    <link rel="stylesheet" href="../../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
     <style>
         .bd-placeholder-img {
@@ -44,13 +44,12 @@ $user_data = get_userdata();
 </head>
 <body>
 
-<?php require_once '../sections/headerforuser.php'; ?>
 
 
 
 
 
-<link href="dashboard.css" rel="stylesheet">
+<link href="../dashboard.css" rel="stylesheet">
 </head>
 
 
@@ -65,6 +64,12 @@ $user_data = get_userdata();
             <a class="nav-link px-3" href="?logout=1">خروج از حساب کاربری</a>
         </div>
     </div>
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+            <a class="nav-link px-3" href="../..">بازگشت به وب سایت</a>
+        </div>
+    </div>
+
 </header>
 
 <div class="container-fluid">
@@ -198,9 +203,9 @@ $user_data = get_userdata();
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <?php if ($user_data['user_image']) { ?>
-                                            <img src="../assets/images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">
+                                            <img src="../../assets/images/profile/<?php echo $user_data['user_image'] ?>" alt="<?php echo $user_data['display_name'] ?>">
                                         <?php } else { ?>
-                                            <img src="../assets/images/profile/profile.jpg" alt="پروفایل کاربری">
+                                            <img src="../../assets/images/profile/profile.jpg" alt="پروفایل کاربری">
                                         <?php } ?>
                                     </div>
                                 </div>
