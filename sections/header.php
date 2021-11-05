@@ -32,7 +32,7 @@ function myFunction() {
             <div class="container">
                 <div class="header-wrapper">
                     <div class="logo">
-                        <a href="index.php">
+                        <a href="<?php echo PATH; ?>">
                             <img src="assets/images/logo/01.png" alt="logo">
                         </a>
                     </div>
@@ -41,7 +41,7 @@ function myFunction() {
                             <li>
                                 <a href="<?php echo PATH; ?>">صفحه اصلی</a>
                             </li>
-
+                            <li><a href="<?php echo PATH; ?>/shop.php">محصولات</a></li>
                             <li>
                                 <a href="#0">صفحات</a>
                                 <ul class="submenu">
@@ -131,7 +131,7 @@ function myFunction() {
                                 </div>
                             </div>
 
-                            <a href="<?php echo PATH; ?>/users/login.php">ورود</a>
+                            <a class="lab-btn" href="<?php echo PATH; ?>/users/login.php" >پنل کاربری</a>
 
                         </div>
 

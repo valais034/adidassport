@@ -1,4 +1,5 @@
-<?php require_once 'inc/config.php';
+<?php
+require_once 'inc/config.php';
 require_once 'sections/header.php';
 ?>
 

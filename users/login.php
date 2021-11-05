@@ -6,7 +6,7 @@ if (is_login()) {
 <?php
 require_once '../sections/header.php';
 ?>
-?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -61,20 +61,23 @@ require_once '../sections/header.php';
 
     <!-- Login Section Section Starts Here -->
     <div class="login-section padding-tb">
-        <?php
-        if ($message) {
-            ?>
-            <div class="success-message"><?php echo $message ?></div>
-            <?php
-        }
-        if ($error) {
-            ?>
-            <div class="error-message"><?php echo $error ?></div>
-            <?php
-        }
-        ?>
+
         <div class=" container">
+
             <div class="account-wrapper">
+                <div class="forms-box">
+                    <?php
+                    if ($message) {
+                        ?>
+                        <div class="success-message"><?php echo $message ?></div>
+                        <?php
+                    }
+                    if ($error) {
+                        ?>
+                        <div class="error-message" style="background: darkred"><?php echo $error ?></div>
+                        <?php
+                    }
+                    ?>
                 <h3 class="title">ورود به آدیداس اسپورت</h3>
                 <form class="account-form" action="login.php" method="post">
                     <div class="form-group">

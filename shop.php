@@ -1,9 +1,11 @@
 <?php require_once 'inc/config.php';
 require_once 'sections/header.php';
+
 ?>
 <?php
 $products= get_products(4);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="zxx">

@@ -1,17 +1,17 @@
-
 <?php require_once '../inc/config.php';
-
 //mysqli_query($db,"INSERT INTO `users`(`display_name`, `email`, `password`) VALUES ('reza','reza@gmail.com','123456')");
 if (is_login()) {
   redirect('profile');
 }
+?>
+<?php
 require_once '../sections/header.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
+
     <title>آدیداس اسپورت</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
