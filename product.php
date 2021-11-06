@@ -336,7 +336,7 @@ $pcomments = get_comments_by_product_id($product_id);
                             <div class="client-review">
                                 <div class="review-form">
                                     <div class="review-title">
-                                        <h5>Add a Review</h5>
+                                        <h5>درج نظر</h5>
                                     </div>
                                     <form action="product.php?product-id=<?php echo $product_id ?>" method="post">
                                         <div class="col-md-4 col-12">
@@ -361,6 +361,7 @@ $pcomments = get_comments_by_product_id($product_id);
                                             <textarea rows="4" name="comment_text" placeholder="متن نظر شما ..."></textarea><br>
                                         </div>
                                         <div class="col-12">
+                                            <input type="hidden" name="product-id" value="<?php echo $product_id ?>">
                                             <button class="lab-btn" type="submit" name="add-comment">ثبت نظر</button>
 <!--                                            <input type="submit" name="add-comment" value="ثبت نظر">-->
                                         </div>
@@ -401,6 +402,7 @@ $pcomments = get_comments_by_product_id($product_id);
             </div>
 
         </div>
+
         <div class="box comments">
             <div class="comments-list">
 
