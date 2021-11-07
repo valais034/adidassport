@@ -216,144 +216,44 @@ $pcomments = get_comments_by_product_id($product_id);
                         <li class="desc" data-target="description-show">توضیحات</li>
                         <li class="rev active" data-target="review-content-show">نظرات</li>
                     </ul>
-                    ///////////////////////////////**//
-                    <div class="box comments">
-                        <div class="comments-list">
-
-                            <?php while ($pcomment = mysqli_fetch_array($pcomments)) { ?>
-                                <div id="comment-item-1" class="comment">
-                                    <div class="user-image"><img src="images/2.jpg" alt=""></div>
-                                    <div class="comment-username"><?php echo $pcomment['username'] ?></div>
-                                    <div class="comment-date">۱۲ فروردین ۱۳۹۶</div>
-                                    <div class="comment-text"><p><?php echo $pcomment['comment_text'] ?></p></div>
-                                    <?php if ($pcomment['comment_answer']) { ?>
-                                        <div class="comment-answer"><?php echo $pcomment['comment_answer'] ?></div>
-                                    <?php } ?>
-                                </div>
-                            <?php } ?>
-                        </div>
-                        <?php
-                        if ($message) {
-                            ?>
-                            <div class="success-message"><?php echo $message ?></div>
-                            <?php
-                        }
-                        if ($error) {
-                            ?>
-                            <div class="error-message"><?php echo $error ?></div>
-                            <?php
-                        }
-                        ?>
-
-                    </div>
+                    <!-- box comments -->
                     <div class="review-showing">
                     <div class="review-content review-content-show">
                         <div class="review-showing">
-                            <ul class="agri-ul content">
-                                <li>
-                                    <div class="post-thumb">
-                                        <img src="assets/images/profile/profile.jpg" alt="shop">
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="entry-meta">
-                                            <?php while ($pcomment = mysqli_fetch_array($pcomments)) { ?>
-                                            <div class="posted-on">
-                                                <a href="#"><?php echo $pcomment['username'] ?></a>
-                                                <p> در 12 فروردین 1399</p>
 
-                                            <div class="rating">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
+                            <div class="box comments">
+                                <div class="comments-list">
+
+                                    <?php while ($pcomment = mysqli_fetch_array($pcomments)) { ?>
+                                        <li>
+                                            <div class="post-thumb">
+                                                <img src="assets/images/profile/profile2.jpg" alt="shop">
                                             </div>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p><?php echo $pcomment['comment_text'] ?></p>
-                                        </div>
-                                        <?php if ($pcomment['comment_answer']) { ?>
-                                            <div class="comment-answer"><?php echo $pcomment['comment_answer'] ?></div>
-                                        <?php } ?>
-                                    </div>
+                                            <div class="user-image"><img src="images/2.jpg" alt=""></div>
+                                            <div class="comment-username"><?php echo $pcomment['username'] ?></div>
+                                            <div class="comment-date">۱۲ فروردین ۱۳۹۶</div>
+                                            <div class="comment-text"><p><?php echo $pcomment['comment_text'] ?></p></div>
+                                            <?php if ($pcomment['comment_answer']) { ?>
+                                                <div class="comment-answer"><?php echo $pcomment['comment_answer'] ?></div>
+                                            <?php } ?>
+                                        </li>
                                     <?php } ?>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <img src="assets/images/team/05.jpg" alt="shop">
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="entry-meta">
-                                            <div class="posted-on">
-                                                <a href="#">Jonathan Doe</a>
-                                                <p>Posted on December 25, 2017 at 6:57 am</p>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Enthusiast build innovativ initiatives before lonterm high-impact
-                                                awesome theme seo psd porta monetize covalent leadership after
-                                                without resource.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <img src="assets/images/team/06.jpg" alt="shop">
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="entry-meta">
-                                            <div class="posted-on">
-                                                <a href="#">Mack Zucky</a>
-                                                <p>Posted on December 25, 2017 at 6:57 am</p>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Enthusiast build innovativ initiatives before lonterm high-impact
-                                                awesome theme seo psd porta monetize covalent leadership after
-                                                without resource.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <img src="assets/images/team/05.jpg" alt="shop">
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="entry-meta">
-                                            <div class="posted-on">
-                                                <a href="#">Jordi Albae</a>
-                                                <p>Posted on December 25, 2017 at 6:57 am</p>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Enthusiast build innovativ initiatives before lonterm high-impact
-                                                awesome theme seo psd porta monetize covalent leadership after
-                                                without resource.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                                </div>
+                                <?php
+                                if ($message) {
+                                    ?>
+                                    <div class="success-message"><?php echo $message ?></div>
+                                    <?php
+                                }
+                                if ($error) {
+                                    ?>
+                                    <div class="error-message"><?php echo $error ?></div>
+                                    <?php
+                                }
+                                ?>
+
+                            </div>
+
                             <div class="client-review">
                                 <div class="review-form">
                                     <div class="review-title">
