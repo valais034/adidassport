@@ -126,7 +126,7 @@ require_once 'sections/header.php';
 
 
                                 <?php if (!is_login()) { ?>
-                                <div style="text-align: center;font-size: 12px">برای ادامه کار و خرید، لطفا <a href="users/login.php">وارد شوید</a> و یا <a href="users/register.php">ثبت نام کنید.</a></div>
+                                <div style="text-align: center;font-size: 12px">برای ادامه کار و خرید، لطفا <a href="users/login.php">وارد شوید</a> و یا <a href="users/registration.php">ثبت نام کنید.</a></div>
                                 <?php } else { ?>
                                 <h4>اطلاعات حساب کاربری</h4>
                                 <div class="user-info">

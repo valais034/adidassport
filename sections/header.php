@@ -1,3 +1,12 @@
+<?php
+$products = get_products(6);
+$cart_items = get_cart_items();
+$cart_total = cart_total();
+$cart_total_final = $cart_total+30;
+if (is_login()) {
+$user_data = get_userdata();
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -81,51 +90,25 @@ function myFunction() {
                                 </a>
 
                                 <div class="cart-content">
+                                    <?php foreach ($cart_items as $cart_item) { ?>
                                     <ul class="cart-list">
                                         <li class="cart-item">
                                             <div class="cart-inner">
                                                 <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_01.jpg" alt="product">
+                                                    <img src="assets/images/product/<?php echo $cart_item['product_image'] ?>" alt="product">
                                                 </div>
                                                 <div class="cart-details">
-                                                    <h6><a href="#">نام محصول</a></h6>
-                                                    <p>تعداد: 1 <span>56000</span></p>
+                                                    <h6><a href="product.php?product-id=<?php echo $cart_item['id'] ?>" target="_blank"><?php echo $cart_item['product_name'] ?></a> </h6>
+                                                    <p>تعداد: 1 <span><?php echo $cart_item['product_price'] ?> تومان</span></p>
                                                     <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
+                                                        <a href="?delete-from-cart=<?php echo $cart_item['id'] ?>" onclick="return confirm('آیا میخواهید این محصول را از سبد خرید خود حذف کنید؟')"><i class="icofont-close"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="cart-item">
-                                            <div class="cart-inner">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_02.jpg" alt="product">
-                                                </div>
-                                                <div class="cart-details">
-                                                    <h6><a href="#">نام محصول</a></h6>
-                                                    <p>تعداد: 1 <span>60000</span></p>
-                                                    <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="cart-item">
-                                            <div class="cart-inner">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_03.jpg" alt="product">
-                                                </div>
-                                                <div class="cart-details">
-                                                    <h6><a href="#">نام محصول</a></h6>
-                                                    <p>تعداد: 1 <span>62000</span></p>
-                                                    <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        <?php } ?>
                                     </ul>
-                                    <a href="#" class="lab-btn">
+                                    <a href="<?php echo PATH; ?>/cart.php" class="lab-btn">
                                         ادامه خرید
                                     </a>
                                 </div>
