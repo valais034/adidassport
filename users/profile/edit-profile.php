@@ -63,6 +63,12 @@ $user_data = get_userdata();
             <a class="nav-link px-3" href="?logout=1">خروج از حساب کاربری</a>
         </div>
     </div>
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+            <a class="nav-link px-3" href="../.." target="_blank">بازگشت به وب سایت</a>
+        </div>
+    </div>
+
 </header>
 
 <div class="container-fluid">

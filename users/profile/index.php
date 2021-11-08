@@ -66,7 +66,7 @@ $user_data = get_userdata();
     </div>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="../..">بازگشت به وب سایت</a>
+            <a class="nav-link px-3" href="../.." target="_blank">بازگشت به وب سایت</a>
         </div>
     </div>
 
