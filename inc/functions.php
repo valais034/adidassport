@@ -298,6 +298,7 @@ function cart_total(){
     return $cart_total;
 }
 
+
 function delete_from_cart($product_id){
     $ip_address = $_SERVER['REMOTE_ADDR'];
     global $db;

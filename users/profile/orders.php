@@ -103,9 +103,9 @@ $user_orders = get_user_orders();
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="../../cart.php" target="_blank">
                                 <span data-feather="users"></span>
-                                Customers
+                                سبد خرید
                             </a>
                         </li>
                         <li class="nav-item">

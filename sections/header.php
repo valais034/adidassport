@@ -51,7 +51,7 @@ function myFunction() {
                                     <li><a href="<?php echo PATH; ?>/pricing-plan.html">قیمت ها</a></li>
                                     <li><a href="<?php echo PATH; ?>/shop.php">فروشگاه</a></li>
                                     <li><a href="<?php echo PATH; ?>/shop-single.html">صفحه تکی محصول</a></li>
-                                    <li><a href="<?php echo PATH; ?>/cart.html">سبد خرید</a></li>
+                                    <li><a href="<?php echo PATH; ?>/cart.php">سبد خرید</a></li>
                                     <li><a href="<?php echo PATH; ?>/404.html">صفحه 404</a></li>
                                     <li><a href="<?php echo PATH; ?>/coming-soon.html">به زودی</a></li>
 

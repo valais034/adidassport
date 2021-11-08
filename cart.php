@@ -1,12 +1,25 @@
+<?php require_once 'inc/config.php'; ?>
+<?php
+$products = get_products(6);
+$cart_items = get_cart_items();
+$cart_total = cart_total();
+$cart_total_final = $cart_total+30;
+if (is_login()) {
+    $user_data = get_userdata();
+}
+?>
+<?php
+require_once 'sections/header.php';
+?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <title>Kagont</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
+    <!-- favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/x-icon/01.png">
 
     <link rel="stylesheet" href="assets/css/animate.css">
@@ -31,126 +44,9 @@
     </div>
     <!-- preloader ending here -->
 
+
     <!-- ==========Header Section Starts Here========== -->
-    <header class="header-section">
-        <div class="header-bottom">
-            <div class="container">
-                <div class="header-wrapper">
-                    <div class="logo">
-                        <a href="index.php">
-                            <img src="assets/images/logo/01.png" alt="logo">
-                        </a>
-                    </div>
-                    <div class="menu-area">
-                        <ul class="menu">
-                            <li>
-                                <a href="index.php">Home</a>
-                            </li>
 
-                            <li>
-                                <a href="#0">Features</a>
-                                <ul class="submenu">
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="users/login.php">Log In</a></li>
-                                    <li><a href="users/registration.php">Sign Up</a></li>
-                                    <li><a href="pricing-plan.html">Pricing Plan</a></li>
-                                    <li><a href="shop.php">Shop</a></li>
-                                    <li><a href="shop-single.html">Shop Single</a></li>
-                                    <li><a href="cart.php">Cart Page</a></li>
-                                    <li><a class="active" href="404.html">404 Page</a></li>
-                                    <li><a href="coming-soon.html">Coming-soon</a></li>
-
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#0">Speakers</a>
-                                <ul class="submenu">
-                                    <li><a href="speakers.html">All Speakers</a></li>
-                                    <li><a href="speaker-details.html">Speaker Details</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#0">Blog</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                        <div class="cart-ticket">
-                            <div class="cart-icon">
-                                <a href="#">
-                                    <i class="icofont-bag"></i>
-                                    <span>3</span>
-                                </a>
-
-                                <div class="cart-content">
-                                    <ul class="cart-list">
-                                        <li class="cart-item">
-                                            <div class="cart-inner">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_01.jpg" alt="product">
-                                                </div>
-                                                <div class="cart-details">
-                                                    <h6><a href="#">Product Text Here</a></h6>
-                                                    <p>Quantity: 1 <span>$56</span></p>
-                                                    <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="cart-item">
-                                            <div class="cart-inner">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_02.jpg" alt="product">
-                                                </div>
-                                                <div class="cart-details">
-                                                    <h6><a href="#">Product Text Here</a></h6>
-                                                    <p>Quantity: 1 <span>$56</span></p>
-                                                    <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="cart-item">
-                                            <div class="cart-inner">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/product/menu_cart_03.jpg" alt="product">
-                                                </div>
-                                                <div class="cart-details">
-                                                    <h6><a href="#">Product Text Here</a></h6>
-                                                    <p>Quantity: 1 <span>$56</span></p>
-                                                    <div class="close-btn">
-                                                        <a href="#"><i class="icofont-close"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <a href="#" class="lab-btn">
-                                        Checkout
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="pricing-plan.html" class="ticket-btn lab-btn ">
-                                <span>Purchase Ticket</span>
-                            </a>
-                        </div>
-
-                        <!-- toggle icons -->
-                        <div class="header-bar d-lg-none">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
     <!-- ==========Header Section Ends Here========== -->
 
     <!-- Page Header Section Start Here -->
@@ -158,36 +54,146 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h4 class="ph-title">404 Error Page</h4>
+                <h4 class="ph-title">سبد خرید</h4>
                 <ul class="lab-ul">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a class="active">404</a></li>
+                    <li><a href="index.php">صفحه اصلی</a></li>
+                    <li><a href="#">محصولات</a></li>
+                    <li><a class="active">سبد خرید</a></li>
                 </ul>
             </div>
         </div>
     </section>
     <!-- Page Header Section Ending Here -->
 
-    <!-- ==========404 Section start Here========== -->
-    <section class="fore-zero padding-tb padding-b">
+    <!-- Shop Cart Page Section start here -->
+    <div class="shop-cart padding-tb">
         <div class="container">
             <div class="section-wrapper">
-                <div class="zero-item">
-                    <div class="zero-thumb">
-                        <img src="assets/images/404.png" alt="404">
+                <div class="cart-top">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>نام محصول</th>
+                                <th>قیمت محصول</th>
+                                <th>تعداد</th>
+                                <th>جمع مبلغ</th>
+                                <th>ویرایش</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($cart_items as $cart_item) { ?>
+                            <tr>
+                                <td class="product-item">
+                                    <div class="p-thumb rounded">
+                                        <a href="product.php?product-id=<?php echo $cart_item['id'] ?>" target="_blank"><img src="assets/images/product/<?php echo $cart_item['product_image'] ?>" alt="product"></a>
+                                    </div>
+                                    <div class="p-content">
+                                        <a href="product.php?product-id=<?php echo $cart_item['id'] ?>" target="_blank"><?php echo $cart_item['product_name'] ?></a>                                    </div>
+                                </td>
+                                <td><?php echo $cart_item['product_price'] ?> تومان</td>
+                                <td>
+                                    <div class="cart-plus-minus">
+                                        <div class="dec qtybutton">-</div>
+                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="3">
+                                        <div class="inc qtybutton">+</div>
+                                    </div>
+                                </td>
+                                <td><?php echo $cart_item['product_price'] ?> تومان</td>
+                                <td>
+                                    <a href="?delete-from-cart=<?php echo $cart_item['id'] ?>" onclick="return confirm('آیا میخواهید این محصول را از سبد خرید خود حذف کنید؟')"><img src="assets/images/del.png" alt="product"></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+
+                            <tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-checkout-box">
+                        <form action="/" class="coupon">
+                            <input type="text" name="coupon" placeholder="Coupon Code..." class="cart-page-input-text">
+                            <input type="submit" value="Apply Coupon">
+                        </form>
+                        <form action="/" class="cart-checkout">
+<!--                            <input type="submit" value="Update Cart">-->
+                            <input type="submit" value="Proceed to Checkout">
+                        </form>
                     </div>
-                    <div class="zero-content">
-                        <h2>Oops! This Page Not Found</h2>
-                        <p>We are Really Sorry But the Page you Requested is Missing <i class="icofont-worried"></i></p>
-                        <a href="index.php" class="lab-btn"><span>Go Back to Home <i
-                                    class="icofont-double-right"></i></span> </a>
+                    <div class="shiping-box">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+
+
+                                <?php if (!is_login()) { ?>
+                                <div style="text-align: center;font-size: 12px">برای ادامه کار و خرید، لطفا <a href="users/login.php">وارد شوید</a> و یا <a href="users/register.php">ثبت نام کنید.</a></div>
+                                <?php } else { ?>
+                                <h4>اطلاعات حساب کاربری</h4>
+                                <div class="user-info">
+                                    <table>
+                                        <tr>
+                                            <td>نام شما:</td>
+                                            <td><?php echo $user_data['display_name'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>آدرس ایمیل:</td>
+                                            <td><?php echo $user_data['email'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>شماره تماس:</td>
+                                            <td><?php echo $user_data['user_number'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>آدرس پستی:</td>
+                                            <td><?php echo $user_data['user_address'] ?></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <form action="cart.php" method="post">
+
+                                    <input type="hidden" name="user-email" value="<?php echo $user_data['email'] ?>">
+                                    <input type="hidden" name="user-number" value="<?php echo $user_data['user_number'] ?>">
+                                    <input type="hidden" name="cart-total" value="<?php echo $cart_total ?>">
+                                    <input type="hidden" name="product-ids" value="<?php
+                                    foreach ($cart_items as $cart_item) {
+                                        echo $cart_item['id'] . ', ';
+                                    }
+
+                                    ?>">
+
+                                    <input type="submit" name="submit-order" value="اتصال به درگاه پرداخت">
+                                </form>
+                                <?php } ?>
+
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="cart-overview">
+                                    <h4>فاکتور شما:</h4>
+                                    <ul>
+                                        <li>
+                                            <span class="pull-left">جمع مبالغ</span>
+                                            <p class="pull-right" style="color: whitesmoke"><?php echo $cart_total ?> تومان</p>
+                                        </li>
+                                        <li>
+                                            <span class="pull-left">هزینه ارسال (پیک موتوری)</span>
+                                            <p class="pull-right" style="color: whitesmoke">30 تومان</p>
+                                        </li>
+                                        <li>
+                                            <span class="pull-left">جمع کل:</span>
+                                            <p class="pull-right" style="color: whitesmoke"><?php echo $cart_total_final ?> تومان</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ==========404 Section ends Here========== -->
+    </div>
+    <!-- Shop Cart Page Section ending here -->
 
     <!-- Footer Section start here -->
     <footer class="footer-section" style="background-image: url(assets/images/bg-images/footer-bg.png);">
@@ -261,10 +267,8 @@
                                     <div class="fm-item-widget lab-item">
                                         <div class="lab-inner">
                                             <div class="lab-thumb">
-                                                <a href="#">
-                                                    <img src="assets/images/footer/footer-middle/02.jpg"
-                                                        alt="footer-widget-img">
-                                                </a>
+                                                <a href="#"> <img src="assets/images/footer/footer-middle/02.jpg"
+                                                        alt="footer-widget-img"></a>
                                             </div>
                                             <div class="lab-content">
                                                 <h6><a href="#">Evisculate Economicy Sound
@@ -347,6 +351,7 @@
     <a href="#" class="scrollToTop"><i class="icofont-bubble-up"></i><span class="pluse_1"></span><span
             class="pluse_2"></span></a>
     <!-- scrollToTop ending here -->
+
 
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/fontawesome.min.js"></script>
