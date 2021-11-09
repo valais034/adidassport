@@ -1,12 +1,12 @@
 <?php
-$products = get_products(6);
-$cart_items = get_cart_items();
-$cart_total = cart_total();
-$cart_total_final = $cart_total+30;
-if (is_login()) {
-$user_data = get_userdata();
-}
-?>
+//$products = get_products(6);
+//$cart_items = get_cart_items();
+//$cart_total = cart_total();
+//$cart_total_final = $cart_total+30;
+//if (is_login()) {
+//$user_data = get_userdata();
+//}
+//?>
 <!doctype html>
 <html lang="en">
 <head>
