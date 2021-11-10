@@ -354,6 +354,10 @@ function get_orders(){
 
 
 function submit_order($email, $product_ids){
+//    $ids = explode(',',$product_ids, -1);
+//    $order_id = 'test_id';
+//    global $db;
+//    $query = mysqli_query($db,"INSERT INTO orders(order_id, product_id, user_email) values ('$order_id','$ids', $email)");
 
 }
 
