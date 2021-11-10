@@ -92,7 +92,7 @@ require_once 'sections/header.php';
                 <div class="col-lg-10">
                     <div class="about-image">
                         <img src="assets/images/about/01.jpg" alt="about image">
-                        <a href="https://www.youtube.com/embed/SP3yyrboTno" class="play-btn" data-rel="lightcase">
+                        <a href="assets/images/NEW2.mp4" class="play-btn" data-rel="lightcase">
                             <i class="icofont-ui-play"></i>
                             <span class="pluse_2"></span>
                         </a>

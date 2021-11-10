@@ -1124,7 +1124,7 @@ ul li {
   text-transform: capitalize;
   font-weight: 700;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "isans";
   margin-bottom: 40px;
 }
 .widget .widget-header h5::before {
@@ -1285,7 +1285,7 @@ ul li {
   font-size: 16px;
   line-height: 1.5;
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: "isans";
   margin-bottom: 2px;
 }
 .widget.widget-post ul.widget-wrapper li .post-content h6:hover {
@@ -1561,7 +1561,7 @@ ul li {
   line-height: 36px;
   font-style: italic;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  font-family: "isans";
 }
 @media (max-width: 767px) {
   .blog-quote {
@@ -4888,7 +4888,7 @@ ul li {
   max-width: 610px;
 }
 .contact-form-wrapper .contact-form h5 {
-  font-family: "Poppins", sans-serif;
+  font-family: "isans";
 }
 .contact-form-wrapper .contact-form form.comment-form {
   justify-content: space-between;
@@ -4951,7 +4951,7 @@ ul li {
   }
 }
 .contact-info-wrapper .contact-info-title h5 {
-  font-family: "Poppins", sans-serif;
+  font-family: "isans";
 }
 .contact-info-wrapper .contact-info-title p {
   max-width: 280px;
@@ -5092,7 +5092,7 @@ footer .footer-middle .footer-middle-item-wrapper .footer-middle-item .fm-item-c
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: "isans";
 }
 footer .footer-middle .footer-middle-item-wrapper .footer-middle-item .fm-item-content .fm-item-widget .lab-inner .lab-content p {
   color: #5d6e8d;
@@ -5140,3 +5140,21 @@ footer .footer-bottom .footer-bottom-content p a {
 /*Footer section End here*/
 
 /*# sourceMappingURL=style.css.map */
+.success-message {
+  background-color: #005f00;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+
+}
+
+.error-message {
+  background-color: #9a0000;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+
+}

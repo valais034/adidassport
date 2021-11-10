@@ -1,12 +1,14 @@
 <?php
-//$products = get_products(6);
-//$cart_items = get_cart_items();
-//$cart_total = cart_total();
-//$cart_total_final = $cart_total+30;
-//if (is_login()) {
-//$user_data = get_userdata();
-//}
-//?>
+$products = get_products(6);
+$cart_items = get_cart_items();
+$cart_total = cart_total();
+$number_of_cart_items = mysqli_query($db, "SELECT * FROM cart");
+$cart_total_final = $cart_total+30;
+if (is_login()) {
+$user_data = get_userdata();
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -86,7 +88,8 @@ function myFunction() {
                             <div class="cart-icon">
                                 <a href="#">
                                     <i class="icofont-bag"></i>
-                                    <span>3</span>
+                                    <span><?php echo mysqli_num_rows($number_of_cart_items);?>
+                                    </span>
                                 </a>
 
                                 <div class="cart-content">

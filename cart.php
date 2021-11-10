@@ -3,7 +3,6 @@
 $products = get_products(6);
 $cart_items = get_cart_items();
 $cart_total = cart_total();
-$cart_total_final = $cart_total+30;
 if (is_login()) {
     $user_data = get_userdata();
 }
@@ -67,6 +66,21 @@ require_once 'sections/header.php';
 
     <!-- Shop Cart Page Section start here -->
     <div class="shop-cart padding-tb">
+        <?php
+        if ($message) {
+            ?>
+            <div class="success-message"><?php echo $message ?></div>
+            <?php
+        }
+        if ($error) {
+            ?>
+            <div class="error-message"><?php echo $error ?></div>
+            <?php
+        }
+        ?>
+        <?php if (!$cart_items) { ?>
+            <div style="text-align: center;font-size: 13px">سبد خرید شما خالی است. لطفا از فروشگاه، اقدام به پر کردن سبد خرید خود کنید.</div>
+        <?php } else { ?>
         <div class="container">
             <div class="section-wrapper">
                 <div class="cart-top">
@@ -182,7 +196,7 @@ require_once 'sections/header.php';
                                         </li>
                                         <li>
                                             <span class="pull-left">جمع کل:</span>
-                                            <p class="pull-right" style="color: whitesmoke"><?php echo $cart_total_final ?> تومان</p>
+                                            <p class="pull-right" style="color: whitesmoke"> تومان</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -192,157 +206,13 @@ require_once 'sections/header.php';
                 </div>
             </div>
         </div>
+
+        <?php } ?>
     </div>
     <!-- Shop Cart Page Section ending here -->
 
     <!-- Footer Section start here -->
-    <footer class="footer-section" style="background-image: url(assets/images/bg-images/footer-bg.png);">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row g-3 justify-content-center g-lg-0">
-                    <div class="col-lg-4 col-sm-6 col-12">
-                        <div class="footer-top-item lab-item">
-                            <div class="lab-inner">
-                                <div class="lab-thumb">
-                                    <img src="assets/images/footer/footer-top/01.png" alt="Phone-icon">
-                                </div>
-                                <div class="lab-content">
-                                    <span>Phone Number : +88019 339 702 520</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-12">
-                        <div class="footer-top-item lab-item">
-                            <div class="lab-inner">
-                                <div class="lab-thumb">
-                                    <img src="assets/images/footer/footer-top/02.png" alt="email-icon">
-                                </div>
-                                <div class="lab-content">
-                                    <span>Email : admin@Kagont.com</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-12">
-                        <div class="footer-top-item lab-item">
-                            <div class="lab-inner">
-                                <div class="lab-thumb">
-                                    <img src="assets/images/footer/footer-top/03.png" alt="location-icon">
-                                </div>
-                                <div class="lab-content">
-                                    <span>Address : 30 North West New York 240</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-middle padding-tb">
-            <div class="container">
-                <div class="row shape-c">
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="footer-middle-item-wrapper">
-                            <div class="footer-middle-item mb-5 mb-lg-0">
-                                <div class="fm-item-title">
-                                    <h5>About Kagont</h5>
-                                </div>
-                                <div class="fm-item-content">
-                                    <p class="mb-30">Energistica coordinate highly eficient procesr
-                                        improvement viaing awesome</p>
-                                    <img class="rounded footer-abt-img" src="assets/images/footer/footer-middle/01.jpg"
-                                        alt="about-image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="footer-middle-item-wrapper">
-                            <div class="footer-middle-item mb-5 mb-lg-0">
-                                <div class="fm-item-title">
-                                    <h5>our Recent news</h5>
-                                </div>
-                                <div class="fm-item-content">
-                                    <div class="fm-item-widget lab-item">
-                                        <div class="lab-inner">
-                                            <div class="lab-thumb">
-                                                <a href="#"> <img src="assets/images/footer/footer-middle/02.jpg"
-                                                        alt="footer-widget-img"></a>
-                                            </div>
-                                            <div class="lab-content">
-                                                <h6><a href="#">Evisculate Economicy Sound
-                                                        Technologies Before.</a></h6>
-                                                <p>July 23, 2021</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="fm-item-widget lab-item">
-                                        <div class="lab-inner">
-                                            <div class="lab-thumb">
-                                                <a href="#"><img src="assets/images/footer/footer-middle/03.jpg"
-                                                        alt="footer-widget-img"></a>
-                                            </div>
-                                            <div class="lab-content">
-                                                <h6><a href="#">Globally initiate Global Niche
-                                                        Awesome Markets For.</a></h6>
-                                                <p>December 23, 2021</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="fm-item-widget lab-item">
-                                        <div class="lab-inner">
-                                            <div class="lab-thumb">
-                                                <a href="#"><img src="assets/images/footer/footer-middle/04.jpg"
-                                                        alt="footer-widget-img"></a>
-                                            </div>
-                                            <div class="lab-content">
-                                                <h6><a href="#">Authorita Underwhni Tactica
-                                                        Growth Stratege Create
-                                                    </a></h6>
-                                                <p>July 29, 2021</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="footer-middle-item-wrapper">
-                            <div class="footer-middle-item-3 mb-5 mb-lg-0">
-                                <div class="fm-item-title">
-                                    <h5>OUR NEWSLETTER</h5>
-                                </div>
-                                <div class="fm-item-content">
-                                    <p>Kagont is a event organization supported
-                                        by community leaders</p>
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Enter email">
-                                        </div>
-                                        <button type="submit" class="lab-btn">Send Massage <i
-                                                class="icofont-paper-plane"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="footer-bottom-content text-center">
-                            <p>&copy;2021 <a href="index.php">Kagont</a> -Best For Event HTML Template.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php require_once 'sections/footer.php' ?>
     <!-- Footer Section end here -->
 
 

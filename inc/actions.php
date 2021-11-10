@@ -216,7 +216,7 @@ if (isset($_GET['add-to-cart'])) {
 if (isset($_GET['delete-from-cart'])) {
     $product_id = $_GET['delete-from-cart'];
     if (delete_from_cart($product_id)) {
-        $message = 'محصول با موفقیت از سبد خرید شما حذف شد.';
+        $message = 'محصول با موفقیت از سبد خرید شما حذف گردید.';
     } else {
         $error = 'مشکلی پیش آمده است.';
     }
