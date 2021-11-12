@@ -22,6 +22,36 @@ require_once 'sections/header.php';
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jan 4, 2022 15:37:25").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
 <body>
 
     <!-- preloader start here -->
@@ -47,25 +77,22 @@ require_once 'sections/header.php';
                 <div class="row gy-5 align-items-center">
                     <div class="col-lg-6 col-12">
                         <div class="banner-content">
-                            <ul id="countdown" class="countdown count-down" data-date="June 31, 2021 21:14:01">
-                                <li class="clock-item"><span class="count-number days">21</span>
-                                    <p class="count-text">روز</p>
-                                </li>
-
-                                <li class="clock-item"><span class="count-number hours">16</span>
-                                    <p class="count-text">ساعت</p>
-                                </li>
-
-                                <li class="clock-item"><span class="count-number minutes">25</span>
-                                    <p class="count-text">دقیقه</p>
-                                </li>
-
+                            <ul id="countdown" class="countdown count-down" data-date="Jan 20, 2022 21:14:01">
                                 <li class="clock-item"><span class="count-number seconds">19</span>
                                     <p class="count-text">ثانیه</p>
                                 </li>
+                                <li class="clock-item"><span class="count-number minutes">25</span>
+                                    <p class="count-text">دقیقه</p>
+                                </li>
+                                <li class="clock-item"><span class="count-number hours">16</span>
+                                    <p class="count-text">ساعت</p>
+                                </li>
+                                <li class="clock-item"><span class="count-number days">20</span>
+                                    <p class="count-text">روز</p>
+                                </li>
                             </ul>
-                            <h1>حراجی  پاییزی آدیداس
-                                 تا 30 آبان</h1>
+                            <h1>حراج  آدیداس
+                                <br>تا 30 دی ماه</h1>
                             <p>در شعبات استان تهران</p>
                             <a href="users/registration.php" class="lab-btn"><span>همین حالا ثبت نام کنید</span> </a>
                             <!--<div class="event-sponsored">

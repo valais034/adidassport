@@ -250,7 +250,7 @@ $products= get_products(4);
             </div>
         </div>
     </section>
-    <!-- Page Header Section Ending Here -->
+
 
     <!-- shop page Section Start Here -->
     <div class="shop-page padding-tb">

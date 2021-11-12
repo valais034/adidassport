@@ -1,9 +1,9 @@
 <?php
 require_once 'config.php';
 
-function register_user($username, $email, $password){
+function register_user($username, $email, $password, $hash){
     global $db;
-    $query = mysqli_query($db, "INSERT INTO users (display_name, email, password) VALUES ('$username', '$email', '$password')");
+    $query = mysqli_query($db, "INSERT INTO users (display_name, email, password, hash) VALUES ('$username', '$email', '$password','$hash')");
     if ($query) {
         return true;
     } else {
@@ -452,7 +452,7 @@ function send_email($email){
     $to = $email;
     $subject = "لینک بازیابی کلمه عبور زنبیل";
     $txt = "برای بازیابی کلمه‌ی عبور خود، روی لینک زیر کلیک کنید:";
-    $txt .= "<br>" . "<a href='http://es92.ir/users/reset.php?email=" . $email . "&hash=" . $user_hash . "'>بازیابی کلمه عبور</a>";
+    $txt .= "<br>" . "<a href='http://es92.ir/adidassport/users/reset.php?email=" . $email . "&hash=" . $user_hash . "'>بازیابی کلمه عبور</a>";
     $headers = "From: info@xanbil.com";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
