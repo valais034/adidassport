@@ -29,7 +29,7 @@ require_once '../sections/header.php';
 
 <body>
 
-    <!-- preloader start here -->
+<!-- preloader start here -->
 <!--    <div class="preloader">-->
 <!--        <div class="preloader-inner">-->
 <!--            <div class="preloader-icon">-->
@@ -38,12 +38,12 @@ require_once '../sections/header.php';
 <!--            </div>-->
 <!--        </div>-->
 <!--    </div>-->
-    <!-- preloader ending here -->
+<!-- preloader ending here -->
 
-    <!-- ==========Header Section Starts Here========== -->
-    <!-- ==========Header Section Ends Here========== -->
+<!-- ==========Header Section Starts Here========== -->
+<!-- ==========Header Section Ends Here========== -->
 
-    <!-- Page Header Section Start Here -->
+<!-- Page Header Section Start Here -->
 <!--    <section class="page-header padding-tb">
         <div class="overlay"></div>
         <div class="container">
@@ -59,49 +59,31 @@ require_once '../sections/header.php';
     </section>
 -->    <!-- Page Header Section Ending Here -->
 
-    <!-- Login Section Section Starts Here -->
-    <div class="login-section padding-tb">
+<!-- Login Section Section Starts Here -->
+<div class="login-section padding-tb">
 
-        <div class=" container">
+    <div class=" container">
 
-            <div class="account-wrapper">
-                <div class="forms-box">
-                    <?php
-                    if ($message) {
-                        ?>
-                        <div class="success-message"><?php echo $message ?></div>
-                        <?php
-                    }
-                    if ($error) {
-                        ?>
-                        <div class="error-message" style="background: darkred"><?php echo $error ?></div>
-                        <?php
-                    }
+        <div class="account-wrapper">
+            <div class="forms-box">
+                <?php
+                if ($message) {
                     ?>
+                    <div class="success-message"><?php echo $message ?></div>
+                    <?php
+                }
+                if ($error) {
+                    ?>
+                    <div class="error-message" style="background: darkred"><?php echo $error ?></div>
+                    <?php
+                }
+                ?>
                 <h3 class="title">ورود به آدیداس اسپورت</h3>
-                <form class="account-form" action="login.php" method="post">
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="نام کاربری"  autofocus>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="رمز عبور">
-                    </div>
-                    <div class="form-group">
-                        <div class="d-flex justify-content-between flex-wrap pt-sm-2">
-                            <div class="checkgroup">
-                                <input type="checkbox" name="remember" id="remember">
-                                <label for="remember">یادآوری رمز عبور</label>
-                            </div>
-                            <a href="<?php echo PATH; ?>/users/forgot.php">فراموشی رمز</a>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button class="d-block lab-btn" name="do-login"><span>ورود</span></button>
-                        <br>
-
-                    </div>
+                <form action="forgot.php" method="post">
+                    <p>برای بازیابی کلمه عبور، ایمیلی که با آن در سایت ثبت نام کرده بودید را وارد نمایید:</p>
+                    <input type="email" name="email" placeholder="ایمیل شما ...">
+                    <input type="submit" name="forgot-pass" value="بازیابی کلمه عبور">
                 </form>
-
                 <div class="account-bottom">
                     <span class="d-block cate pt-10">اکانت ندارید؟ <a href="registration.php"> ثبت نام</a></span>
                     <span class="or"><span>یا</span></span>
@@ -127,12 +109,10 @@ require_once '../sections/header.php';
             </div>
         </div>
     </div>
-    <!-- Login Section Section Ends Here -->
 
+</div>
 
-
-
-    <?php require_once '../sections/footer.php' ?>
+<div class="clear"></div>
+<?php require_once '../sections/footer.php' ?>
 </body>
-
 </html>
