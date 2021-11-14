@@ -365,7 +365,7 @@ function submit_order($email, $product_ids){
 function pay($Amount, $Email, $Mobile, $product_ids){
     $MerchantID = '1be98c62-9918-4a9c-86b6-a2e470229967'; //Required
     $Description = 'خرید از فروشگاه آدیداس'; // Required
-    $CallbackURL = 'http://www.xanbiltest.ir/verify.php'; // Required
+    $CallbackURL = 'https://es92.ir/verify.php'; // Required
 
 
     $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
