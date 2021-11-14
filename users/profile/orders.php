@@ -6,7 +6,7 @@ if (!is_login()) {
 
 $user_data = get_userdata();
 $user_orders = get_user_orders();
-
+$get_order_products = get_order_items();
 ?>
 <!doctype html>
 <html lang="en">

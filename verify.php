@@ -1,59 +1,35 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>تایید پرداخت</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
-
 <?php
-require_once 'inc/config.php';
+/*
+ * ZarinPal Advanced Class
+ *
+ * version 	: 1.0
+ * link 	: https://vrl.ir/zpc
+ *
+ * author 	: milad maldar
+ * e-mail 	: miladworkshop@gmail.com
+ * website 	: https://miladworkshop.ir
+*/
 
-$MerchantID = '1be98c62-9918-4a9c-86b6-a2e470229967';
-$Authority = $_GET['Authority'];
+require_once("zarinpal_function.php");
 
-$order_data = get_order_by_authority($Authority);
-$Amount = $order_data['order_total']; //Amount will be based on Toman
-clear_cart();
+$MerchantID 	= "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+$Amount 		= 100;
+$ZarinGate 		= false;
+$SandBox 		= false;
 
-if ($_GET['Status'] == 'OK') {
+$zp 	= new zarinpal();
+$result = $zp->verify($MerchantID, $Amount, $SandBox, $ZarinGate);
 
-    $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
-
-    $result = $client->PaymentVerification(
-        [
-            'MerchantID' => $MerchantID,
-            'Authority' => $Authority,
-            'Amount' => $Amount,
-        ]
-    );
-
-    if ($result->Status == 100) {
-        $ref_id = $result->RefID;
-        if (final_pay($Authority, $ref_id)) {
-
-            ?>
-            <div class="final-pay">
-                <?php
-                echo 'پرداخت با موفقیت انجام شد. کد رهگیری:' . $result->RefID;
-                echo "<br>";
-                echo 'مبلغ تراکنش: ' . $order_data['order_total'] . ' تومان';
-                echo "<br>";
-                echo "<a href='" . PATH . "'>بازگشت به صفحه اصلی فروشگاه</a>";
-                ?>
-            </div>
-            <?php
-        }
-    } else {
-        echo 'خطایی پیش آمده است. کد خطا:' . $result->Status;
-
-    }
+if (isset($result["Status"]) && $result["Status"] == 100)
+{
+	// Success
+	echo "تراکنش با موفقیت انجام شد";
+	echo "<br />مبلغ : ". $result["Amount"];
+	echo "<br />کد پیگیری : ". $result["RefID"];
+	echo "<br />Authority : ". $result["Authority"];
 } else {
-    echo 'عملیات پرداخت توسط کاربر لغو شده است.';
+	// error
+	echo "پرداخت ناموفق";
+	echo "<br />کد خطا : ". $result["Status"];
+	echo "<br />تفسیر و علت خطا : ". $result["Message"];
 }
-?>
-
-
-</body>
-</html>

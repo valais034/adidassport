@@ -1,6 +1,7 @@
 <?php
 require_once 'config.php';
 
+
 function register_user($username, $email, $password, $hash){
     global $db;
     $query = mysqli_query($db, "INSERT INTO users (display_name, email, password, hash) VALUES ('$username', '$email', '$password','$hash')");
@@ -323,6 +324,7 @@ function get_user_orders(){
     return $orders;
 }
 
+
 function get_order_items($order_id){
     global $db;
     $query = mysqli_query($db, "SELECT * FROM orders WHERE order_id='$order_id'");
@@ -354,45 +356,79 @@ function get_orders(){
 
 
 function submit_order($email, $product_ids){
-//    $ids = explode(',',$product_ids, -1);
-//    $order_id = 'test_id';
-//    global $db;
-//    $query = mysqli_query($db,"INSERT INTO orders(order_id, product_id, user_email) values ('$order_id','$ids', $email)");
+//  $ids = explode(',',$product_ids, -1);
+  $order_id = 'adidas-'.time();
+  global $db;
+  $query = mysqli_query($db,"INSERT INTO orders(order_id, product_id, user_email) values ('$order_id','$product_ids', $email)");
 
 }
 
 
-function pay($Amount, $Email, $Mobile, $product_ids){
-    $MerchantID = '1be98c62-9918-4a9c-86b6-a2e470229967'; //Required
-    $Description = 'خرید از فروشگاه آدیداس'; // Required
-    $CallbackURL = 'https://es92.ir/verify.php'; // Required
+//function pay($Amount, $Email, $Mobile, $product_ids){
+//    $MerchantID = '1be98c62-9918-4a9c-86b6-a2e470229967'; //Required
+//    $Description = 'خرید از فروشگاه آدیداس'; // Required
+//    $CallbackURL = 'https://es92.ir/verify.php'; // Required
+//
+//
+//    $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+//
+//    $result = $client->PaymentRequest(
+//        [
+//            'MerchantID' => $MerchantID,
+//            'Amount' => $Amount,
+//            'Description' => $Description,
+//            'Email' => $Email,
+//            'Mobile' => $Mobile,
+//            'CallbackURL' => $CallbackURL,
+//        ]
+//    );
+//
+//    //Redirect to URL You can do it also by creating a form
+//    if ($result->Status == 100) {
+//        $order_id = 'xbl-' . time();
+//        $authority = $result->Authority;
+//        global $db;
+//        $query = mysqli_query($db, "INSERT INTO orders (order_id, order_total,product_id,user_email, authority) VALUES ('$order_id','$Amount','$product_ids','$Email', '$authority')");
+//
+//        Header('Location: https://www.zarinpal.com/pg/StartPay/' . $result->Authority);
+//        //برای استفاده از زرین گیت باید ادرس به صورت زیر تغییر کند:
+//        //Header('Location: https://www.zarinpal.com/pg/StartPay/'.$result->Authority.'/ZarinGate');
+//    } else {
+//        echo 'ERR: ' . $result->Status;
+//    }
+//}
+function pay($Amount, $Email, $Mobile) {
+    /*
+     * ZarinPal Advanced Class
+     *
+     * version 	: 1.0
+     * link 	: https://vrl.ir/zpc
+     *
+     * author 	: milad maldar
+     * e-mail 	: miladworkshop@gmail.com
+     * website 	: https://miladworkshop.ir
+    */
+    $MerchantID 	= "1be98c62-9918-4a9c-86b6-a2e470229967";
+    $Amount 		= $_POST['cart-total'];
+    $Description 	= "خرید از فروشگاه آدیداس";
+    $Email 			= $_POST['user-email'];
+    $Mobile 		= $_POST['user-number'];
+    $CallbackURL 	= "http://es92.ir/adidassport/verify.php";
+    $ZarinGate 		= false;
+    $SandBox 		= false;
 
+    $zp 	= new zarinpal();
+    $result = $zp->request($MerchantID, $Amount, $Description, $Email, $Mobile, $CallbackURL, $SandBox, $ZarinGate);
 
-    $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
-
-    $result = $client->PaymentRequest(
-        [
-            'MerchantID' => $MerchantID,
-            'Amount' => $Amount,
-            'Description' => $Description,
-            'Email' => $Email,
-            'Mobile' => $Mobile,
-            'CallbackURL' => $CallbackURL,
-        ]
-    );
-
-    //Redirect to URL You can do it also by creating a form
-    if ($result->Status == 100) {
-        $order_id = 'xbl-' . time();
-        $authority = $result->Authority;
-        global $db;
-        $query = mysqli_query($db, "INSERT INTO orders (order_id, order_total,product_id,user_email, authority) VALUES ('$order_id','$Amount','$product_ids','$Email', '$authority')");
-
-        Header('Location: https://www.zarinpal.com/pg/StartPay/' . $result->Authority);
-        //برای استفاده از زرین گیت باید ادرس به صورت زیر تغییر کند:
-        //Header('Location: https://www.zarinpal.com/pg/StartPay/'.$result->Authority.'/ZarinGate');
+    if (isset($result["Status"]) && $result["Status"] == 100)
+    {
+        // Success and redirect to pay
+        $zp->redirect($result["StartPay"]);
     } else {
-        echo 'ERR: ' . $result->Status;
+        // error
+        echo "خطا در ایجاد تراکنش";
+        echo "<br />کد خطا : ". $result["Status"];
+        echo "<br />تفسیر و علت خطا : ". $result["Message"];
     }
 }
 
