@@ -363,8 +363,8 @@ function submit_order($email, $product_ids){
 
 
 function pay($Amount, $Email, $Mobile, $product_ids){
-    $MerchantID = '0e25eef0-f310-11e7-814b-000c295eb8fc'; //Required
-    $Description = 'خرید از فروشگاه زنبیل'; // Required
+    $MerchantID = '1be98c62-9918-4a9c-86b6-a2e470229967'; //Required
+    $Description = 'خرید از فروشگاه آدیداس'; // Required
     $CallbackURL = 'http://www.xanbiltest.ir/verify.php'; // Required
 
 
