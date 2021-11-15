@@ -225,10 +225,10 @@ if (isset($_GET['delete-from-cart'])) {
 if (isset($_POST['submit-order'])) {
     $email = $_POST['user-email'];
     $product_ids = $_POST['product-ids'];
-    submit_order($email, $product_ids);
+//    submit_order($email, $product_ids);
     $amount = $_POST['cart-total'];
     $mobile = $_POST['user-number'];
-    pay($amount, $email, $mobile);
+    request($amount, $email, $mobile, $product_ids);
 }
 
 if (isset($_POST['forgot-pass'])) {
