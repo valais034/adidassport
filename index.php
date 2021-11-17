@@ -770,7 +770,7 @@ require_once 'sections/header.php';
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.html">نمایندگی شماره 1</a> </h5>
+                                        <h5><a href="speaker-details.php">نمایندگی شماره 1</a> </h5>
                                         <p>تمامی محصولات</p>
                                     </div>
                                     <div class="spkr-content-details">
@@ -795,7 +795,7 @@ require_once 'sections/header.php';
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.html">نمایندگی شماره 2 </a> </h5>
+                                        <h5><a href="speaker-details.php">نمایندگی شماره 2 </a> </h5>
                                         <p>کیف و کفش</p>
                                     </div>
                                     <div class="spkr-content-details">
@@ -820,7 +820,7 @@ require_once 'sections/header.php';
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.html">نمایندگی شماره 3</a> </h5>
+                                        <h5><a href="speaker-details.php">نمایندگی شماره 3</a> </h5>
                                         <p>کیف و کفش و لباس اسپرت</p>
                                     </div>
                                     <div class="spkr-content-details">
@@ -845,7 +845,7 @@ require_once 'sections/header.php';
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.html">نمایندگی شماره 4</a> </h5>
+                                        <h5><a href="speaker-details.php">نمایندگی شماره 4</a> </h5>
                                         <p>کفش اسپرت</p>
                                     </div>
                                     <div class="spkr-content-details">
@@ -870,7 +870,7 @@ require_once 'sections/header.php';
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.html">نمایندگی شماره 5</a> </h5>
+                                        <h5><a href="speaker-details.php">نمایندگی شماره 5</a> </h5>
                                         <p>لباس اسپرت زنانه و مردانه</p>
                                     </div>
                                     <div class="spkr-content-details">
@@ -895,7 +895,7 @@ require_once 'sections/header.php';
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.html">نمایندگی شماره 6</a> </h5>
+                                        <h5><a href="speaker-details.php">نمایندگی شماره 6</a> </h5>
                                         <p>تمامی محصولات</p>
                                     </div>
                                     <div class="spkr-content-details">

@@ -10,7 +10,7 @@ $products= get_products(6);
 <html lang="zxx">
 
 <head>
-    <title>Kagont</title>
+    <title>فروشگاه</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -66,7 +66,7 @@ $products= get_products(6);
                     <div class="col-lg-9 col-12">
                         <article>
                             <div class="shop-title d-flex flex-wrap justify-content-between">
-                                <p>Showing 01 - 12 of 139 Results</p>
+                                <p>نمایش <?php echo mysqli_num_rows($products) ?> از <?php echo mysqli_num_rows($products) ?> محصول</p>
                                 <div class="product-view-mode">
                                     <a class="active" data-target="grids"><i class="fas fa-th"></i></a>
                                     <a data-target="lists"><i class="fas fa-th-list"></i></a>

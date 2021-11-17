@@ -53,36 +53,18 @@ function myFunction() {
                                 <a href="<?php echo PATH; ?>">صفحه اصلی</a>
                             </li>
                             <li><a href="<?php echo PATH; ?>/shop.php">محصولات</a></li>
-                            <li>
-                                <a href="#0">صفحات</a>
-                                <ul class="submenu">
-                                    <li><a href="<?php echo PATH; ?>/gallery.html">گالری</a></li>
-                                    <li><a href="<?php echo PATH; ?>/users/login.php">ورود</a></li>
-                                    <li><a href="<?php echo PATH; ?>/users/registration.php">ثبت نام کاربران</a></li>
-                                    <li><a href="<?php echo PATH; ?>/pricing-plan.html">قیمت ها</a></li>
-                                    <li><a href="<?php echo PATH; ?>/shop.php">فروشگاه</a></li>
-                                    <li><a href="<?php echo PATH; ?>/shop-single.html">صفحه تکی محصول</a></li>
-                                    <li><a href="<?php echo PATH; ?>/cart.php">سبد خرید</a></li>
-                                    <li><a href="<?php echo PATH; ?>/404.html">صفحه 404</a></li>
-                                    <li><a href="<?php echo PATH; ?>/coming-soon.html">به زودی</a></li>
 
-                                </ul>
-                            </li>
                             <li>
                                 <a href="#0">مدل های جدید</a>
                                 <ul class="submenu">
-                                    <li><a href="speakers.html">تمامی مدل های 2021</a></li>
-                                    <li><a href="speaker-details.html">جزئیات مدل های جدید</a></li>
+                                    <li><a href="speaker-details.php">جزئیات مدل های جدید</a></li>
                                 </ul>
                             </li>
+                            <li><a href="<?php echo PATH; ?>/gallery.php">گالری تصاویر</a></li>
                             <li>
-                                <a href="#0">بلاگ</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">بلاگ</a></li>
-                                    <li><a href="blog-single.html">صفحه تکی بلاگ</a></li>
-                                </ul>
+                                <a href="<?php echo PATH; ?>/blog.php">بلاگ</a>
                             </li>
-                            <li><a href="contact.html">تماس با ما</a></li>
+                            <li><a href="contact.php">تماس با ما</a></li>
                         </ul>
                         <div class="cart-ticket">
                             <div class="cart-icon">
