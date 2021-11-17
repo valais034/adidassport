@@ -88,7 +88,7 @@ if(!is_admin_login()){
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="?admin-logout=1">خروج از حساب کاربری</a>
+            <a class="nav-link px-3" href="?admin-logout=1">خروج </a>
         </div>
     </div>
     <div class="navbar-nav">
@@ -103,6 +103,7 @@ if(!is_admin_login()){
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div class="position-sticky pt-3">
+
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">
@@ -139,6 +140,11 @@ if(!is_admin_login()){
                             نظرات
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.php">
+                            <span data-feather="layers"></span>
+                            سفارشات
+                        </a>
                 </ul>
 
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -178,7 +184,7 @@ if(!is_admin_login()){
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">سلام،</h1>
+                <h1 class="h2">پنل ادمین</h1>
 
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
@@ -197,41 +203,40 @@ if(!is_admin_login()){
                 <div class="container">
                     <div class="row flex-lg-row-reverse">
                         <div class="col-lg-6 col-12">
-                            <div class="section-header">
-                                <h2>نام کاربر:</h2>
-                                <p>آدرس ایمیل:</p>
-                            </div>
-                            <div class="section-wrapper">
-                                <div class="gift-content">
-                                    <p>
-                                        در فروشگاه اینترنتی آدیداس اسپورت میتوانید از مزایای عضویت ویژه ای بهره مند شوید. در این پنل کاربری شما می توانید انواع محصولات
-                                        آدیداس را با قیمتی عالی بصورت آنلاین خریداری نمایید.
-                                        هر هفته کوپن های تخفیف ویژه در این پنل برای شما کاربران به نمایش در می آید.
-                                    </p>
-                                    <p>مزایای عضویت در آدیداس اسپورت:</p>
-                                    <ul class="gift-list">
-                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                    </span> خرید لباس های خاص اسپورت</li>
-                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                    </span> استفاده از تخفیفات ویژه هر فصل</li>
-                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                    </span> مشاهده محصولات جدید در پنل کاربری</li>
-
-                                    </ul>
-                                    <div class="register-button">
-                                        <a href="edit-profile.php" class="lab-btn"><span>ویرایش پروفایل</span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12">
                             <div class="image-part">
                                 <div class="row">
                                     <div class="col-xs-12">
-
                                     </div>
                                 </div>
 
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="section-header" >
+                                <h2>به پنل مدیریت خوش آمدید.</h2>
+                                <p>لطفا از موارد سمت چپ یکی را انتخاب نمایید.</p>
+                            </div>
+                            <div class="section-wrapper">
+                                <div class="gift-content">
+                                    <p></p>
+                                    <p>مزایای پنل مدیریت آدیداس اسپورت:</p>
+                                    <ul class="gift-list">
+                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </span> مشاهده محصولات به صورت لیستی به همراه جزئیات کامل</li>
+                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </span> مشاهده لیست کاربران عضو شده در سایت</li>
+                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </span> مشاهده دسته بندی ها و امکان افزودن دسته بندی جدید</li>
+                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </span>مشاهده نظرات ثبت شده در صفحه محصولات و ویرایش، تایید و حذف آن ها</li>
+                                        <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </span>مشاهده سفارشات ثبت شده و جزئیات آن ها</li>
+
+                                    </ul>
+                                    <div class="register-button">
+                                        <a href="products.php" class="lab-btn"><span>مشاهده محصولات</span> </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -379,21 +384,6 @@ if(!is_admin_login()){
 
 
 <div id="main">
-    <h1 class="title">پنل مدیریت</h1>
-    <div class="sidebar">
-        <ul>
-            <li><a href="products.php">مشاهده فروشگاه</a></li>
-            <li><a href="products.php">لیست محصولات</a></li>
-            <li><a href="add-product.php">افزودن محصول</a></li>
-            <li><a href="users.php">لیست کاربران</a></li>
-            <li><a href="cats.php">دسته‌بندی‌ها</a></li>
-            <li><a href="comments.php">نظرات</a></li>
-            <li><a href="orders.php">سفارشات</a></li>
-            <li><a href="?admin-logout=1">خروج</a></li>
-        </ul>
-    </div>
-    <div class="content">یکی از موارد منوی سمت راست را انتخاب کنید :)</div>
-</div>
 
 <script src="../assets/js/jquery.js"></script>
 <script src="../assets/js/fontawesome.min.js"></script>
