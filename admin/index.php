@@ -124,7 +124,7 @@ if(!is_admin_login()){
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="users.php" target="_blank">
+                        <a class="nav-link" href="users.php">
                             <span data-feather="users"></span>
 لیست کاربران                        </a>
                     </li>
@@ -383,7 +383,6 @@ if(!is_admin_login()){
 
 
 
-<div id="main">
 
 <script src="../assets/js/jquery.js"></script>
 <script src="../assets/js/fontawesome.min.js"></script>
