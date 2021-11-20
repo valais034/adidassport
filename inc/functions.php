@@ -15,7 +15,7 @@ function register_user($username, $email, $password, $hash){
 function login($email, $password){
     global $db;
     $query = mysqli_query($db, "SELECT * FROM users WHERE email='$email' AND password='$password'");
-    if (mysqli_num_rows($query) > 0) {
+    if (mysqli_num_rows($query) == 1) {
         return true;
     } else {
         return false;
@@ -460,7 +460,7 @@ function clear_cart(){
 function check_user($email){
     global $db;
     $query = mysqli_query($db, "SELECT * FROM users WHERE email='$email'");
-    if (mysqli_num_rows($query) > 0) {
+    if (mysqli_num_rows($query) == 1) {
         return true;
     } else {
         return false;
