@@ -45,10 +45,10 @@ $post = mysqli_fetch_array($get_post);
         }
         ?>
         <form action="edit-post.php?edit-post-id=<?php echo $post['id'] ?>" method="post" enctype="multipart/form-data">
-            <input type="text" name="product-name" placeholder="نام محصول" value="<?php echo $post['post_title'] ?>"><br>
-            <input type="hidden" name="product-id" value="<?php echo $post['id'] ?>">
+            <input type="text" name="post-title" placeholder="نام نوشته" value="<?php echo $post['post_title'] ?>"><br>
+            <input type="hidden" name="post-id" value="<?php echo $post['id'] ?>">
 
-            <span style="font-size: 11px;margin-right: 5px">دسته‌بندی نوشته: <?php echo $post['post_cat'] ?></span>
+            <span style="font-size: 11px;margin-right: 5px">دسته‌بندی نوشته: <?php echo $post['post-cat'] ?></span>
             <br>
             <select name="product-cat">
                 <option value="<?php echo $post['post_cat'] ?>"><?php echo $post['post_cat'] ?></option>

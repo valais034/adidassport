@@ -239,7 +239,7 @@ function update_product($product_name, $product_price, $product_cat, $product_of
 
 }
 
-function update_post($post_title, $post_cat, $post_visibility, $post_desc, $post_image, $image_tmp = null){
+function update_post($post_title, $post_cat, $post_visibility, $post_desc,$post_id, $post_image, $image_tmp = null){
     global $db;
     if (!isset($image_tmp)) {
         $query = mysqli_query($db, "UPDATE posts set post_title='$post_title', post_cat='$post_cat', post_visibility='$post_visibility', post_desc='$post_desc', post_image='$post_image' WHERE id='$post_id'");

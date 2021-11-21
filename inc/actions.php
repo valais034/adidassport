@@ -184,7 +184,7 @@ if (isset($_POST['update-product'])) {
 
 
 if (isset($_POST['update-post'])) {
-    $post_title = $_POST['post_title'];
+    $post_title = $_POST['post-title'];
     $post_cat = $_POST['post-cat'];
     $post_visibility = $_POST['post-visibility'];
     $post_desc = $_POST['post-desc'];
