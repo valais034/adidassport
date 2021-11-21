@@ -1,6 +1,9 @@
 <?php require_once 'inc/config.php';
 require_once 'sections/header.php';
 ?>
+<?php
+$posts= get_posts(6);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,23 +57,285 @@ require_once 'sections/header.php';
 	</section>
 	<!-- Page Header Section Ending Here -->
 
-	<!-- Blog Section Start Here -->
+<!--    <div class="shop-page padding-tb">-->
+<!--        <div class="container">-->
+<!--            <div class="section-wrapper">-->
+<!--                <div class="row justify-content-center">-->
+<!--                    <div class="col-lg-9 col-12">-->
+<!--                        <article>-->
+<!--                            <div class="shop-title d-flex flex-wrap justify-content-between">-->
+<!--                                <p>نمایش --><?php //echo mysqli_num_rows($posts) ?><!-- از --><?php //echo mysqli_num_rows($posts) ?><!-- محصول</p>-->
+<!--                                <div class="product-view-mode">-->
+<!--                                    <a class="active" data-target="grids"><i class="fas fa-th"></i></a>-->
+<!--                                    <a data-target="lists"><i class="fas fa-th-list"></i></a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="shop-product-wrap grids row justify-content-center">-->
+<!--                                --><?php //while ($post = mysqli_fetch_array($posts)) { ?>
+<!---->
+<!--                                    <div class="col-lg-4 col-sm-6 col-12">-->
+<!---->
+<!--                                        <div class="product-item">-->
+<!---->
+<!---->
+<!--                                            <div class="product-thumb">-->
+<!--                                                <a href="product.php?product-id=--><?php //echo $post['id'] ?><!--"><img src="assets/images/product/--><?php //echo $post['post_image'] ?><!--" alt=""></a>-->
+<!--                                                <div class="product-action-link">-->
+<!--                                                    <a href="assets/images/product/--><?php //echo $post['post_image'] ?><!--" data-rel="lightcase"><i-->
+<!--                                                                class="icofont-eye"></i></a>-->
+<!--                                                    <a href="#"><i class="icofont-heart-alt"></i></a>-->
+<!--                                                    <a href="product.php?product-id=--><?php //echo $post['id'] ?><!--"><i class="icofont-cart-alt"></i></a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="product-content">-->
+<!--                                                <h6><a href="product.php?product-id=--><?php //echo $post['id'] ?><!--">--><?php //echo $post['post_title'] ?><!--</a></h6>-->
+<!--                                                <div class="rating mb-1">-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                </div>-->
+<!--                                                <span></span>-->
+<!--                                            </div>-->
+<!---->
+<!---->
+<!--                                        </div>-->
+<!--                                        <div class="product-list-item">-->
+<!--                                            <div class="product-thumb">-->
+<!--                                                <img src="assets/images/product/--><?php //echo $post['post_image'] ?><!--" alt="shope">-->
+<!--                                                <div class="product-action-link">-->
+<!--                                                    <a href="assets/images/product/--><?php //echo $post['post_image'] ?><!--" data-rel="lightcase"><i-->
+<!--                                                                class="icofont-eye"></i></a>-->
+<!--                                                    <a href="#"><i class="icofont-heart-alt"></i></a>-->
+<!--                                                    <a href="product.php?product-id=--><?php //echo $post['id'] ?><!--"><i class="icofont-cart-alt"></i></a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="product-content">-->
+<!--                                                <h6><a href="product.php?product-id=--><?php //echo $post['id'] ?><!--">--><?php //echo $post['post_title'] ?><!--</a></h6>-->
+<!--                                                <div class="rating mb-1">-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                    <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                </div>-->
+<!--                                                <span> تومان</span>-->
+<!--                                                <p>--><?php //echo $post['post_desc'] ?><!--</p>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                --><?php //} ?>
+<!--                            </div>-->
+<!---->
+<!--                            <div class="paginations">-->
+<!--                                <ul class="lab-ul d-flex flex-wrap justify-content-center">-->
+<!--                                    <li>-->
+<!--                                        <a href="#"><i class="icofont-rounded-double-left"></i></a>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-none d-sm-block">-->
+<!--                                        <a href="#">1</a>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-none d-sm-block">-->
+<!--                                        <a href="#">2</a>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-none d-sm-block">-->
+<!--                                        <a class="dot">...</a>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-none d-sm-block">-->
+<!--                                        <a href="#">5</a>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-none d-sm-block">-->
+<!--                                        <a href="#"><i class="icofont-rounded-double-right"></i></a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </article>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-md-7 col-12">-->
+<!--                        <aside>-->
+<!--                            <div class="widget widget-search primary-bg px-3">-->
+<!--                                <div class="widget-header">-->
+<!--                                    <h5>Search keywords</h5>-->
+<!--                                </div>-->
+<!--                                <form action="/" class="search-wrapper">-->
+<!--                                    <input type="text" name="s" placeholder="Your Search...">-->
+<!--                                    <button type="submit"><i class="icofont-search-2"></i></button>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="widget widget-category primary-bg px-3">-->
+<!--                                <div class="widget-header">-->
+<!--                                    <h5>All Categories</h5>-->
+<!--                                </div>-->
+<!--                                <div class="widget-wrapper">-->
+<!--                                    <ul class="lab-ul shop-menu">-->
+<!--                                        <li>-->
+<!--                                            <a href="#0">Apple</a>-->
+<!--                                            <ul class="lab-ul shop-submenu">-->
+<!--                                                <li><a href="#">Apple 1</a></li>-->
+<!--                                                <li><a href="#">Apple 2</a></li>-->
+<!--                                                <li><a href="#">Apple 3</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="#0">Orange</a>-->
+<!--                                            <ul class="lab-ul shop-submenu">-->
+<!--                                                <li><a href="#">Orange 1</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="#0">Tomato</a>-->
+<!--                                            <ul class="lab-ul shop-submenu">-->
+<!--                                                <li><a href="#">Tomato 1</a></li>-->
+<!--                                                <li><a href="#">Tomato 2</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="#0">Honey</a>-->
+<!--                                            <ul class="lab-ul shop-submenu">-->
+<!--                                                <li><a href="#">Honey 1</a></li>-->
+<!--                                                <li><a href="#">Honey 2</a></li>-->
+<!--                                                <li><a href="#">Honey 3</a></li>-->
+<!--                                                <li><a href="#">Honey 4</a></li>-->
+<!--                                                <li><a href="#">Honey 5</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="#0">Banana</a>-->
+<!--                                            <ul class="lab-ul shop-submenu">-->
+<!--                                                <li><a href="#">Banana 1</a></li>-->
+<!--                                                <li><a href="#">Banana 2</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="#0">Blueberry</a>-->
+<!--                                            <ul class="lab-ul shop-submenu">-->
+<!--                                                <li><a href="#">Blueberry 1</a></li>-->
+<!--                                                <li><a href="#">Blueberry 2</a></li>-->
+<!--                                                <li><a href="#">Blueberry 3</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="#0">Lettuce</a>-->
+<!--                                            <ul class="lab-ul shop-submenu">-->
+<!--                                                <li><a href="#">Lettuce 1</a></li>-->
+<!--                                                <li><a href="#">Lettuce 2</a></li>-->
+<!--                                                <li><a href="#">Lettuce 3</a></li>-->
+<!--                                                <li><a href="#">Lettuce 4</a></li>-->
+<!--                                                <li><a href="#">Lettuce 5</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="widget widget-post primary-bg px-3">-->
+<!--                                <div class="widget-header">-->
+<!--                                    <h5>Latests Products</h5>-->
+<!--                                </div>-->
+<!--                                <ul class="lab-ul widget-wrapper">-->
+<!--                                    <li class="d-flex flex-wrap justify-content-between">-->
+<!--                                        <div class="post-thumb">-->
+<!--                                            <a href="blog-single.html"><img src="assets/images/shop/02.jpg"-->
+<!--                                                                            alt="product"></a>-->
+<!--                                        </div>-->
+<!--                                        <div class="post-content ps-3">-->
+<!--                                            <a href="blog-single.html">-->
+<!--                                                <h6>Organic Orange</h6>-->
+<!--                                            </a>-->
+<!--                                            <div class="rating">-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                            </div>-->
+<!--                                            <h6>$59.9</h6>-->
+<!--                                        </div>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-flex flex-wrap justify-content-between">-->
+<!--                                        <div class="post-thumb">-->
+<!--                                            <a href="blog-single.html"><img src="assets/images/shop/03.jpg"-->
+<!--                                                                            alt="product"></a>-->
+<!--                                        </div>-->
+<!--                                        <div class="post-content ps-3">-->
+<!--                                            <a href="blog-single.html">-->
+<!--                                                <h6>Organic Orange</h6>-->
+<!--                                            </a>-->
+<!--                                            <div class="rating">-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                            </div>-->
+<!--                                            <h6>$59.9</h6>-->
+<!--                                        </div>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-flex flex-wrap justify-content-between">-->
+<!--                                        <div class="post-thumb">-->
+<!--                                            <a href="blog-single.html"><img src="assets/images/shop/04.jpg"-->
+<!--                                                                            alt="product"></a>-->
+<!--                                        </div>-->
+<!--                                        <div class="post-content ps-3">-->
+<!--                                            <a href="blog-single.html">-->
+<!--                                                <h6>Organic Orange</h6>-->
+<!--                                            </a>-->
+<!--                                            <div class="rating">-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                            </div>-->
+<!--                                            <h6>$59.9</h6>-->
+<!--                                        </div>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-flex flex-wrap justify-content-between">-->
+<!--                                        <div class="post-thumb">-->
+<!--                                            <a href="blog-single.html"><img src="assets/images/shop/05.jpg"-->
+<!--                                                                            alt="product"></a>-->
+<!--                                        </div>-->
+<!--                                        <div class="post-content ps-3">-->
+<!--                                            <a href="blog-single.html">-->
+<!--                                                <h6>Organic Orange</h6>-->
+<!--                                            </a>-->
+<!--                                            <div class="rating">-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                                <span><a href="#"><i class="far fa-star"></i></a></span>-->
+<!--                                            </div>-->
+<!--                                            <h6>$59.9</h6>-->
+<!--                                        </div>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </aside>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!-- Blog Section Start Here -->
 	<div class="blog-section blog-page padding-tb aside-bg">
 		<div class="container">
-			<div class="section-wrapper">
+
+            <div class="section-wrapper">
 				<div class="row justify-content-center">
+
 					<div class="col-lg-8 col-12">
-						<article>
-							<div class="post-item-2">
+
+                        <article>
+                            <?php while ($post = mysqli_fetch_array($posts)) { ?>
+                            <div class="post-item-2">
 								<div class="post-inner">
 									<div class="post-thumb rounded">
-										<a href="blog-single.html">
+										<a href="post.php">
 											<img src="assets/images/blog/01.jpg" alt="blog">
 										</a>
 									</div>
 									<div class="post-content">
-										<a href="blog-single.html">
-											<h3>Continually proactive services</h3>
+										<a href="post.php">
+											<h3><a href="post.php?post-id=<?php echo $post['id'] ?>"><?php echo $post['post_title'] ?></a></h3>
 										</a>
 										<ul class="lab-ul post-date">
 											<li><span><i class="icofont-ui-calendar"></i> October 9, 2019 10:59 am
@@ -80,122 +345,17 @@ require_once 'sections/header.php';
 											<li><span><i class="icofont-speech-comments"></i><a href="#">09
 														Comments</a></span></li>
 										</ul>
-										<p>It’s no secret that the digital industry is booming. from exciting startups
-											to global brands, to the new companies are reachin boomingesagencies,
-											responding to the new psblites available. however, the industry is
-											exciting fast becoming overcr.</p>
-										<a href="blog-single.html" class="lab-btn">Read More</a>
+										<p><?php echo substr($post['post_desc'],0,18) ?>...</p>
+										<a href="post.php?post-id=<?php echo $post['id'] ?>" class="lab-btn">ادامه مطلب</a>
 									</div>
-								</div>
-							</div>
-							<div class="post-item-2">
-								<div class="post-inner">
-									<div class="post-thumb-container rounded">
-										<div class="swiper-wrapper">
-											<div class="swiper-slide">
-												<div class="post-img">
-													<img src="assets/images/blog/01.jpg" alt="blog">
-												</div>
-											</div>
-											<div class="swiper-slide">
-												<div class="post-img">
-													<img src="assets/images/blog/02.jpg" alt="blog">
-												</div>
-											</div>
-											<div class="swiper-slide">
-												<div class="post-img">
-													<img src="assets/images/blog/03.jpg" alt="blog">
-												</div>
-											</div>
-										</div>
 
-										<div class="thumb-next thumb-nav"><i class="icofont-rounded-right"></i></div>
-										<div class="thumb-prev thumb-nav"><i class="icofont-rounded-left"></i></div>
+                                </div>
+                                <?php } ?>
+							</div>
 
-									</div>
-									<div class="post-content">
-										<a href="blog-single.html">
-											<h3>Continually proactive services</h3>
-										</a>
-										<ul class="lab-ul post-date">
-											<li><span><i class="icofont-ui-calendar"></i> October 9, 2019 10:59 am
-												</span></li>
-											<li><span><i class="icofont-user"></i><a href="#">Robot Smith</a></span>
-											</li>
-											<li><span><i class="icofont-speech-comments"></i><a href="#">09
-														Comments</a></span></li>
-										</ul>
-										<p>It’s no secret that the digital industry is booming. from exciting startups
-											to global brands, to the new companies are reachin boomingesagencies,
-											responding to the new psblites available. however, the industry is
-											exciting fast becoming overcr.</p>
-										<a href="blog-single.html" class="lab-btn">Read More</a>
-									</div>
-								</div>
-							</div>
-							<div class="post-item-2">
-								<div class="post-inner">
-									<div class="post-thumb rounded">
-										<a href="blog-single.html">
-											<img src="assets/images/blog/03.jpg" alt="blog">
-										</a>
-										<a href="https://www.youtube.com/embed/SP3yyrboTno" class="play-btn"
-											data-rel="lightcase">
-											<i class="icofont-play"></i>
-											<span class="pluse_2"></span>
-										</a>
-									</div>
-									<div class="post-content">
-										<a href="blog-single.html">
-											<h3>Continually proactive services</h3>
-										</a>
-										<ul class="lab-ul post-date">
-											<li><span><i class="icofont-ui-calendar"></i> October 9, 2019 10:59 am
-												</span></li>
-											<li><span><i class="icofont-user"></i><a href="#">Robot Smith</a></span>
-											</li>
-											<li><span><i class="icofont-speech-comments"></i><a href="#">09
-														Comments</a></span></li>
-										</ul>
-										<p>It’s no secret that the digital industry is booming. from exciting startups
-											to global brands, to the new companies are reachin boomingesagencies,
-											responding to the new psblites available. however, the industry is
-											exciting fast becoming overcr.</p>
-										<a href="blog-single.html" class="lab-btn">Read More</a>
-									</div>
-								</div>
-							</div>
-							<div class="post-item-2">
-								<div class="post-inner">
-									<div class="post-thumb">
-										<blockquote class="blog-quote text-center">
-											<div class="quotes">
-												Rapdiou Qntegrat Distrbute Supply Chains Through Markey Position Bestng
-												Chans Throug Marke Posito Bestin Practces Ieractve Fashon Sound Qources
-												Fashion Economically And Sound Qources
-											</div>
-										</blockquote>
-									</div>
-									<div class="post-content">
-										<a href="blog-single.html">
-											<h3>Continually proactive services</h3>
-										</a>
-										<ul class="lab-ul post-date">
-											<li><span><i class="icofont-ui-calendar"></i> October 9, 2019 10:59 am
-												</span></li>
-											<li><span><i class="icofont-user"></i><a href="#">Robot Smith</a></span>
-											</li>
-											<li><span><i class="icofont-speech-comments"></i><a href="#">09
-														Comments</a></span></li>
-										</ul>
-										<p>It’s no secret that the digital industry is booming. from exciting startups
-											to global brands, to the new companies are reachin boomingesagencies,
-											responding to the new psblites available. however, the industry is
-											exciting fast becoming overcr.</p>
-										<a href="blog-single.html" class="lab-btn">Read More</a>
-									</div>
-								</div>
-							</div>
+
+
+
 							<div class="paginations">
 								<ul class="lab-ul d-flex flex-wrap justify-content-center mb-1">
 									<li>
@@ -273,11 +433,11 @@ require_once 'sections/header.php';
 								<ul class="lab-ul widget-wrapper">
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="blog-single.html"><img src="assets/images/product/01.jpg"
-													alt="product"></a>
+											<a href="post.php"><img src="assets/images/product/01.jpg"
+                                                                    alt="product"></a>
 										</div>
 										<div class="post-content ps-3">
-											<a href="blog-single.html">
+											<a href="post.php">
 												<h6>Poor People’s Campaign
 													Our Resources</h6>
 											</a>
@@ -286,11 +446,11 @@ require_once 'sections/header.php';
 									</li>
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="blog-single.html"><img src="assets/images/product/02.jpg"
-													alt="product"></a>
+											<a href="post.php"><img src="assets/images/product/02.jpg"
+                                                                    alt="product"></a>
 										</div>
 										<div class="post-content ps-3">
-											<a href="blog-single.html">
+											<a href="post.php">
 												<h6>Boosting Social For NGO
 													And Charities </h6>
 											</a>
@@ -299,11 +459,11 @@ require_once 'sections/header.php';
 									</li>
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="blog-single.html"><img src="assets/images/product/03.jpg"
-													alt="product"></a>
+											<a href="post.php"><img src="assets/images/product/03.jpg"
+                                                                    alt="product"></a>
 										</div>
 										<div class="post-content ps-3">
-											<a href="blog-single.html">
+											<a href="post.php">
 												<h6>Poor People’s Campaign
 													Our Resources</h6>
 											</a>
@@ -312,11 +472,11 @@ require_once 'sections/header.php';
 									</li>
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="blog-single.html"><img src="assets/images/product/04.jpg"
-													alt="product"></a>
+											<a href="post.php"><img src="assets/images/product/04.jpg"
+                                                                    alt="product"></a>
 										</div>
 										<div class="post-content ps-3">
-											<a href="blog-single.html">
+											<a href="post.php">
 												<h6>Boosting Social For NGO
 													And Charities </h6>
 											</a>
@@ -410,7 +570,7 @@ require_once 'sections/header.php';
 							</div>
 						</aside>
 					</div>
-				</div>
+                </div>
 			</div>
 		</div>
 	</div>

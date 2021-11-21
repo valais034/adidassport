@@ -1,8 +1,20 @@
+<?php require_once 'inc/config.php';
+require_once 'sections/header.php';
+?>
+<?php
+if ($_GET['post-id']) {
+    $post_id = $_GET['post-id'];
+    $post_info = mysqli_fetch_array(get_post_by_id($post_id));
+}
+
+
+$pcomments = get_comments_by_product_id($post_id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Kagont</title>
+	<title>پست ها</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -30,130 +42,6 @@
 		</div>
 	</div>
 	<!-- preloader ending here -->
-
-
-	<!-- ==========Header Section Starts Here========== -->
-	<header class="header-section">
-		<div class="header-bottom">
-			<div class="container">
-				<div class="header-wrapper">
-					<div class="logo">
-						<a href="index.php">
-							<img src="assets/images/logo/01.png" alt="logo">
-						</a>
-					</div>
-					<div class="menu-area">
-						<ul class="menu">
-							<li>
-								<a href="index.php">Home</a>
-							</li>
-
-							<li>
-								<a href="#0">Features</a>
-								<ul class="submenu">
-									<li><a href="gallery.php">Gallery</a></li>
-									<li><a href="users/login.php">Log In</a></li>
-									<li><a href="users/registration.php">Sign Up</a></li>
-									<li><a href="pricing-plan.html">Pricing Plan</a></li>
-									<li><a href="shop3.php">Shop</a></li>
-									<li><a href="shop-single.html">Shop Single</a></li>
-									<li><a href="cart.php">Cart Page</a></li>
-									<li><a href="404.php">404 Page</a></li>
-									<li><a href="coming-soon.html">Coming-soon</a></li>
-
-								</ul>
-							</li>
-							<li>
-								<a href="#0">Speakers</a>
-								<ul class="submenu">
-									<li><a href="speakers.html">All Speakers</a></li>
-									<li><a href="speaker-details.php">Speaker Details</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#0">Blog</a>
-								<ul class="submenu">
-									<li><a href="blog.php">Blog</a></li>
-									<li><a class="active" href="blog-single.html">Blog Single</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.php">Contact</a></li>
-						</ul>
-						<div class="cart-ticket">
-							<div class="cart-icon">
-								<a href="#">
-									<i class="icofont-bag"></i>
-									<span>3</span>
-								</a>
-
-								<div class="cart-content">
-									<ul class="cart-list">
-										<li class="cart-item">
-											<div class="cart-inner">
-												<div class="cart-thumb">
-													<img src="assets/images/product/menu_cart_01.jpg" alt="product">
-												</div>
-												<div class="cart-details">
-													<h6><a href="#">Product Text Here</a></h6>
-													<p>Quantity: 1 <span>$56</span></p>
-													<div class="close-btn">
-														<a href="#"><i class="icofont-close"></i></a>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="cart-item">
-											<div class="cart-inner">
-												<div class="cart-thumb">
-													<img src="assets/images/product/menu_cart_02.jpg" alt="product">
-												</div>
-												<div class="cart-details">
-													<h6><a href="#">Product Text Here</a></h6>
-													<p>Quantity: 1 <span>$56</span></p>
-													<div class="close-btn">
-														<a href="#"><i class="icofont-close"></i></a>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="cart-item">
-											<div class="cart-inner">
-												<div class="cart-thumb">
-													<img src="assets/images/product/menu_cart_03.jpg" alt="product">
-												</div>
-												<div class="cart-details">
-													<h6><a href="#">Product Text Here</a></h6>
-													<p>Quantity: 1 <span>$56</span></p>
-													<div class="close-btn">
-														<a href="#"><i class="icofont-close"></i></a>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-									<a href="#" class="lab-btn">
-										Checkout
-									</a>
-								</div>
-							</div>
-							<a href="pricing-plan.html" class="ticket-btn lab-btn ">
-								<span>Purchase Ticket</span>
-							</a>
-						</div>
-
-						<!-- toggle icons -->
-						<div class="header-bar d-lg-none">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- ==========Header Section Ends Here========== -->
-
 
 	<!-- Page Header Section Start Here -->
 	<section class="page-header padding-tb">
@@ -183,7 +71,7 @@
 										<img src="assets/images/blog/04.jpg" alt="blog">
 									</div>
 									<div class="post-content">
-										<h3>Serenity hassir taken posseson</h3>
+										<h3><?php echo $post_info['post_title'] ?></h3>
 										<ul class="lab-ul post-date">
 											<li><span><i class="icofont-ui-calendar"></i> October 9, 2019 10:59 am
 												</span></li>
@@ -192,80 +80,10 @@
 											<li><span><i class="icofont-speech-comments"></i><a href="#">09
 														Comments</a></span></li>
 										</ul>
-										<p>Serenity hassir taken posseson of mying entire soung like these sweet mornngs
-											is whch enjoy with
-											my whole heart create am alonesi and feel the charm of exstenceth spotens
-											whch
-											was the blis of souls like
-											mineing am soo happy my dearsi frend absoribed the em exquste sense enjoy
-											with
-											my whole heart inaming
-											alone and feel the charm of exstensc spotsi whch was the blis of souls
-											like mineing am soing happyr
-											my dear frend soingu ize absoribed the exqust sense tranquil existence that
-											neglect my talentsr Ins should
-											byers ncapable ofing is drawng and singe wonderful.</p>
-										<blockquote class="single-quote mb-30">
-											<div class="quotes">
-												Steal into The nering Sanc How Mysef Down Amon The Hal Gras Buz
-												Lttle World Amon The Stak And Grow Fama With Couns And Fesingri
-												Steal intoing Thene Sanc Hrow Myse Down Amon The Hall Gras Biss
-												The Almighty Among The Staks
-												<span>...Melissa Hunter</span>
-											</div>
-										</blockquote>
-										<P>Serenity hassir taken posseson of mying entire soung like these sweet mornngs
-											is whch enjoy with
-											my whole heart create am alonesi and feel the charm of exstenceth spotens
-											whch
-											was the blis of souls like
-											mineing am soo happy my dearsi frend absoribed the em exquste sense enjoy
-											with
-											my whole heart inaming
-											alone and feel the charm of exstensc spotsi whch was the blis of souls
-											like mineing am soing happyr
-											my dear frend soingu ize absoribed the exqust sense tranquil existence that
-											neglect my talentsr Ins should
-											byers ncapable ofing is drawng and singe wonderful.</P>
-										<div class="post-thumb mb-30 rounded"><img src="assets/images/blog/05.jpg"
-												alt="blog-img">
-										</div>
+										<p>
+                                            <?php echo $post_info['post_desc'] ?>
+                                        </p>
 
-										<P>Serenity hassir taken posseson of mying entire soung like these sweet mornngs
-											is whch enjoy with
-											my whole heart create am alonesi and feel the charm of exstenceth spotens
-											whch
-											was the blis of souls like
-											mineing am soo happy my dearsi frend absoribed the em exquste sense enjoy
-											with
-											my whole heart inaming
-											alone and feel the charm of exstensc spotsi whch was the blis of souls
-											like mineing am soing happyr
-											my dear frend soingu ize absoribed the exqust sense tranquil existence that
-											neglect my talentsr Ins should
-											byers ncapable ofing is drawng and singe wonderful.</P>
-
-										<div class="post-thumb mb-30 rounded">
-											<img src="assets/images/blog/06.jpg" alt="blog">
-											<a href="https://www.youtube.com/embed/SP3yyrboTno" class="play-btn"
-												data-rel="lightcase">
-												<i class="icofont-play"></i>
-												<span class="pluse_2"></span>
-											</a>
-										</div>
-										<P>Serenity hassir taken posseson of mying entire soung like these sweet mornngs
-											is whch enjoy with
-											my whole heart create am alonesi and feel the charm of exstenceth spotens
-											whch
-											was the blis of souls like
-											mineing am soo happy my dearsi frend absoribed the em exquste sense enjoy
-											with
-											my whole heart inaming
-											alone and feel the charm of exstensc spotsi whch was the blis of souls
-											like mineing am soing happyr
-											my dear frend soingu ize absoribed the exqust sense tranquil existence that
-											neglect my talentsr Ins should
-											byers ncapable ofing is drawng and singe wonderful.</P>
 
 										<div class="tags-area">
 											<ul class="tags lab-ul justify-content-center">
@@ -460,11 +278,11 @@
 								<ul class="lab-ul widget-wrapper">
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="blog-single.html"><img src="assets/images/product/01.jpg"
-													alt="product"></a>
+											<a href="post.php"><img src="assets/images/product/01.jpg"
+																	alt="product"></a>
 										</div>
 										<div class="post-content ps-3">
-											<a href="blog-single.html">
+											<a href="post.php">
 												<h6>Poor People’s Campaign
 													Our Resources</h6>
 											</a>
@@ -473,11 +291,11 @@
 									</li>
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="blog-single.html"><img src="assets/images/product/02.jpg"
-													alt="product"></a>
+											<a href="post.php"><img src="assets/images/product/02.jpg"
+																	alt="product"></a>
 										</div>
 										<div class="post-content ps-3">
-											<a href="blog-single.html">
+											<a href="post.php">
 												<h6>Boosting Social For NGO
 													And Charities </h6>
 											</a>
@@ -486,11 +304,11 @@
 									</li>
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="blog-single.html"><img src="assets/images/product/03.jpg"
-													alt="product"></a>
+											<a href="post.php"><img src="assets/images/product/03.jpg"
+																	alt="product"></a>
 										</div>
 										<div class="post-content ps-3">
-											<a href="blog-single.html">
+											<a href="post.php">
 												<h6>Poor People’s Campaign
 													Our Resources</h6>
 											</a>
@@ -499,11 +317,11 @@
 									</li>
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="blog-single.html"><img src="assets/images/product/04.jpg"
-													alt="product"></a>
+											<a href="post.php"><img src="assets/images/product/04.jpg"
+																	alt="product"></a>
 										</div>
 										<div class="post-content ps-3">
-											<a href="blog-single.html">
+											<a href="post.php">
 												<h6>Boosting Social For NGO
 													And Charities </h6>
 											</a>

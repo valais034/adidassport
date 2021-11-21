@@ -354,11 +354,11 @@ $products= get_products(4);
                                 <ul class="lab-ul widget-wrapper">
                                     <li class="d-flex flex-wrap justify-content-between">
                                         <div class="post-thumb">
-                                            <a href="blog-single.html"><img src="assets/images/shop/02.jpg"
-                                                    alt="product"></a>
+                                            <a href="post.php"><img src="assets/images/shop/02.jpg"
+                                                                    alt="product"></a>
                                         </div>
                                         <div class="post-content ps-3">
-                                            <a href="blog-single.html">
+                                            <a href="post.php">
                                                 <h6>Organic Orange</h6>
                                             </a>
                                             <div class="rating">
@@ -373,11 +373,11 @@ $products= get_products(4);
                                     </li>
                                     <li class="d-flex flex-wrap justify-content-between">
                                         <div class="post-thumb">
-                                            <a href="blog-single.html"><img src="assets/images/shop/03.jpg"
-                                                    alt="product"></a>
+                                            <a href="post.php"><img src="assets/images/shop/03.jpg"
+                                                                    alt="product"></a>
                                         </div>
                                         <div class="post-content ps-3">
-                                            <a href="blog-single.html">
+                                            <a href="post.php">
                                                 <h6>Organic Orange</h6>
                                             </a>
                                             <div class="rating">
@@ -392,11 +392,11 @@ $products= get_products(4);
                                     </li>
                                     <li class="d-flex flex-wrap justify-content-between">
                                         <div class="post-thumb">
-                                            <a href="blog-single.html"><img src="assets/images/shop/04.jpg"
-                                                    alt="product"></a>
+                                            <a href="post.php"><img src="assets/images/shop/04.jpg"
+                                                                    alt="product"></a>
                                         </div>
                                         <div class="post-content ps-3">
-                                            <a href="blog-single.html">
+                                            <a href="post.php">
                                                 <h6>Organic Orange</h6>
                                             </a>
                                             <div class="rating">
@@ -411,11 +411,11 @@ $products= get_products(4);
                                     </li>
                                     <li class="d-flex flex-wrap justify-content-between">
                                         <div class="post-thumb">
-                                            <a href="blog-single.html"><img src="assets/images/shop/05.jpg"
-                                                    alt="product"></a>
+                                            <a href="post.php"><img src="assets/images/shop/05.jpg"
+                                                                    alt="product"></a>
                                         </div>
                                         <div class="post-content ps-3">
-                                            <a href="blog-single.html">
+                                            <a href="post.php">
                                                 <h6>Organic Orange</h6>
                                             </a>
                                             <div class="rating">

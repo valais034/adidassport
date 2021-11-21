@@ -96,6 +96,17 @@ function get_products($limit = 0){
 }
 
 
+function get_posts($limit = 0){
+    global $db;
+    if ($limit == 0) {
+        $query = mysqli_query($db, "SELECT * FROM posts ORDER BY id DESC");
+    } else {
+        $query = mysqli_query($db, "SELECT * FROM posts ORDER BY id DESC LIMIT $limit");
+    }
+    return $query;
+}
+
+
 function delete_product($product_id){
     global $db;
     $query = mysqli_query($db, "DELETE FROM products WHERE id='$product_id'");
@@ -270,6 +281,17 @@ function get_product_by_id($product_id, $is_array = false){
     }
 }
 
+function get_post_by_id($post_id, $is_array = false){
+    global $db;
+    $query = mysqli_query($db, "SELECT * FROM posts WHERE id=$post_id");
+
+    if ($is_array == true) {
+        return mysqli_fetch_array($query);
+    } else {
+        return $query;
+
+    }
+}
 
 function get_cart_items(){
     $ip_address = $_SERVER['REMOTE_ADDR'];
