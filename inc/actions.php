@@ -70,6 +70,20 @@ if (isset($_POST['add-product'])) {
     }
 }
 
+if (isset($_POST['add-post'])) {
+    $post_title = $_POST['post-title'];
+    $post_cat = $_POST['post-cat'];
+    $post_visibility = $_POST['post-visibility'];
+    $post_image_name = $_FILES['post-image']['name'];
+    $post_image_tmp = $_FILES['post-image']['tmp_name'];
+    $post_desc = $_POST['post-desc'];
+    if (add_post($post_title, $post_cat, $post_visibility, $post_desc, $post_image_name, $post_image_tmp)) {
+        $message = 'نوشته با موفقیت اضافه شد.';
+    } else {
+        $error = 'هنگام افزودن نوشته مشکلی پیش آمد.';
+    }
+}
+
 if (isset($_GET['delete-product-id'])) {
     $product_id = $_GET['delete-product-id'];
     if (delete_product($product_id)) {

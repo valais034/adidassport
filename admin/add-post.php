@@ -4,8 +4,10 @@ if (!is_admin_login()) {
     redirect("login.php");
 }
 
-$products = get_products();
+$post_cats = get_post_cats();
 ?>
+
+
 
 <!doctype html>
 <html lang="en">
@@ -187,7 +189,7 @@ $products = get_products();
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">محصولات</h1>
+                <h1 class="h2">افزودن نوشته</h1>
 
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
@@ -203,7 +205,7 @@ $products = get_products();
 
 
             <section class="event-gift-section padding-tb padding-b bg-image">
-                <div class="table-responsive">
+                <div class="content">
                     <?php
                     if ($message) {
                         ?>
@@ -216,36 +218,89 @@ $products = get_products();
                         <?php
                     }
                     ?>
-                    <table class="table " style="color: white">
-                        <thead>
-                        <tr>
-                            <th scope="col">کد محصول</th>
-                            <th scope="col">نام محصول</th>
-                            <th scope="col">قیمت محصول</th>
-                            <th scope="col">قیمت ویژه</th>
-                            <th scope="col">دسته بندی</th>
-                            <th scope="col">موجودی در انبار</th>
-                            <th scope="col">وضعیت محصول</th>
-                            <th scope="col">ویرایش</th>
-                            <th scope="col">حذف</th>
-                        </tr>
-                        </thead>
-                        <?php
-                        while ($product = mysqli_fetch_array($products)) {
-                            ?>
-                            <tr>
-                                <td><?php echo $product['product_serial'] ?></td>
-                                <td><?php echo $product['product_name'] ?></td>
-                                <td><?php echo $product['product_price'] ?></td>
-                                <td><?php echo $product['product_off_price'] ?></td>
-                                <td><?php echo $product['product_cat'] ?></td>
-                                <td><?php echo $product['product_num_in_stock'] ?></td>
-                                <td><?php echo $product['product_visibility'] ?></td>
-                                <td><a href="edit-product.php?edit-product-id=<?php echo $product['id'] ?>">ویرایش</a></td>
-                                <td><a href="?delete-product-id=<?php echo $product['id'] ?>" onclick="return confirm('آیا میخواهید این محصول را حذف کنید؟')">حذف</a></td>
-                            </tr>
-                        <?php } ?>
-                    </table>
+                    <form action="add-post.php" method="post" enctype="multipart/form-data">
+                        <input type="text" name="post-title" placeholder="نام نوشته"><br>
+
+                        <span style="font-size: 11px;margin-right: 5px">دسته‌بندی نوشته:</span>
+                        <select name="post-cat">
+                            <option value="0">انتخاب کنید ...</option>
+                            <?php while ($post_cat = mysqli_fetch_array($post_cats)) { ?>
+                                <option value="<?php echo $post_cat['posts_cat_name'] ?>"><?php echo $post_cat['posts_cat_name'] ?></option>
+                            <?php } ?>
+                        </select>
+                        <br>
+                        <span style="font-size: 11px;margin-right: 5px">وضعیت نوشته:</span><select name="post-visibility">
+                            <option value="active" >فعال</option>
+                            <option value="not active" >غیرفعال</option>
+
+                        </select>
+                        <br>
+                        <span style="font-size: 11px;margin-right: 5px">عکس نوشته:</span>
+                        <input type="file" name="post-image"> <br>
+
+
+                        <textarea name="post-desc" id="myTextarea"></textarea>
+                        <script src='../assets/js/tinymce/tinymce.min.js'></script>
+                        <script>tinymce.init({
+                                selector: '#myTextarea',
+                                plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+                                imagetools_cors_hosts: ['picsum.photos'],
+                                menubar: 'file edit view insert format tools table help',
+                                toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+                                toolbar_sticky: true,
+                                autosave_ask_before_unload: true,
+                                autosave_interval: "30s",
+                                autosave_prefix: "{path}{query}-{id}-",
+                                autosave_restore_when_empty: false,
+                                autosave_retention: "2m",
+                                image_advtab: true,
+                                /*content_css: '//www.tiny.cloud/css/codepen.min.css',*/
+                                link_list: [
+                                    { title: 'My page 1', value: 'https://www.codexworld.com' },
+                                    { title: 'My page 2', value: 'https://www.xwebtools.com' }
+                                ],
+                                image_list: [
+                                    { title: 'My page 1', value: 'https://www.codexworld.com' },
+                                    { title: 'My page 2', value: 'https://www.xwebtools.com' }
+                                ],
+                                image_class_list: [
+                                    { title: 'None', value: '' },
+                                    { title: 'Some class', value: 'class-name' }
+                                ],
+                                importcss_append: true,
+                                file_picker_callback: function (callback, value, meta) {
+                                    /* Provide file and text for the link dialog */
+                                    if (meta.filetype === 'file') {
+                                        callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+                                    }
+
+                                    /* Provide image and alt text for the image dialog */
+                                    if (meta.filetype === 'image') {
+                                        callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+                                    }
+
+                                    /* Provide alternative source and posted for the media dialog */
+                                    if (meta.filetype === 'media') {
+                                        callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+                                    }
+                                },
+                                templates: [
+                                    { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+                                    { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+                                    { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+                                ],
+                                template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+                                template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+                                height: 600,
+                                image_caption: true,
+                                quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+                                noneditable_noneditable_class: "mceNonEditable",
+                                toolbar_mode: 'sliding',
+                                contextmenu: "link image imagetools table",
+                            });
+                        </script>
+                        <input type="submit" name="add-post" value="افزودن محصول">
+                    </form>
                 </div>
 
 

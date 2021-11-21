@@ -161,9 +161,9 @@ if(!is_admin_login()){
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="add-post.php">
                             <span data-feather="file-text"></span>
-                            Last quarter
+                            افزودن نوشته
                         </a>
                     </li>
                     <li class="nav-item">

@@ -330,7 +330,7 @@ $posts= get_posts(6);
 								<div class="post-inner">
 									<div class="post-thumb rounded">
 										<a href="post.php">
-											<img src="assets/images/blog/01.jpg" alt="blog">
+                                            <a href="post.php?post-id=<?php echo $post['id'] ?>"><img src="assets/images/post/<?php echo $post['post_image'] ?>" alt=""></a>
 										</a>
 									</div>
 									<div class="post-content">

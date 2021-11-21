@@ -84,6 +84,22 @@ function add_product($product_name, $product_price, $product_cat, $product_off_p
 
 }
 
+function add_post($post_title, $post_cat, $post_visibility, $post_desc, $post_image_name, $post_image_tmp){
+    global $db;
+
+    move_uploaded_file($post_image_tmp, '../assets/images/post/' . $post_image_name);
+
+    $query = mysqli_query($db, "INSERT INTO posts (post_title, post_cat, post_visibility, post_desc, post_image) VALUES ('$post_title', '$post_cat', '$post_visibility', '$post_desc', '$post_image_name')");
+    if ($query) {
+        return true;
+    } else {
+        return false;
+    }
+
+
+}
+
+
 
 function get_products($limit = 0){
     global $db;

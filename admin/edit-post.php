@@ -66,9 +66,9 @@ $post = mysqli_fetch_array($get_post);
             <br>
             <select name="post-visibility">
                 <option value="<?php echo $post['post_visibility'] ?>"><?php echo $post['post_visibility'] ?></option>
-                <!--                --><?php //while ($cat = mysqli_fetch_array($cats)) { ?>
-                <!--                    <option value="--><?php //echo $cat['cat_name'] ?><!--">--><?php //echo $cat['cat_name'] ?><!--</option>-->
-                <!--                --><?php //} ?>
+<!--                                --><?php //while ($cat = mysqli_fetch_array($cats)) { ?>
+<!--                                    <option value="--><?php //echo $cat['cat_name'] ?><!--">--><?php //echo $cat['cat_name'] ?><!--</option>-->
+<!--                                --><?php //} ?>
                 <option value="active" >فعال</option>
                 <option value="not active" >غیرفعال</option>
 

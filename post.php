@@ -68,7 +68,7 @@ $pcomments = get_comments_by_product_id($post_id);
 							<div class="post-item-2">
 								<div class="post-inner">
 									<div class="post-thumb rounded">
-										<img src="assets/images/blog/04.jpg" alt="blog">
+                                        <img src="assets/images/post/<?php echo $post_info['post_image'] ?>" alt="">
 									</div>
 									<div class="post-content">
 										<h3><?php echo $post_info['post_title'] ?></h3>
