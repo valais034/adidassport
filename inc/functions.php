@@ -133,6 +133,12 @@ function get_cats(){
     return $query;
 }
 
+function get_post_cats(){
+    global $db;
+    $query = mysqli_query($db, "SELECT * FROM post_cats ORDER BY id DESC");
+    return $query;
+}
+
 
 function delete_cat($cat_id){
     global $db;
