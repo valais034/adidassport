@@ -44,30 +44,28 @@ $post = mysqli_fetch_array($get_post);
             <?php
         }
         ?>
-        <form action="edit-product.php?edit-product-id=<?php echo $post['id'] ?>" method="post" enctype="multipart/form-data">
+        <form action="edit-post.php?edit-post-id=<?php echo $post['id'] ?>" method="post" enctype="multipart/form-data">
             <input type="text" name="product-name" placeholder="نام محصول" value="<?php echo $post['post_title'] ?>"><br>
             <input type="hidden" name="product-id" value="<?php echo $post['id'] ?>">
 
-            <span style="font-size: 11px;margin-right: 5px">دسته‌بندی محصول: <?php echo $product['product_cat'] ?></span>
+            <span style="font-size: 11px;margin-right: 5px">دسته‌بندی نوشته: <?php echo $post['post_cat'] ?></span>
             <br>
             <select name="product-cat">
-                <option value="<?php echo $product['product_cat'] ?>"><?php echo $product['product_cat'] ?></option>
-                <?php while ($cat = mysqli_fetch_array($cats)) { ?>
+                <option value="<?php echo $post['post_cat'] ?>"><?php echo $post['post_cat'] ?></option>
+                <?php while ($cat = mysqli_fetch_array($post_cats)) { ?>
                     <option value="<?php echo $cat['cat_name'] ?>"><?php echo $cat['cat_name'] ?></option>
                 <?php } ?>
             </select>
             <br>
-            <img src="../assets/images/product/<?php echo $product['product_image'] ?>" alt="<?php echo $product['product_name'] ?>" width="120" style="margin-right: 5px"><br>
-            <span style="font-size: 11px;margin-right: 5px">عکس محصول:</span>
-            <input type="file" name="new-product-image">
-            <input type="hidden" name="product-image" value="<?php echo $product['product_image'] ?>">
+            <img src="../assets/images/product/<?php echo $post['post_image'] ?>" alt="<?php echo $post['post_title'] ?>" width="120" style="margin-right: 5px"><br>
+            <span style="font-size: 11px;margin-right: 5px">عکس نوشته:</span>
+            <input type="file" name="new-post-image">
+            <input type="hidden" name="post-image" value="<?php echo $post['post_image'] ?>">
             <br>
-            <span>کد محصول:</span><input type="text" name="product-serial" placeholder="کد محصول" value="<?php echo $product['product_serial'] ?>"><br>
-            <span>موجودی در انبار:</span><input type="text" name="product-num-in-stock" placeholder="موجودی در انبار" value="<?php echo $product['product_num_in_stock'] ?>"><br>
-            <span style="font-size: 11px;margin-right: 5px">وضعیت محصول: <?php echo $product['product_visibility'] ?></span>
+            <span style="font-size: 11px;margin-right: 5px">وضعیت محصول: <?php echo $post['post_visibility'] ?></span>
             <br>
-            <select name="product-visibility">
-                <option value="<?php echo $product['product_visibility'] ?>"><?php echo $product['product_visibility'] ?></option>
+            <select name="post-visibility">
+                <option value="<?php echo $post['post_visibility'] ?>"><?php echo $post['post_visibility'] ?></option>
                 <!--                --><?php //while ($cat = mysqli_fetch_array($cats)) { ?>
                 <!--                    <option value="--><?php //echo $cat['cat_name'] ?><!--">--><?php //echo $cat['cat_name'] ?><!--</option>-->
                 <!--                --><?php //} ?>
@@ -76,9 +74,9 @@ $post = mysqli_fetch_array($get_post);
 
             </select>
 
-            <textarea name="product-desc" placeholder="توضیحات محصول"><?php echo $product['product_desc'] ?></textarea><br>
+            <textarea name="post-desc" placeholder="توضیحات نوشته"><?php echo $post['post_desc'] ?></textarea><br>
 
-            <input type="submit" name="update-product" value="بروزرسانی محصول">
+            <input type="submit" name="update-post" value="بروزرسانی نوشته">
         </form>
     </div>
 </div>

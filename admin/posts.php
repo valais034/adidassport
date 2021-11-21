@@ -236,8 +236,8 @@ $posts = get_posts();
 <!--                                <td>--><?php //echo $post['product_cat'] ?><!--</td>-->
 <!--                                <td>--><?php //echo $post['product_num_in_stock'] ?><!--</td>-->
                                 <td><?php echo $post['post_visibility'] ?></td>
-                                <td><a href="edit-product.php?edit-product-id=<?php echo $post['id'] ?>">ویرایش</a></td>
-                                <td><a href="?delete-product-id=<?php echo $post['id'] ?>" onclick="return confirm('آیا میخواهید این نوشته را حذف کنید؟')">حذف</a></td>
+                                <td><a href="edit-post.php?edit-post-id=<?php echo $post['id'] ?>">ویرایش</a></td>
+                                <td><a href="?delete-post-id=<?php echo $post['id'] ?>" onclick="return confirm('آیا میخواهید این نوشته را حذف کنید؟')">حذف</a></td>
                             </tr>
                         <?php } ?>
                     </table>

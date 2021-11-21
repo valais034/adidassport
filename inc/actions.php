@@ -181,6 +181,38 @@ if (isset($_POST['update-product'])) {
     }
 }
 
+
+
+if (isset($_POST['update-post'])) {
+    $post_title = $_POST['post_title'];
+    $post_cat = $_POST['post-cat'];
+    $post_visibility = $_POST['post-visibility'];
+    $post_desc = $_POST['post-desc'];
+    $post_id = $_POST['post-id'];
+
+
+    if (!empty($_FILES['new-post-image']['name'])) {
+
+        $image_name = $_FILES['new-post-image']['name'];
+        $image_tmp = $_FILES['new-post-image']['tmp_name'];
+        $update_post = update_post($post_title, $post_cat, $post_visibility, $post_desc, $image_name, $image_tmp);
+
+    } else {
+
+        $post_image = $_POST['post-image'];
+        $update_post = update_post($post_title, $post_visibility, $post_desc, $post_id, $post_image);
+
+
+    }
+
+    if ($update_post) {
+        $message = 'محصول با موفقیت بروزرسانی شد.';
+    } else {
+        $error = 'هنگام بروزرسانی محصول مشکلی پیش آمده است.';
+    }
+}
+
+
 if (isset($_POST['update-profile'])) {
     $display_name = $_POST['display-name'];
     $user_address = $_POST['user-address'];
