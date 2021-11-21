@@ -221,7 +221,7 @@ $posts = get_posts();
                         <tr>
                             <th scope="col">آی دی نوشته</th>
                             <th scope="col">نام نوشته</th>
-<!--                            <th scope="col">دسته بندی</th>-->
+                            <th scope="col">دسته بندی</th>
                             <th scope="col">نمایش نوشته</th>
                             <th scope="col">ویرایش</th>
                             <th scope="col">حذف</th>
@@ -233,7 +233,7 @@ $posts = get_posts();
                             <tr>
                                 <td><?php echo $post['id'] ?></td>
                                 <td><?php echo $post['post_title'] ?></td>
-<!--                                <td>--><?php //echo $post['product_cat'] ?><!--</td>-->
+                                <td><?php echo $post['post_cat'] ?></td>
 <!--                                <td>--><?php //echo $post['product_num_in_stock'] ?><!--</td>-->
                                 <td><?php echo $post['post_visibility'] ?></td>
                                 <td><a href="edit-post.php?edit-post-id=<?php echo $post['id'] ?>">ویرایش</a></td>

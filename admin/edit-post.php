@@ -48,16 +48,16 @@ $post = mysqli_fetch_array($get_post);
             <input type="text" name="post-title" placeholder="نام نوشته" value="<?php echo $post['post_title'] ?>"><br>
             <input type="hidden" name="post-id" value="<?php echo $post['id'] ?>">
 
-            <span style="font-size: 11px;margin-right: 5px">دسته‌بندی نوشته: <?php echo $post['post-cat'] ?></span>
+            <span style="font-size: 11px;margin-right: 5px">دسته‌بندی نوشته: <?php echo $post['post_cat'] ?></span>
             <br>
-            <select name="product-cat">
+            <select name="post-cat">
                 <option value="<?php echo $post['post_cat'] ?>"><?php echo $post['post_cat'] ?></option>
-                <?php while ($cat = mysqli_fetch_array($post_cats)) { ?>
-                    <option value="<?php echo $cat['cat_name'] ?>"><?php echo $cat['cat_name'] ?></option>
+                <?php while ($post_cat = mysqli_fetch_array($post_cats)) { ?>
+                    <option value="<?php echo $post_cat['posts_cat_name'] ?>"><?php echo $post_cat['posts_cat_name'] ?></option>
                 <?php } ?>
             </select>
             <br>
-            <img src="../assets/images/product/<?php echo $post['post_image'] ?>" alt="<?php echo $post['post_title'] ?>" width="120" style="margin-right: 5px"><br>
+            <img src="../assets/images/post/<?php echo $post['post_image'] ?>" alt="<?php echo $post['post_title'] ?>" width="120" style="margin-right: 5px"><br>
             <span style="font-size: 11px;margin-right: 5px">عکس نوشته:</span>
             <input type="file" name="new-post-image">
             <input type="hidden" name="post-image" value="<?php echo $post['post_image'] ?>">
