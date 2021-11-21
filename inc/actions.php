@@ -207,14 +207,14 @@ if (isset($_POST['update-post'])) {
 
     if (!empty($_FILES['new-post-image']['name'])) {
 
-        $image_name = $_FILES['new-post-image']['name'];
-        $image_tmp = $_FILES['new-post-image']['tmp_name'];
-        $update_post = update_post($post_title, $post_cat, $post_visibility, $post_desc, $image_name, $image_tmp);
+        $post_image_name = $_FILES['new-post-image']['name'];
+        $post_image_tmp = $_FILES['new-post-image']['tmp_name'];
+        $update_post = update_post($post_title, $post_cat, $post_visibility, $post_desc, $post_image_name, $post_image_tmp);
 
     } else {
 
         $post_image = $_POST['post-image'];
-        $update_post = update_post($post_title, $post_visibility, $post_desc, $post_id, $post_image);
+        $update_post = update_post($post_title, $post_cat, $post_visibility, $post_desc, $post_id, $post_image);
 
 
     }

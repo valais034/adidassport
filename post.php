@@ -48,10 +48,10 @@ $pcomments = get_comments_by_product_id($post_id);
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="page-header-content-area">
-				<h4 class="ph-title">Blog Single Page</h4>
+				<h4 class="ph-title"><?php echo $post_info['post_title'] ?></h4>
 				<ul class="lab-ul">
-					<li><a href="index.php">Home</a></li>
-					<li><a class="active">Blog Single</a></li>
+					<li><a href="index.php">خانه</a></li>
+					<li><a class="active">بلاگ</a></li>
 				</ul>
 			</div>
 		</div>
