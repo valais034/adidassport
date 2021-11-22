@@ -1,3 +1,6 @@
+<?php require_once 'inc/config.php';
+require_once 'sections/header.php';
+?>
 <?php
 $products = get_products(6);
 $cart_items = get_cart_items();

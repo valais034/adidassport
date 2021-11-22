@@ -143,6 +143,16 @@ function add_cat($cat_name){
     }
 }
 
+function add_post_cat($post_cat_name){
+    global $db;
+    $query = mysqli_query($db, "INSERT INTO post_cats (posts_cat_name) VALUES ('$post_cat_name')");
+    if ($query) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function get_cats(){
     global $db;
     $query = mysqli_query($db, "SELECT * FROM product_cats ORDER BY id DESC");

@@ -3,6 +3,9 @@ require_once 'sections/header.php';
 ?>
 <?php
 $posts= get_posts(6);
+$post_cats = get_post_cats();
+$number_of_posts = mysqli_query($db, "SELECT * FROM posts");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -381,48 +384,33 @@ $posts= get_posts(6);
 						<aside class="ps-lg-4">
 							<div class="widget widget-search">
 								<div class="widget-header">
-									<h5>Search Your keywords</h5>
+									<h5>جستجو در نوشته ها</h5>
 								</div>
 								<form action="/" class="search-wrapper">
-									<input class="rounded" type="text" name="s" placeholder="Search Here...">
+									<input class="rounded" type="text" name="s" placeholder="جستجو...">
 									<button type="submit"><i class="icofont-search-2"></i></button>
 								</form>
 							</div>
 
 							<div class="widget widget-category">
 								<div class="widget-header">
-									<h5>Post Categories</h5>
+									<h5>دسته بندی نوشته ها</h5>
 								</div>
 								<ul class="lab-ul widget-wrapper list-bg-none">
 									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-rounded-double-right"></i>Show
-												all</span><span>18</span></a>
+										<a href="#" class="d-flex flex-wrap justify-content-between"><span>کل نوشته ها</span><span><?php echo mysqli_num_rows($number_of_posts);?></span></a>
 									</li>
+                                    <?php while ($post_cat = mysqli_fetch_array($post_cats)) { ?>
 									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-rounded-double-right"></i>Business</span><span>20</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-rounded-double-right"></i>Creative</span><span>25</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-rounded-double-right"></i>Inspiation</span><span>30</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-rounded-double-right"></i>News</span><span>28</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-rounded-double-right"></i>Photography</span><span>20</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-rounded-double-right"></i>Smart</span><span>26</span></a>
-									</li>
+										<a href="#" class="d-flex flex-wrap justify-content-between"><span><?php echo $post_cat['posts_cat_name'] ?></span><span><?php echo mysqli_num_rows($number_of_posts);?></span></a>
+                                        <?php } ?>
+
+                                    </li>
+
+
+
+
+
 								</ul>
 							</div>
 

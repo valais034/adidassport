@@ -103,6 +103,15 @@ if (isset($_POST['add-cat'])) {
     }
 }
 
+if (isset($_POST['add-post-cat'])) {
+    $post_cat_name = $_POST['post-cat-name'];
+    if (add_post_cat($post_cat_name)) {
+        $message = 'دسته بندی با موفقیت افزوده شد.';
+    } else {
+        $error = 'در هنگام افزودن دسته بندی خطایی پیش آمده است.';
+    }
+}
+
 if (isset($_GET['delete-cat-id'])) {
     $cat_id = $_GET['delete-cat-id'];
     if (delete_cat($cat_id)) {
