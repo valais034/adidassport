@@ -17,7 +17,7 @@ require_once QUFORM_ROOT . '/common.php';
 /**
  * Success message, displayed when the form is successfully submitted
  */
-$config['successMessage'] = 'Your message has been sent, thank you.';
+$config['successMessage'] = '%name% عزیز از پیام شما متشکریم. به زودی پیام شما را پاسخ خواهیم داد.';
 
 /**
  * Whether or not to send the notification email. You may wish to disable this if you are
@@ -200,6 +200,7 @@ $email->addFilter('trim');
 $email->addValidators(array('required', 'email'));
 $form->addElement($email);
 
+
 /**
  * Configure the message element
  * Filters: Trim
@@ -210,17 +211,20 @@ $message->addFilter('trim');
 $message->addValidator('required');
 $form->addElement($message);
 
+
+
+
+$recaptcha = new Quform_Element('g-recaptcha-response', 'reCAPTCHA');
+$recaptcha->addValidator('required');
+$recaptcha->addValidator('recaptcha', array('secretKey' => '6Ld5SVEdAAAAAA8suPbbKODENkT4L5SAhUYlP6ry'));
+$recaptcha->setIsHidden(true);
+$form->addElement($recaptcha);
+
 /**
  * Configure the CAPTCHA element
  * Filters: Trim
  * Validators: Required, Identical
  */
-$captcha = new Quform_Element('type_the_word', 'Type the word');
-$captcha->addFilter('trim');
-$captcha->addValidator('required');
-$captcha->addValidator('identical', array('token' => 'catch'));
-$captcha->setIsHidden(true);
-$form->addElement($captcha);
 
 /** END FORM ELEMENT CONFIGURATION **/
 
@@ -239,8 +243,8 @@ function process(Quform $form, array &$config)
             // Process uploaded files
             foreach ($elements as $element) {
                 if ($element instanceof Quform_Element_File
-                && array_key_exists($element->getName(), $_FILES)
-                && is_array($_FILES[$element->getName()])) {
+                    && array_key_exists($element->getName(), $_FILES)
+                    && is_array($_FILES[$element->getName()])) {
                     $file = $_FILES[$element->getName()];
 
                     if (is_array($file['error'])) {
