@@ -169,9 +169,9 @@ $orders = get_orders();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="post-cats.php">
                             <span data-feather="file-text"></span>
-                            Social engagement
+                            دسته بندی نوشته ها
                         </a>
                     </li>
                     <li class="nav-item">

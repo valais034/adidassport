@@ -170,9 +170,9 @@ $cats = get_cats();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="post-cats.php">
                             <span data-feather="file-text"></span>
-                            Social engagement
+                            دسته بندی نوشته ها
                         </a>
                     </li>
                     <li class="nav-item">
@@ -184,7 +184,6 @@ $cats = get_cats();
                 </ul>
             </div>
         </nav>
-
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">دسته بندی ها</h1>
