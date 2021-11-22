@@ -233,7 +233,7 @@ $post_cats = get_post_cats();
                         <?php while($post_cat = mysqli_fetch_array($post_cats)){ ?>
                             <tr>
                                 <td><?php echo $post_cat['posts_cat_name'] ?></td>
-                                <td><a href="?delete-cat-id=<?php echo $post_cat['id'] ?>" onclick="return confirm('آیا میخواهید دسته بندی را حذف کنید؟')">حذف</a></td>
+                                <td><a href="?delete-post-cat-id=<?php echo $post_cat['id'] ?>" onclick="return confirm('آیا میخواهید دسته بندی را حذف کنید؟')">حذف</a></td>
                             </tr>
                         <?php } ?>
                     </table>

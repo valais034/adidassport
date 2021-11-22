@@ -1,3 +1,10 @@
+<?php
+require_once 'inc/config.php';
+require_once 'sections/header.php';
+?>
+<?php
+$footer_posts = get_posts(3);
+?>
 <!-- Footer Section start here -->
 <footer class="footer-section" style="background-image: url(assets/images/bg-images/footer-bg.png);">
     <div class="footer-top">
@@ -66,43 +73,20 @@
                                 <h5>اخبار جدید</h5>
                             </div>
                             <div class="fm-item-content">
+                                <?php while ($footer_post = mysqli_fetch_array($footer_posts)) { ?>
                                 <div class="fm-item-widget lab-item">
                                     <div class="lab-inner">
                                         <div class="lab-thumb">
-                                            <a href="#"> <img src="assets/images/news/01.jpg"
-                                                              alt="footer-widget-img"></a>
+                                            <a href="post.php?post-id=<?php echo $footer_post['id'] ?>"><img src="assets/images/post/<?php echo $footer_post['post_image'] ?>" alt=""></a>
                                         </div>
                                         <div class="lab-content">
-                                            <h6><a href="#">افتتاح نمایندگی جدید در معین مال</a></h6>
+                                            <h6><a href="post.php?post-id=<?php echo $footer_post['id'] ?>"><?php echo $footer_post['post_title'] ?></a></h6>
                                             <p>14 آذر 1400</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="fm-item-widget lab-item">
-                                    <div class="lab-inner">
-                                        <div class="lab-thumb">
-                                            <a href="#"><img src="assets/images/news/02.jpg"
-                                                             alt="footer-widget-img"></a>
-                                        </div>
-                                        <div class="lab-content">
-                                            <h6><a href="#">برندینگ آدیداس و سابقه آن</a></h6>
-                                            <p>1 آذر 1400</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="fm-item-widget lab-item">
-                                    <div class="lab-inner">
-                                        <div class="lab-thumb">
-                                            <a href="#"><img src="assets/images/news/03.jpg"
-                                                             alt="footer-widget-img"></a>
-                                        </div>
-                                        <div class="lab-content">
-                                            <h6><a href="#">کفش جدید ضد لرزش آدیداس
-                                                </a></h6>
-                                            <p>22 آبان 1400</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
+
                             </div>
                         </div>
                     </div>

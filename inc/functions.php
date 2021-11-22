@@ -133,6 +133,16 @@ function delete_product($product_id){
     }
 }
 
+function delete_post($post_id){
+    global $db;
+    $query = mysqli_query($db, "DELETE FROM posts WHERE id='$post_id'");
+    if ($query) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function add_cat($cat_name){
     global $db;
     $query = mysqli_query($db, "INSERT INTO product_cats (cat_name) VALUES ('$cat_name')");
@@ -169,6 +179,16 @@ function get_post_cats(){
 function delete_cat($cat_id){
     global $db;
     $query = mysqli_query($db, "DELETE FROM product_cats WHERE id='$cat_id'");
+    if ($query) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function delete_post_cat($post_cat_id){
+    global $db;
+    $query = mysqli_query($db, "DELETE FROM post_cats WHERE id='$post_cat_id'");
     if ($query) {
         return true;
     } else {

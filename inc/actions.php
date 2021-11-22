@@ -93,6 +93,15 @@ if (isset($_GET['delete-product-id'])) {
     }
 }
 
+if (isset($_GET['delete-post-id'])) {
+    $post_id = $_GET['delete-post-id'];
+    if (delete_post($post_id)) {
+        $message = 'محصول با موفقیت حذف شد.';
+    } else {
+        $error = 'خطایی در حین حذف محصول پیش آمده است.';
+    }
+}
+
 
 if (isset($_POST['add-cat'])) {
     $cat_name = $_POST['cat-name'];
@@ -120,6 +129,16 @@ if (isset($_GET['delete-cat-id'])) {
         $error = 'در حین حذف دسته بندی اشکالی پیش آمده است.';
     }
 }
+
+if (isset($_GET['delete-post-cat-id'])) {
+    $post_cat_id = $_GET['delete-post-cat-id'];
+    if (delete_post_cat($post_cat_id)) {
+        $message = 'دسته بندی نوشته با موفقیت حذف شد.';
+    } else {
+        $error = 'در حین حذف دسته بندی اشکالی پیش آمده است.';
+    }
+}
+
 
 if (isset($_GET['delete-user-id'])) {
     $user_id = $_GET['delete-user-id'];

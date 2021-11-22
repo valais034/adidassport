@@ -5,7 +5,7 @@ require_once 'sections/header.php';
 $posts= get_posts(6);
 $post_cats = get_post_cats();
 $number_of_posts = mysqli_query($db, "SELECT * FROM posts");
-
+$sidebar_posts = get_posts(3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -348,7 +348,11 @@ $number_of_posts = mysqli_query($db, "SELECT * FROM posts");
 											<li><span><i class="icofont-speech-comments"></i><a href="#">09
 														Comments</a></span></li>
 										</ul>
-										<p><?php echo substr($post['post_desc'],0,18) ?>...</p>
+<!--										<p>--><?php //echo substr($post['post_desc'],0,25) ?><!--...</p>-->
+										<p><?php
+                                            mb_internal_encoding('UTF-8');
+                                            echo  mb_substr($post['post_desc'],0,180)
+                                            ?>...</p>
 										<a href="post.php?post-id=<?php echo $post['id'] ?>" class="lab-btn">ادامه مطلب</a>
 									</div>
 
@@ -416,146 +420,109 @@ $number_of_posts = mysqli_query($db, "SELECT * FROM posts");
 
 							<div class="widget widget-post">
 								<div class="widget-header">
-									<h5>Recent Post</h5>
+									<h5>نوشته های اخیر</h5>
 								</div>
+                                <?php while ($sidebar_post = mysqli_fetch_array($sidebar_posts)) { ?>
 								<ul class="lab-ul widget-wrapper">
 									<li class="d-flex flex-wrap justify-content-between">
 										<div class="post-thumb rounded">
-											<a href="post.php"><img src="assets/images/product/01.jpg"
-                                                                    alt="product"></a>
+                                            <a href="post.php?post-id=<?php echo $sidebar_post['id'] ?>"><img src="assets/images/post/<?php echo $sidebar_post['post_image'] ?>" alt=""></a>
 										</div>
 										<div class="post-content ps-3">
 											<a href="post.php">
-												<h6>Poor People’s Campaign
-													Our Resources</h6>
+												<h6><a href="post.php?post-id=<?php echo $sidebar_post['id'] ?>"><?php echo $sidebar_post['post_title'] ?></a></h6>
 											</a>
 											<p>04 February 2019</p>
 										</div>
 									</li>
-									<li class="d-flex flex-wrap justify-content-between">
-										<div class="post-thumb rounded">
-											<a href="post.php"><img src="assets/images/product/02.jpg"
-                                                                    alt="product"></a>
-										</div>
-										<div class="post-content ps-3">
-											<a href="post.php">
-												<h6>Boosting Social For NGO
-													And Charities </h6>
-											</a>
-											<p>04 February 2019</p>
-										</div>
-									</li>
-									<li class="d-flex flex-wrap justify-content-between">
-										<div class="post-thumb rounded">
-											<a href="post.php"><img src="assets/images/product/03.jpg"
-                                                                    alt="product"></a>
-										</div>
-										<div class="post-content ps-3">
-											<a href="post.php">
-												<h6>Poor People’s Campaign
-													Our Resources</h6>
-											</a>
-											<p>04 February 2019</p>
-										</div>
-									</li>
-									<li class="d-flex flex-wrap justify-content-between">
-										<div class="post-thumb rounded">
-											<a href="post.php"><img src="assets/images/product/04.jpg"
-                                                                    alt="product"></a>
-										</div>
-										<div class="post-content ps-3">
-											<a href="post.php">
-												<h6>Boosting Social For NGO
-													And Charities </h6>
-											</a>
-											<p>04 February 2019</p>
-										</div>
-									</li>
-								</ul>
-							</div>
+                                    <?php } ?>
 
-							<div class="widget widget-instagram">
-								<div class="widget-header">
-									<h5>Instagram</h5>
-								</div>
-								<ul class="lab-ul widget-wrapper d-flex flex-wrap justify-content-center">
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/01.jpg"
-												alt="gallery-img"></a></li>
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/02.jpg"
-												alt="gallery-img"></a></li>
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/03.jpg"
-												alt="gallery-img"></a></li>
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/04.jpg"
-												alt="gallery-img"></a></li>
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/05.jpg"
-												alt="gallery-img"></a></li>
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/06.jpg"
-												alt="gallery-img"></a></li>
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/07.jpg"
-												alt="gallery-img"></a></li>
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/08.jpg"
-												alt="gallery-img"></a></li>
-									<li><a class="rounded" href="#"><img src="assets/images/gallery/09.jpg"
-												alt="gallery-img"></a></li>
-								</ul>
-							</div>
+                                </ul>
 
-							<div class="widget widget-archive">
-								<div class="widget-header">
-									<h5>Our Archive</h5>
-								</div>
-								<ul class="lab-ul widget-wrapper list-bg-none">
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-ui-calendar"></i>January</span><span>2021</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-ui-calendar"></i>February</span><span>2021</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-ui-calendar"></i>March</span><span>2019</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-ui-calendar"></i>August</span><span>2018</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-ui-calendar"></i>September</span><span>2017</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-ui-calendar"></i>October</span><span>2016</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-ui-calendar"></i>November</span><span>2014</span></a>
-									</li>
-									<li>
-										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i
-													class="icofont-ui-calendar"></i>December</span><span>2013</span></a>
-									</li>
-								</ul>
-							</div>
+                            </div>
 
-							<div class="widget widget-tags">
-								<div class="widget-header">
-									<h5>Our Popular tags</h5>
-								</div>
-								<ul class="lab-ul widget-wrapper">
-									<li><a href="#">envato</a></li>
-									<li><a href="#">themeforest</a></li>
-									<li><a href="#">codecanyon</a></li>
-									<li><a href="#">videohive</a></li>
-									<li><a href="#">audiojungle</a></li>
-									<li><a href="#">3docean</a></li>
-									<li><a href="#">envato</a></li>
-									<li><a href="#">themeforest</a></li>
-									<li><a href="#">codecanyon</a></li>
-								</ul>
-							</div>
+<!--							<div class="widget widget-instagram">-->
+<!--								<div class="widget-header">-->
+<!--									<h5>Instagram</h5>-->
+<!--								</div>-->
+<!--								<ul class="lab-ul widget-wrapper d-flex flex-wrap justify-content-center">-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/01.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/02.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/03.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/04.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/05.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/06.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/07.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/08.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--									<li><a class="rounded" href="#"><img src="assets/images/gallery/09.jpg"-->
+<!--												alt="gallery-img"></a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+
+<!--							<div class="widget widget-archive">-->
+<!--								<div class="widget-header">-->
+<!--									<h5>Our Archive</h5>-->
+<!--								</div>-->
+<!--								<ul class="lab-ul widget-wrapper list-bg-none">-->
+<!--									<li>-->
+<!--										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i-->
+<!--													class="icofont-ui-calendar"></i>January</span><span>2021</span></a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i-->
+<!--													class="icofont-ui-calendar"></i>February</span><span>2021</span></a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i-->
+<!--													class="icofont-ui-calendar"></i>March</span><span>2019</span></a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i-->
+<!--													class="icofont-ui-calendar"></i>August</span><span>2018</span></a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i-->
+<!--													class="icofont-ui-calendar"></i>September</span><span>2017</span></a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i-->
+<!--													class="icofont-ui-calendar"></i>October</span><span>2016</span></a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i-->
+<!--													class="icofont-ui-calendar"></i>November</span><span>2014</span></a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#" class="d-flex flex-wrap justify-content-between"><span><i-->
+<!--													class="icofont-ui-calendar"></i>December</span><span>2013</span></a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
+
+<!--							<div class="widget widget-tags">-->
+<!--								<div class="widget-header">-->
+<!--									<h5>Our Popular tags</h5>-->
+<!--								</div>-->
+<!--								<ul class="lab-ul widget-wrapper">-->
+<!--									<li><a href="#">envato</a></li>-->
+<!--									<li><a href="#">themeforest</a></li>-->
+<!--									<li><a href="#">codecanyon</a></li>-->
+<!--									<li><a href="#">videohive</a></li>-->
+<!--									<li><a href="#">audiojungle</a></li>-->
+<!--									<li><a href="#">3docean</a></li>-->
+<!--									<li><a href="#">envato</a></li>-->
+<!--									<li><a href="#">themeforest</a></li>-->
+<!--									<li><a href="#">codecanyon</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
 						</aside>
 					</div>
                 </div>
