@@ -87,8 +87,8 @@ require_once '../sections/header.php';
                     <div class="form-group">
                         <div class="d-flex justify-content-between flex-wrap pt-sm-2">
                             <div class="checkgroup">
-                                <input type="checkbox" name="remember" id="remember">
-                                <label for="remember">یادآوری رمز عبور</label>
+                                <input type="checkbox" name="" id="remember">
+                                <label for="">یادآوری رمز عبور</label>
                             </div>
                             <a href="<?php echo PATH; ?>/users/forgot.php">فراموشی رمز</a>
                         </div>
@@ -126,6 +126,23 @@ require_once '../sections/header.php';
         </div>
     </div>
     <!-- Login Section Section Ends Here -->
+        <h4> PHP login with remember me function</h4>
+        <div class="field-group">
+            <div><label for="login2">Username</label></div>
+            <div>
+                <input name="username2" type="text" value="<?php if(isset($_COOKIE["user_login2"])) { echo $_COOKIE["user_login2"]; } ?>" class="input-field">
+            </div>
+            <div class="field-group">
+                <div><label for="password2">Password</label></div>
+                <div><input name="password2" type="password" value="<?php if(isset($_COOKIE["userpassword2"])) { echo $_COOKIE["userpassword2"]; } ?>" class="input-field">
+                </div>
+                <div class="field-group">
+                    <div><input type="checkbox" name="remember2" id="remember" <?php if(isset($_COOKIE["user_login2"])) { ?> checked <?php } ?> />
+                        <label for="remember-me2">Remember me</label>
+                    </div>
+                    <div class="field-group">
+                        <div><input type="submit" name="login2" value="Login" class="form-submit-button"></span></div>
+                    </div>
 
 
 

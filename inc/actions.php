@@ -20,21 +20,9 @@ if (isset($_POST['do-register'])) {
 }
 
 
-//if (isset($_POST['do-login'])) {
-//    $email = $_POST['email'];
-//    $password = md5($_POST['password']);
-//    if (login($email, $password)) {
-//        $_SESSION['user-email'] = $email;
-//        setcookie('logged-in', 'true', time() + 86400, '/');
-//    } else {
-//        $error = 'ایمیل یا کلمه عبور اشتباه است.';
-//    }
-//}
-
-if (isset($_POST['do-login']["remember"])) {
+if (isset($_POST['do-login'])) {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
-    $hour = time() + 3600 * 24 * 30;
     if (login($email, $password)) {
         $_SESSION['user-email'] = $email;
         setcookie('logged-in', 'true', time() + 86400, '/');
@@ -42,8 +30,6 @@ if (isset($_POST['do-login']["remember"])) {
         $error = 'ایمیل یا کلمه عبور اشتباه است.';
     }
 }
-
-
 
 if (isset($_GET['logout'])) {
     logout();
