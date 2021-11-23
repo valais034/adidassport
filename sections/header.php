@@ -1,6 +1,4 @@
-<?php require_once 'inc/config.php';
-require_once 'sections/header.php';
-?>
+
 <?php
 $products = get_products(6);
 $cart_items = get_cart_items();
@@ -35,8 +33,8 @@ function myFunction() {
 </script>
 </head>
 <body>
-    
-    
+
+
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 

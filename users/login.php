@@ -2,8 +2,6 @@
 if (is_login()) {
     redirect('profile');
 }
-?>
-<?php
 require_once '../sections/header.php';
 ?>
 
