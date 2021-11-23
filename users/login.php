@@ -79,7 +79,7 @@ require_once '../sections/header.php';
                 <h3 class="title">ورود به آدیداس اسپورت</h3>
                 <form class="account-form" action="login.php" method="post">
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="نام کاربری"  autofocus>
+                        <input type="email" name="email" placeholder="ایمیل"  autofocus>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" placeholder="رمز عبور">
@@ -126,25 +126,6 @@ require_once '../sections/header.php';
         </div>
     </div>
     <!-- Login Section Section Ends Here -->
-        <h4> PHP login with remember me function</h4>
-        <div class="field-group">
-            <div><label for="login2">Username</label></div>
-            <div>
-                <input name="username2" type="text" value="<?php if(isset($_COOKIE["user_login2"])) { echo $_COOKIE["user_login2"]; } ?>" class="input-field">
-            </div>
-            <div class="field-group">
-                <div><label for="password2">Password</label></div>
-                <div><input name="password2" type="password" value="<?php if(isset($_COOKIE["userpassword2"])) { echo $_COOKIE["userpassword2"]; } ?>" class="input-field">
-                </div>
-                <div class="field-group">
-                    <div><input type="checkbox" name="remember2" id="remember" <?php if(isset($_COOKIE["user_login2"])) { ?> checked <?php } ?> />
-                        <label for="remember-me2">Remember me</label>
-                    </div>
-                    <div class="field-group">
-                        <div><input type="submit" name="login2" value="Login" class="form-submit-button"></span></div>
-                    </div>
-
-
 
 
     <?php require_once '../sections/footer.php' ?>
