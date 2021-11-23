@@ -220,6 +220,15 @@ $recaptcha->addValidator('recaptcha', array('secretKey' => '6Ld5SVEdAAAAAA8suPbb
 $recaptcha->setIsHidden(true);
 $form->addElement($recaptcha);
 
+$upload = new Quform_Element_File('upload');
+$form->addElement($upload);
+/**
+ * if upload file is require code blow:
+ * $upload->getFileUploadValidator()->setRequired(true);
+ * this code for just this format allowed for upload:
+ * $upload->getFileUploadValidator()->setAllowedExtensions(array('gif', 'jpeg', 'jpg', 'png'));
+ * maximum upload size:
+ * $upload->getFileUploadValidator()->setMaximumFileSize(10485760);
 /**
  * Configure the CAPTCHA element
  * Filters: Trim

@@ -123,6 +123,18 @@ require_once 'sections/header.php';
                                             </div>
                                             <!-- End Textarea element -->
 
+                                            <!-- Begin Upload element -->
+                                            <div class="quform-element quform-element-file">
+                                                <div class="quform-spacer">
+                                                    <label for="upload">Upload <span class="quform-required">*</span></label>
+                                                    <div class="quform-input">
+                                                        <input class="upload-element" id="upload" type="file" name="upload" />
+                                                        <p class="quform-description">All files allowed.  Maximum size 10MB.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Upload element -->
+
                                             <!-- Begin Captcha element -->
 
                                             <!-- End Captcha element -->
