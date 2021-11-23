@@ -45,19 +45,6 @@ require_once '../sections/header.php';
     <!-- ==========Header Section Ends Here========== -->
 
     <!-- Page Header Section Start Here -->
-    <section class="page-header bg_img padding-tb">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="page-header-content-area">
-                <h4 class="ph-title">ثبت نام کابران</h4>
-                <ul class="lab-ul">
-                    <li><a href="../index.php">صفحه اصلی</a></li>
-                    <li><a href="#"></a></li>
-                    <li><a class="active">ثبت نام</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
     <!-- Page Header Section Ending Here -->
 <!--    <div class="forms-box">-->
 <!--        --><?php
