@@ -7,10 +7,18 @@ if (isset($_POST['do-register'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_conf = $_POST['password-conf'];
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number    = preg_match('@[0-9]@', $password);
     $hash = 'addias' . time();
-    if ($password != $password_conf) {
-        $error = 'کلمه عبور و تکرار آن با هم برابر نیستند.';
-    } else {
+    if(!$uppercase || !$lowercase || !$number || strlen($password) < 8 ) {
+        $error = 'شما یک رمز ساده انتخاب کرده اید. لطفا رمز عبوری حداقل 8 رقمی شامل حروف کوچک، بزرگ و یک عدد باشد.';
+         }
+    else if($password != $password_conf) {
+
+        $error = ' کلمه عبور و تکرار آن با هم برابر نیستند';
+    }
+    else {
         if (register_user($username, $email, md5($password), $hash)) {
             $message = 'ثبت نام شما با موفقیت انجام شد. هم اکنون میتوانید وارد حساب کاربری خود شوید.';
         } else {

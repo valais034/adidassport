@@ -76,7 +76,7 @@ require_once '../sections/header.php';
                         <?php
                     }
                     ?>
-                <h3 class="title">ورود به آدیداس اسپورت</h3>
+                <h4 class="title">ورود به پنل کاربری</h4>
                 <form class="account-form" action="login.php" method="post">
                     <div class="form-group">
                         <input type="email" name="email" placeholder="ایمیل"  autofocus>
@@ -102,25 +102,25 @@ require_once '../sections/header.php';
 
                 <div class="account-bottom">
                     <span class="d-block cate pt-10">اکانت ندارید؟ <a href="registration.php"> ثبت نام</a></span>
-                    <span class="or"><span>یا</span></span>
-                    <h5 class="subtitle">لوگین با شبکه های اجتماعی</h5>
-                    <ul class="social-media social-color lab-ul d-flex justify-content-center">
-                        <li>
-                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>
-                        </li>
-                    </ul>
+<!--                    <span class="or"><span>یا</span></span>-->
+<!--                    <h5 class="subtitle">لوگین با شبکه های اجتماعی</h5>-->
+<!--                    <ul class="social-media social-color lab-ul d-flex justify-content-center">-->
+<!--                        <li>-->
+<!--                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
                 </div>
             </div>
         </div>

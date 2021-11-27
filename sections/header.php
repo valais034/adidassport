@@ -65,7 +65,7 @@ function myFunction() {
                             <li>
                                 <a href="<?php echo PATH; ?>/blog.php">بلاگ</a>
                             </li>
-                            <li><a href="contact.php">تماس با ما</a></li>
+                            <li><a href="<?php echo PATH; ?>/contact.php">تماس با ما</a></li>
                         </ul>
                         <div class="cart-ticket">
                             <div class="cart-icon">
