@@ -164,7 +164,7 @@ require_once 'sections/header.php';
                                     </table>
                                 </div>
 
-                                <form action="cart.php" method="post">
+                                <form action="request.php" method="post">
 
                                     <input type="hidden" name="user-email" value="<?php echo $user_data['email'] ?>">
                                     <input type="hidden" name="user-number" value="<?php echo $user_data['user_number'] ?>">
