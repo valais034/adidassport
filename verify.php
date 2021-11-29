@@ -1,5 +1,6 @@
 
 <?php
+require_once 'inc/config.php';
 $Authority = $_GET['Authority'];
 $data = array("merchant_id" => "1be98c62-9918-4a9c-86b6-a2e470229967", "authority" => $Authority, "amount" => 1000);
 $jsonData = json_encode($data);
