@@ -1,11 +1,9 @@
 <?php
-
-
 $data = array("merchant_id" => "1be98c62-9918-4a9c-86b6-a2e470229967",
-    "amount" => 1000,
-    "callback_url" => "http://www.yoursite.com/verify.php",
-    "description" => "خرید تست",
-    "metadata" => ["email" => "info@email.com", "mobile" => "09121234567"],
+    "amount" => $_POST['cart_total'],
+    "callback_url" => "http://localhost/adidassport/verify.php",
+    "description" => "خرید از فروشگاه آدیداس اسپورت",
+    "metadata" => ["email" => $_POST['user-email'], "mobile" => $_POST['user-number']],
 );
 $jsonData = json_encode($data);
 $ch = curl_init('https://api.zarinpal.com/pg/v4/payment/request.json');
