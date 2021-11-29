@@ -176,8 +176,23 @@ require_once 'sections/header.php';
 
                                     ?>">
 
-                                    <input type="submit" name="submit-order" value="اتصال به درگاه پرداخت">
+                                    <input type="submit" name="submit-order" value="پرداخت در محل">
                                 </form>
+                                    <br>
+                                    <form action="pay.php" method="post">
+
+                                        <input type="hidden" name="user-email" value="<?php echo $user_data['email'] ?>">
+                                        <input type="hidden" name="user-number" value="<?php echo $user_data['user_number'] ?>">
+                                        <input type="hidden" name="cart-total" value="<?php echo $cart_total ?>">
+                                        <input type="hidden" name="product-ids" value="<?php
+                                        foreach ($cart_items as $cart_item) {
+                                            echo $cart_item['id'] . ', ';
+                                        }
+
+                                        ?>">
+
+                                        <input type="submit" name="submit-order-online" value="پرداخت آنلاین">
+                                    </form>
                                 <?php } ?>
 
 
