@@ -447,8 +447,9 @@ function get_orders(){
 
 
 function submit_order($email, $product_ids){
-//  $ids = explode(',',$product_ids, -1);
-
+    $order_id = 'adisport'. time();
+    global $db ;
+    $query = mysqli_query($db, "insert into orders (order_id, product_id, user_email) values ('$order_id', '$product_ids', '$email')");
 }
 
 
