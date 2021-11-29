@@ -6,7 +6,7 @@ if (!is_login()) {
 
 $user_data = get_userdata();
 $user_orders = get_user_orders();
-$get_order_products = get_order_items();
+//$get_order_products = get_order_items();
 ?>
 <!doctype html>
 <html lang="en">
@@ -176,7 +176,7 @@ $get_order_products = get_order_items();
                 <div id="main" class="profile">
 
 
-                    <div class="box" style="padding: 10px;box-sizing: border-box">
+                    <div class="box" style="padding: 10px;box-sizing: border-box; background: #0c63e4">
                         <?php foreach ($user_orders as $user_order) {
                             $products = get_order_items($user_order['order_id']);
                             ?>
