@@ -1,6 +1,6 @@
 <?php
 $data = array("merchant_id" => "1be98c62-9918-4a9c-86b6-a2e470229967",
-    "amount" => $_POST['cart_total'],
+    "amount" => $_POST['cart-total'],
     "callback_url" => "http://localhost/adidassport/verify.php",
     "description" => "خرید از فروشگاه آدیداس اسپورت",
     "metadata" => ["email" => $_POST['user-email'], "mobile" => $_POST['user-number']],
