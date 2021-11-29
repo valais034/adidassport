@@ -1,35 +1,29 @@
+
 <?php
-/*
- * ZarinPal Advanced Class
- *
- * version 	: 1.0
- * link 	: https://vrl.ir/zpc
- *
- * author 	: milad maldar
- * e-mail 	: miladworkshop@gmail.com
- * website 	: https://miladworkshop.ir
-*/
+$Authority = $_GET['Authority'];
+$data = array("merchant_id" => "1be98c62-9918-4a9c-86b6-a2e470229967", "authority" => $Authority, "amount" => 1000);
+$jsonData = json_encode($data);
+$ch = curl_init('https://api.zarinpal.com/pg/v4/payment/verify.json');
+curl_setopt($ch, CURLOPT_USERAGENT, 'ZarinPal Rest Api v4');
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'Content-Length: ' . strlen($jsonData)
+));
 
-require_once("zarinpal_function.php");
-
-$MerchantID 	= "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
-$Amount 		= 100;
-$ZarinGate 		= false;
-$SandBox 		= false;
-
-$zp 	= new zarinpal();
-$result = $zp->verify($MerchantID, $Amount, $SandBox, $ZarinGate);
-
-if (isset($result["Status"]) && $result["Status"] == 100)
-{
-	// Success
-	echo "تراکنش با موفقیت انجام شد";
-	echo "<br />مبلغ : ". $result["Amount"];
-	echo "<br />کد پیگیری : ". $result["RefID"];
-	echo "<br />Authority : ". $result["Authority"];
+$result = curl_exec($ch);
+curl_close($ch);
+$result = json_decode($result, true);
+if ($err) {
+    echo "cURL Error #:" . $err;
 } else {
-	// error
-	echo "پرداخت ناموفق";
-	echo "<br />کد خطا : ". $result["Status"];
-	echo "<br />تفسیر و علت خطا : ". $result["Message"];
+    if ($result['data']['code'] == 100) {
+        echo 'Transation success. RefID:' . $result['data']['ref_id'];
+    } else {
+        echo'code: ' . $result['errors']['code'];
+        echo'message: ' .  $result['errors']['message'];
+    }
 }
+?>
