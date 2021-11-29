@@ -312,6 +312,14 @@ if (isset($_POST['submit-order'])) {
 //    $mobile = $_POST['user-number'];
 //    request($amount, $email, $mobile, $product_ids);
 }
+if (isset($_POST['submit-order-online'])) {
+    $email = $_POST['user-email'];
+    $product_ids = $_POST['product-ids'];
+    $amount = $_POST['cart-total'];
+    $mobile = $_POST['user-number'];
+    pay($amount, $email, $mobile, $product_ids);
+//    request($amount, $email, $mobile, $product_ids);
+}
 
 
 if (isset($_POST['forgot-pass'])) {

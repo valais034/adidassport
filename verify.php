@@ -20,7 +20,7 @@ if ($err) {
     echo "cURL Error #:" . $err;
 } else {
     if ($result['data']['code'] == 100) {
-        echo 'Transation success. RefID:' . $result['data']['ref_id'];
+        echo 'تراکنش با موفقیت انجام شد. کد رهگیری:' . $result['data']['ref_id'];
     } else {
         echo'code: ' . $result['errors']['code'];
         echo'message: ' .  $result['errors']['message'];
