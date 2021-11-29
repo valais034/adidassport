@@ -483,15 +483,15 @@ function pay($amount, $email, $mobile, $product_ids) {
         if (empty($result['errors'])) {
             if ($result['data']['code'] == 100) {
                 $order_id = 'adisportonline'. time();
-                $authority = $result->Authority;
+                $array = ['Authority'=>$result["Authority"]];
+//                $authority = $result->Authority;
                 global $db ;
-                $query = mysqli_query($db, "insert into orders (order_id, product_id, user_email, authority) values ('$order_id', '$product_ids', '$email','$authority')");
+                $query = mysqli_query($db, "insert into orders (order_id, product_id, user_email, authority) values ('$order_id', '$product_ids', '$email','$array')");
                 header('Location: https://www.zarinpal.com/pg/StartPay/' . $result['data']["authority"]);
             }
         } else {
             echo'Error Code: ' . $result['errors']['code'];
             echo'message: ' .  $result['errors']['message'];
-
         }
     }
 }
