@@ -176,7 +176,7 @@
             <a href="#">Contact</a>
         </p>
 
-        <p class="footer-company-name">Company Name &copy; 2015</p>
+        <p class="footer-company-name">Company Name © 2015</p>
     </div>
 
     <div class="footer-center">

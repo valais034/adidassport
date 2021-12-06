@@ -12,9 +12,6 @@
 <body>
 
 <header> <!--    start header-->
-    <DIV class="right">
-        <span>پیشخوان</span>
-    </DIV>
 
     <DIV class="left">
         <div class="avatar">

@@ -13,19 +13,10 @@
 
     <div class="menu">
         <UL>
-            <li><a href="#">پیشخوان</a></li>
-            
-
-
-            
-
+            <li><a href="index.php">پیشخوان</a></li>
             <li><a href="uploadtheme.php">مدیریت قالب</a></li>
-            <li><a href="uploadtheme.php">افزودن قالب</a></li>
-            <li><a href="uploadtheme.php">ویرایشگر</a></li>
-
-           
-          
-
+            <li><a href="#">افزودن قالب</a></li>
+            <li><a href="edit.php">ویرایشگر</a></li>
         </UL>
         <div class="clear"></div>
     </div>

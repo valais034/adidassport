@@ -28,55 +28,39 @@ require_once ('coding.php');
 
 <div id="box1">
 
-  <?php
-$sql=$connect->prepare('SELECT * FROM options WHERE option_key=?');
-$sql->execute(array('Template_directory'));
-$fetch=$sql->fetch();
-$Template_directory=$fetch['option_value'];
-$file='../theme/'.$Template_directory.'/theme_img.png';
-if(file_exists($file))
-{
-    ?>
-    <div class="theme">
-        <div style="width:330px;height:220px;border:1px solid #48ADFF;">
-            <img src="<?= $file ?>" width="330" height="220">
-        </div>
-        <div style="width:100%;background:#000000;height:35px;color:#ffffff;margin-top:0px;font-family:BYekan;">
-            <div style="float:right">
-                <span style="font-family:BYekan;margin-right:20px;line-height:35px;">نام قالب : </span><?= str_replace('*','',get_info('../theme/'.$Template_directory.'/index.php')['Theme Name']);  ?></div>
-            <div style="width:100px;background:#ffffff;border-radius:5px;float:left;text-align:center;margin-left:10px;margin-top:5px;"><a href="<?= URL.'/admin/customize.php' ?>" style="color:#000000;">سفارشی سازی</a></div>
-        </div>
-    </div>
-  <?php
-}
-$dir='../theme';
-$files=scandir($dir);
 
-foreach($files as $key=>$value)
-{
-  if($value!='.' && $value!='..' && $value!=$Template_directory)
+  <?php
+  $sql=$connect->prepare('SELECT * FROM options WHERE option_key=?');
+  $sql->execute(array('Template_directory'));
+  $fetch=$sql->fetch();
+  $Template_directory=$fetch['option_value'];
+  $file='../theme/'.$Template_directory.'/theme_img.png';
+  
+
+  $directory = "../theme";
+  $files = scandir($directory);
+  foreach($files as $key=>$value)
   {
-    $file='../theme/'.$value.'/theme_img.png';
+      if($value!='.' && $value!='..' && $value!=$Template_directory)
+      {
+          $file='../theme/'.$value.'/theme_img.png';
+          ?>
+          <div class="theme">
+              <div style="width:330px;height:220px;border:1px solid #48ADFF;">
+                  <img src="<?= $file ?>" width="330" height="220">
+              </div>
+
+              <div style="width:100%;background:#000000;height:35px;color:#ffffff;height:35px;margin-top:0px;font-family:BYekan;"><div style="float:right"><span style="font-family:BYekan;margin-right:20px;line-height:35px;">نام قالب : </span><?= str_replace('*','',get_info('../theme/'.$value.'/index.php')['Theme Name']);  ?></div>
+                  <div style="width:70px;background:#ffffff;border-radius:5px;float:right;text-align:center;margin-right:10px;margin-top:5px;"><a href="<?= URL.'/admin/index.php?active='.$value ?>" style="color:#000000;">فعال سازی</a></div>
+                  <div style="width:80px;background:#ffffff;border-radius:5px;float:right;text-align:center;margin-right:10px;margin-top:5px;"><a href="demo.php?template=<?= $value; ?>" style="color:#000000;">پیش نمایش</a></div>
+              </div>
+          </div>
+      <?php
+      }
+  }
 
   ?>
-
-  <div class="theme">
-      <div style="width:330px;height:220px;border:1px solid #48ADFF;">
-          <img src="<?= $file ?>" width="330" height="220">
-      </div>
-
-      <div style="width:100%;background:#000000;height:35px;color:#ffffff;height:35px;margin-top:0px;font-family:BYekan;"><div style="float:right"><span style="font-family:BYekan;margin-right:20px;line-height:35px;">نام قالب : </span><?= str_replace('*','',get_info('../theme/'.$value.'/index.php')['Theme Name']);  ?></div>
-          <div style="width:70px;background:#ffffff;border-radius:5px;float:right;text-align:center;margin-right:10px;margin-top:5px;"><a href="<?= URL.'/admin/uploadtheme?active='.$value ?>" style="color:#000000;">فعال سازی</a></div>
-          <div style="width:80px;background:#ffffff;border-radius:5px;float:right;text-align:center;margin-right:10px;margin-top:5px;"><a href="" style="color:#000000;">پیش نمایش</a></div>
-      </div>
-  </div>
-  <?php
-  }
-}
-
-?>
-
-
+  <div style="clear:both;padding-bottom:20px;"></div>
 </div>
 
 <?php

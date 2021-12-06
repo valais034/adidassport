@@ -85,9 +85,9 @@
         }
     </style>
 </head>
-<body>
+<body style="background:#CAD9DC;">
 
-      <div style="margin:right;"><img src="<?= get_template_uri(); ?>images/header.jpg"  style="margin:60px;"></div>
+      <div style="margin:right;"><img src="<?= get_template_uri(); ?>images/header.png"  style="margin:60px;"></div>
 
 
 
