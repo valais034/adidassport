@@ -85,138 +85,145 @@
         }
     </style>
 </head>
+
 <body style="background:#CAD9DC;">
 
       <div style="margin:right;"><img src="<?= get_template_uri(); ?>images/header.png"  style="margin:60px;"></div>
 
 
 
-<div class="content">
+      <div class="content">
 
-    <div class="panel1">
+          <div class="panel1">
 
-        <div class="menu">
-            <p style="padding-top:10px;padding-right:20px;padding-bottom:5px;">دسته ها</p>
-            <div style="width:90%;height:3px;background:#c4baee;margin:auto;"></div>
+              <div class="menu">
+                  <p style="padding-top:10px;padding-right:20px;padding-bottom:5px;">دسته ها</p>
+                  <div style="width:90%;height:3px;background:#c4baee;margin:auto;"></div>
 
-            <ul class="li-menu">
+                  <ul class="li-menu">
+                    <?php
+                    while(have_menu())
+                    {
+                      the_menu();
+                      ?>
+                      <li><a href="<?= get_menu_url(); ?>"><?= get_menu_name(); ?></a></li>
+                      <?php
+                    }
+                    ?>
+                  </ul>
 
 
-                    <li><a href=""></a></li>
+                 <div style="padding-bottom:10px;"></div>
+              </div>
 
-            </ul>
-            <div style="padding-bottom:10px;"></div>
-        </div>
+              <div class="menu">
+                  <p style="padding-top:10px;padding-right:20px;padding-bottom:5px;">آخرین مطالب</p>
+                  <div style="width:90%;height:3px;background:#efb0ad;margin:auto;"></div>
 
-        <div class="menu">
-            <p style="padding-top:10px;padding-right:20px;padding-bottom:5px;">آخرین مطالب</p>
-            <div style="width:90%;height:3px;background:#efb0ad;margin:auto;"></div>
+                  <ul class="li-menu">
+                      <li>آموزش برنامه نویسی</li>
+                      <li>آموزش برنامه نویسی</li>
+                  </ul>
+                  <div style="padding-bottom:10px;"></div>
+              </div>
+          </div>
 
-            <ul class="li-menu">
-                <li>آموزش برنامه نویسی</li>
-                <li>آموزش برنامه نویسی</li>
-            </ul>
-            <div style="padding-bottom:10px;"></div>
-        </div>
-</div>
+                   <?php
+                   if(have_posts())
+                   {
+                     while(have_post())
+                     {
+                       the_post();
+                      ?>
+                       <div class="posts">
+                          <p style="padding-top:10px;padding-right:20px;padding-bottom:10px;font-family:BYekan;">
+                          <a href="<?= post_url(); ?>"><?= post_title(); ?></a></p>
+                          <div style="width:95%;height:3px;background:#15E31E;margin:auto;"></div>
+                          <div style="width:500px;margin:50px auto;"><img src="<?= get_template_uri(); ?>images/aa.jpg" style="width:500px;"></div>
+                          <div class="post_text">
+                          <?= post_content(); ?>
+                      </div>
 
-             <?php
-             if(have_posts())
-             {
-               while(have_post())
-               {
-                 the_post();
-                ?>
-                 <div class="posts">
-                    <p style="padding-top:10px;padding-right:20px;padding-bottom:10px;font-family:BYekan;">
-                    <a href="<?= post_url(); ?>"><?= post_title(); ?></a></p>
-                    <div style="width:95%;height:3px;background:#15E31E;margin:auto;"></div>
-                    <div style="width:500px;margin:50px auto;"><img src="<?= get_template_uri(); ?>images/aa.jpg" style="width:500px;"></div>
-                    <div class="post_text">
-                    <?= post_content(); ?>
-                </div>
+                     <div class="more">توضیحات بیشتر</div>
+                     <div style="padding-bottom:30px;"></div>
+                 </div>
+                 <?php
+                  }
+                 }
+                 else
+                 {
+                   ?>
+                   <div style="text-align:center;color:blue;font-family:'BYekan'; font-size:28px;">پستی وجود ندارد</div>
+                   <?php
+                 }
 
-               <div class="more">توضیحات بیشتر</div>
-               <div style="padding-bottom:30px;"></div>
-           </div>
-           <?php
-            }
-           }
-           else
-           {
              ?>
-             <div style="text-align:center;color:red;">پستی وجود ندارد</div>
-             <?php
-           }
-
-       ?>
 
 
-           <div style="color:red;"></div>
+                 <div style="color:red;"></div>
 
-<div style="clear:both"></div>
-</div>
-<footer class="footer-distributed">
+      <div style="clear:both"></div>
+      <footer class="footer-distributed">
 
-    <div class="footer-left">
+          <div class="footer-left">
 
-        <h3>Company<span>logo</span></h3>
+              <h3>Company<span>logo</span></h3>
 
-        <p class="footer-links">
-            <a href="#">Home</a>
-            ·
-            <a href="#">Blog</a>
-            ·
-            <a href="#">Pricing</a>
-            ·
-            <a href="#">About</a>
-            ·
-            <a href="#">Faq</a>
-            ·
-            <a href="#">Contact</a>
-        </p>
+              <p class="footer-links">
+                  <a href="#">Home</a>
+                  ·
+                  <a href="#">Blog</a>
+                  ·
+                  <a href="#">Pricing</a>
+                  ·
+                  <a href="#">About</a>
+                  ·
+                  <a href="#">Faq</a>
+                  ·
+                  <a href="#">Contact</a>
+              </p>
 
-        <p class="footer-company-name">Company Name &copy; 2015</p>
-    </div>
+              <p class="footer-company-name">Company Name © 2015</p>
+          </div>
 
-    <div class="footer-center">
+          <div class="footer-center">
 
-        <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>21 Revolution Street</span> Paris, France</p>
+              <div>
+                  <i class="fa fa-map-marker"></i>
+                  <p><span>21 Revolution Street</span> Paris, France</p>
+              </div>
+
+              <div>
+                  <i class="fa fa-phone"></i>
+                  <p>+1 555 123456</p>
+              </div>
+
+              <div>
+                  <i class="fa fa-envelope"></i>
+                  <p><a href="mailto:support@company.com">support@company.com</a></p>
+              </div>
+
+          </div>
         </div>
+          <div class="footer-right">
 
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>+1 555 123456</p>
-        </div>
+              <p class="footer-company-about">
+                  <span>About the company</span>
+                  Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+              </p>
 
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">support@company.com</a></p>
-        </div>
+              <div class="footer-icons">
 
-    </div>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                  <a href="#"><i class="fa fa-github"></i></a>
 
-    <div class="footer-right">
+              </div>
 
-        <p class="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-        </p>
+          </div>
 
-        <div class="footer-icons">
+      </footer>
 
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
-
-        </div>
-
-    </div>
-
-</footer>
-
-</body>
-</html>
+      </body>
+      </html>

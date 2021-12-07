@@ -79,10 +79,9 @@
 </head>
 <body>
 
-<div id="hero">
-    <div id="overlay"></div>
-</div>
+  <body style="background:#CAD9DC;">
 
+        <div style="margin:right;"><img src="<?= get_template_uri(); ?>images/header.png"  style="margin:60px;"></div>
 
 <div class="content">
 
@@ -93,10 +92,15 @@
             <div style="width:90%;height:3px;background:#c4baee;margin:auto;"></div>
 
             <ul class="li-menu">
-
-
-                    <li><a href=""></a></li>
-
+              <?php
+              while(have_menu())
+              {
+                  the_menu();
+                  ?>
+                  <li><a href="<?= get_menu_url(); ?>"><?= get_menu_name(); ?></a></li>
+              <?php
+              }
+              ?>
             </ul>
             <div style="padding-bottom:10px;"></div>
         </div>
@@ -122,7 +126,7 @@
                 ?>
                  <div class="posts">
                     <p style="padding-top:10px;padding-right:20px;padding-bottom:10px;font-family:BYekan;">
-                    <a href=<?= post_url(); ?>><?= post_title(); ?></a></p>
+                    <?= post_title(); ?></p>
                     <div style="width:95%;height:3px;background:#15E31E;margin:auto;"></div>
                     <div style="width:500px;margin:50px auto;"><img src="<?= get_template_uri(); ?>images/aa.jpg" style="width:500px;"></div>
                     <div class="post_text">
@@ -146,6 +150,7 @@
            <div style="color:red;"></div>
 
 <div style="clear:both"></div>
+</div>
 <footer class="footer-distributed">
 
     <div class="footer-left">
