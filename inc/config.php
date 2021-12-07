@@ -1,7 +1,7 @@
 <?php
 
 
-$db = mysqli_connect('localhost','adidasuser','123456','adidasecommerce');
+$db = mysqli_connect('localhost','adidasuser','123456','adidasecommerce2');
 
 if (!$db) {
     echo mysqli_connect_error();
