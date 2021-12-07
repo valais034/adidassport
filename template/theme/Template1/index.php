@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>آموزش قالب سازی داینامیک php</title>
+    <title>آموزش قالب سازی داینامیک </title>
     <link href="<?=get_template_uri()?>css/style.css" rel="stylesheet">
     <link href="<?=get_template_uri()?>css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=get_template_uri()?>css/footer-distributed-with-address-and-phones.css">

@@ -15,9 +15,17 @@ if(isset($_GET['url']))
   {
     singl_post($url[0]);
   }
-
+  elseif(sizeof($url)==2)
+  {
+    if($url[0]=='category')
+    {
+      $template->category=$url[1];
+      require_once 'theme/'.get_template().'/index.php';
+    }
+  }
 }
 else
 {
+  
   require_once 'theme/'.get_template().'/index.php';
 }

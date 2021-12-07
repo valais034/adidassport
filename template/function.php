@@ -1,11 +1,19 @@
 <?php
 function get_template()
 {
-  global $connect;
-  $sql=$connect->prepare('SELECT * FROM options WHERE option_key=?');
-  $sql->execute(array('Template_directory'));
-  $fetch=$sql->fetch();
-  return $Template_directory=$fetch['option_value'];
+  if(!defined('Template'))
+  {
+    global $connect;
+    $sql=$connect->prepare('SELECT * FROM options WHERE option_key=?');
+    $sql->execute(array('Template_directory'));
+    $fetch=$sql->fetch();
+    return $Template_directory=$fetch['option_value'];
+  }
+  else
+  {
+    return Template;
+  }
+
 }
 function get_template_uri()
 {
@@ -38,17 +46,8 @@ function post_content()
 
 function have_posts()
 {
-  global $connect;
-  $sql= $connect->prepare('SELECT * FROM post');
-  $sql->execute();
-  if($sql->rowCount()>0)
-  {
-    return true;
-  }
-  else
-  {
-    return false;
-  }
+  global $template;
+  return $template->have_posts();
 }
 
 function post_url()
@@ -73,3 +72,27 @@ function singl_post($url)
 
   }
 }
+
+  function have_menu()
+  {
+    global $template;
+    return $template->have_menu();
+  }
+
+  function the_menu()
+  {
+    global $template;
+    return $template->the_menu();
+  }
+
+  function get_menu_name()
+  {
+    global $template;
+    return $template->get_menu_name();
+  }
+
+  function get_menu_url()
+  {
+    global $template;
+    return $template->get_menu_url();
+  }
