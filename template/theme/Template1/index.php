@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>آموزش قالب سازی داینامیک </title>
+    <title>آموزش قالب سازی داینامیک php</title>
     <link href="<?=get_template_uri()?>css/style.css" rel="stylesheet">
     <link href="<?=get_template_uri()?>css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=get_template_uri()?>css/footer-distributed-with-address-and-phones.css">
@@ -101,12 +101,19 @@
             <div style="width:90%;height:3px;background:#c4baee;margin:auto;"></div>
 
             <ul class="li-menu">
-
-
-                    <li><a href=""></a></li>
-
+              <?php
+              while(have_menu())
+              {
+                the_menu();
+                ?>
+                <li><a href="<?= get_menu_url(); ?>"><?= get_menu_name(); ?></a></li>
+                <?php
+              }
+              ?>
             </ul>
-            <div style="padding-bottom:10px;"></div>
+
+
+           <div style="padding-bottom:10px;"></div>
         </div>
 
         <div class="menu">
@@ -119,7 +126,7 @@
             </ul>
             <div style="padding-bottom:10px;"></div>
         </div>
-</div>
+    </div>
 
              <?php
              if(have_posts())
@@ -146,7 +153,7 @@
            else
            {
              ?>
-             <div style="text-align:center;color:red;">پستی وجود ندارد</div>
+             <div style="text-align:center;color:blue;font-family:'BYekan'; font-size:28px;">پستی وجود ندارد</div>
              <?php
            }
 

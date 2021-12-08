@@ -7,6 +7,7 @@ class template
   private $j=-1;
   public $url=null;
   public $category=null;
+  public $page=null;
   public function have_post()
   {
     global $connect;
@@ -25,10 +26,21 @@ class template
     {
       if(empty($this->url))
       {
-        $sql=$connect->prepare('SELECT * FROM post');
-        $sql->execute();
-        $row = $sql->rowCount();
-        return $this->i<--$row;
+        if(empty($this->page))
+        {
+          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,1');
+          $sql->execute();
+          $row = $sql->rowCount();
+          return $this->i<--$row;
+        }
+        else
+        {
+          $limit=($this->page-1)*1;
+          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',1');
+          $sql->execute();
+          $row = $sql->rowCount();
+          return $this->i<--$row;
+        }
 
       }
       else
@@ -67,10 +79,21 @@ class template
     {
       if(empty($this->url))
       {
-        $sql=$connect->prepare('SELECT * FROM post');
-        $sql->execute();
-        $fetch=$sql->fetchAll();
-        return $fetch[$this->i]['title'];
+        if(empty($this->page))
+        {
+          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,1');
+          $sql->execute();
+          $fetch=$sql->fetchAll();
+          return $fetch[$this->i]['title'];
+        }
+        else
+        {
+          $limit=($this->page-1)*1;
+          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',1');
+          $sql->execute();
+          $fetch=$sql->fetchAll();
+          return $fetch[$this->i]['title'];
+        }
       }
       else
       {
@@ -97,17 +120,28 @@ class template
       $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=?');
       $sql->execute(array($id));
       $fetch=$sql->fetchAll();
-      return $fetch[$this->i]['title'];
+      return $fetch[$this->i]['content'];
     }
     else
     {
     }
     if(empty($this->url))
     {
-      $sql=$connect->prepare('SELECT * FROM post');
-      $sql->execute();
-      $fetch=$sql->fetchAll();
-      return $fetch[$this->i]['content'];
+      if(empty($this->page))
+      {
+        $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,1');
+        $sql->execute();
+        $fetch=$sql->fetchAll();
+        return $fetch[$this->i]['content'];
+      }
+      else
+      {
+        $limit=($this->page-1)*1;
+        $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',1');
+        $sql->execute();
+        $fetch=$sql->fetchAll();
+        return $fetch[$this->i]['content'];
+      }
     }
     else
     {
@@ -122,10 +156,46 @@ class template
   public function post_url()
   {
     global $connect;
-    $sql=$connect->prepare('SELECT * FROM post');
-    $sql->execute();
-    $fetch=$sql->fetchAll();
-    return URL.'/'.$fetch[$this->i]['url'];
+    if(!empty($this->category))
+    {
+      $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+      $category->execute(array($this->category));
+      $fetch=$category->fetch();
+      $id=$fetch['id'];
+      $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=?');
+      $sql->execute(array($id));
+      $fetch=$sql->fetchAll();
+      return $fetch[$this->i]['url'];
+    }
+    else
+    {
+    }
+    if(empty($this->url))
+    {
+      if(empty($this->page))
+      {
+        $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,1');
+        $sql->execute();
+        $fetch=$sql->fetchAll();
+        return $fetch[$this->i]['url'];
+      }
+      else
+      {
+        $limit=($this->page-1)*1;
+        $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',1');
+        $sql->execute();
+        $fetch=$sql->fetchAll();
+        return $fetch[$this->i]['url'];
+      }
+    }
+    else
+    {
+      $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
+      $sql->execute(array($this->url));
+      $fetch=$sql->fetchAll();
+      return $fetch[$this->i]['url'];
+
+    }
 
   }
 
@@ -198,6 +268,34 @@ public function have_posts()
              return false;
         }
     }
+}
+
+public function paging($page)
+{
+  global $connect;
+  $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC');
+  $sql->execute();
+  $row = $sql->rowCount();
+  $k=1;
+  if($page<=ceil($row/$k))
+  {
+    return $this->page=$page;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+public function total_page()
+{
+  global $connect;
+  $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC');
+  $sql->execute();
+  $row = $sql->rowCount();
+  $k=1;
+  return ceil($row/$k);
+
 }
 
 }
