@@ -15,7 +15,7 @@
         <UL>
             <li><a href="index.php">پیشخوان</a></li>
             <li><a href="uploadtheme.php">مدیریت قالب</a></li>
-            <li><a href="#">افزودن قالب</a></li>
+            <li><a href="installtheme.php">افزودن قالب</a></li>
             <li><a href="edit.php">ویرایشگر</a></li>
         </UL>
         <div class="clear"></div>

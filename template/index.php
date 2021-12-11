@@ -6,7 +6,11 @@ require_once 'connect.php';
 require_once 'template.php';
 $template=new template();
 require_once 'function.php';
-
+$file='theme/'.get_template().'/functions.php';
+if(file_exists($file))
+{
+    require_once($file);
+}
 if(isset($_GET['url']))
 {
   $url=$_GET['url'];
@@ -26,16 +30,36 @@ if(isset($_GET['url']))
     }
     elseif($url[0]=='page')
     {
-        if($template->paging($url[1])==false)
-        {
-            
-        }
-        else
-        {
-            require_once 'theme/'.get_template().'/index.php';
-        }
+      if($template->paging($url[1])==false)
+      {
+
+      }
+      else
+      {
+        require_once 'theme/'.get_template().'/index.php';
+      }
+    }
+
+  }
+elseif(sizeof($url)==4)
+{
+  if($url[0]=='category' && $template->get_menu($url[1]) && $url[2]=='page')
+  {
+    $template->category=$url[1];
+    if($template->paging($url[3])==false)
+    {
+
+    }
+    else
+    {
+      require_once 'theme/'.get_template().'/index.php';
     }
   }
+  else
+  {
+
+  }
+}
 }
 else
 {

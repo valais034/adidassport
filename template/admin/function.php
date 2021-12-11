@@ -32,6 +32,7 @@ function get_info($file)
   return $info;
 }
 
+
 function get_file($file,$text)
 {
   global $connect;
@@ -74,3 +75,89 @@ function get_other_files()
   }
 
 }
+
+function upload($file)
+{
+  $file_name = $_FILES['zip_file']['name'];
+  $directory='upload/'.$file_name;
+  if(move_uploaded_file($_FILES['zip_file']['tmp_name'], $directory))
+  {
+      $zip = new ZipArchive;
+      if ($zip->open($directory))
+      {
+          for($i = 0; $i <$zip->numFiles; $i++)
+          {
+              $template=explode('/',$zip->getNameIndex($i));
+              if(sizeof($template)==2)
+              {
+                  if($template[1]=='index.php')
+                  {
+                      $template_directory=$template[0];
+                  }
+              }
+          }
+          if(isset($template_directory))
+          {
+              $zip->extractTo('upload', array($template_directory.'/index.php'));
+              if(Check_Template($template_directory)==true)
+              {
+                  $zip->extractTo('../theme');
+                  $zip->close();
+                  unlink($directory);
+                  unlink('upload/'.$template_directory.'/index.php');
+                  rmdir('upload/'.$template_directory);
+                  header('location:installtheme.php?Template='.$template_directory.'');
+              }
+              else
+              {
+                  $zip->close();
+                  unlink($directory);
+                  unlink('upload/'.$template_directory.'/index.php');
+                  rmdir('upload/'.$template_directory);
+                  return $msg='خطا : اطلاعات قالب وجود ندارد';
+              }
+          }
+          else
+          {
+              $zip->close();
+              unlink($directory);
+              return $msg='خطا : فايل اصلي قالب موجود نمي باشد';
+          }
+        }
+    }
+  }
+
+  function Check_Template($template_directory)
+  {
+      $info = array(
+          'Theme Name' =>null,
+      );
+      $file='upload/'.$template_directory.'/index.php';
+      $fp=@fopen($file,'r');
+      if($fp)
+      {
+          while(($file_line=fgets($fp))!==false)
+          {
+              if(strpos($file_line,'/*')!==false) continue;
+              else if (strpos($file_line,'*/')!==false) break;
+              foreach($info as $key=>$val)
+              {
+                  $find=$key.':';
+                  if(strpos($file_line,$find)!==false)
+                  {
+                      $info[$key]=trim(str_replace($find,'',$file_line));
+
+                  }
+              }
+          }
+      }
+      fclose($fp);
+      if($info['Theme Name']==null)
+      {
+          return false;
+      }
+      else
+      {
+          return true;
+      }
+  }

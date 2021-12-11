@@ -1,17 +1,10 @@
-<?php
-/*
- * Theme Name: TEMPLATE1
- * Theme URI: http://GOOGLE.COM
- * Author:امین کریمی
- * Author URI: http://GOOGLE.COM
- * Description: این قالب برای سایت http://GOOGLE.COM طراحی شده
-*/
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>آموزش قالب سازی داینامیک php</title>
+    <link href="<?=get_template_uri()?>css/style.css" rel="stylesheet">
     <link href="<?=get_template_uri()?>css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=get_template_uri()?>css/footer-distributed-with-address-and-phones.css">
     <link rel="stylesheet" href="<?=get_template_uri()?>css/font-awesome.min.css">
@@ -100,19 +93,12 @@
             <div style="width:90%;height:3px;background:#c4baee;margin:auto;"></div>
 
             <ul class="li-menu">
-              <?php
-              while(have_menu())
-              {
-                the_menu();
-                ?>
-                <li><a href="<?= get_menu_url(); ?>"><?= get_menu_name(); ?></a></li>
-                <?php
-              }
-              ?>
+
+
+                    <li><a href=""></a></li>
+
             </ul>
-
-
-           <div style="padding-bottom:10px;"></div>
+            <div style="padding-bottom:10px;"></div>
         </div>
 
         <div class="menu">
@@ -125,7 +111,7 @@
             </ul>
             <div style="padding-bottom:10px;"></div>
         </div>
-    </div>
+</div>
 
              <?php
              if(have_posts())
@@ -136,14 +122,12 @@
                 ?>
                  <div class="posts">
                     <p style="padding-top:10px;padding-right:20px;padding-bottom:10px;font-family:BYekan;">
-                    <a href="<?= post_url(); ?>"><?= post_title(); ?></a></p>
+                    <a href=<?= post_url(); ?>><?= post_title(); ?></a></p>
                     <div style="width:95%;height:3px;background:#15E31E;margin:auto;"></div>
                     <div style="width:500px;margin:50px auto;"><img src="<?= get_template_uri(); ?>images/aa.jpg" style="width:500px;"></div>
                     <div class="post_text">
                     <?= post_content(); ?>
                 </div>
-
-               <div class="more">توضیحات بیشتر</div>
                <div style="padding-bottom:30px;"></div>
            </div>
            <?php
@@ -152,11 +136,9 @@
            else
            {
              ?>
-             <div style="text-align:center;color:blue;font-family:'BYekan'; font-size:28px;">پستی وجود ندارد</div>
+             <div style="text-align:center;color:red;">پستی وجود ندارد</div>
              <?php
            }
-            pagination();
-
 
        ?>
 
@@ -184,7 +166,7 @@
             <a href="#">Contact</a>
         </p>
 
-        <p class="footer-company-name">Company Name © 2015</p>
+        <p class="footer-company-name">Company Name &copy; 2015</p>
     </div>
 
     <div class="footer-center">

@@ -27,15 +27,10 @@ require_once ('coding.php');
         width:100%;
     }
 </style>
-<?php
-if(isset($_GET['template']))
-{
-  ?>
+<?php if(isset($_GET['template'])) { ?>
+<div id="box">
 
-  <div id="box">
-  <iframe src="template.php?template=<?= $_GET['template']; ?>">
-  </iframe>
-
+   <iframe src="template.php?template=<?= $_GET['template']; ?>"></iframe>
 </div>
 <?php
 }

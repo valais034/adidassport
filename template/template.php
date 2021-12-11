@@ -13,191 +13,263 @@ class template
     global $connect;
     if(!empty($this->category))
     {
-      $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
-      $category->execute(array($this->category));
-      $fetch=$category->fetch();
-      $id=$fetch['id'];
-      $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=?');
-      $sql->execute(array($id));
-      $row = $sql->rowCount();
-      return $this->i<--$row;
-    }
-    else
-    {
-      if(empty($this->url))
-      {
         if(empty($this->page))
         {
-          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,1');
-          $sql->execute();
-          $row = $sql->rowCount();
-          return $this->i<--$row;
+            $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+            $category->execute(array($this->category));
+            $fetch=$category->fetch();
+            $id=$fetch['id'];
+
+            $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC LIMIT 0,2');
+            $sql->execute(array($id));
+            $row=$sql->rowCount();
+            return $this->i<--$row;
         }
         else
         {
-          $limit=($this->page-1)*1;
-          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',1');
-          $sql->execute();
-          $row = $sql->rowCount();
-          return $this->i<--$row;
+            $limit=($this->page-1)*2;
+            $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+            $category->execute(array($this->category));
+            $fetch=$category->fetch();
+            $id=$fetch['id'];
+
+            $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC LIMIT '.$limit.',2');
+            $sql->execute(array($id));
+            $row=$sql->rowCount();
+            return $this->i<--$row;
         }
 
-      }
-      else
-      {
-        $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
-        $sql->execute(array($this->url));
-        $row = $sql->rowCount();
-        return $this->i<--$row;
-      }
     }
+    else
+    {
+        if(empty($this->url))
+        {
+            if(empty($this->page))
+            {
+                $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,2 ');
+                $sql->execute();
+                $row=$sql->rowCount();
+                return $this->i<--$row;
+            }
+            else
+            {
+                $limit=($this->page-1)*2;
+                $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',2 ');
+                $sql->execute();
+                $row=$sql->rowCount();
+                return $this->i<--$row;
+            }
 
 
+        }
+        else
+        {
+            $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
+            $sql->execute(array($this->url));
+            $row=$sql->rowCount();
+            return $this->i<--$row;
+        }
+    }
+}
 
-  }
-
-  public function the_post()
-  {
+public function the_post()
+{
     $this->i++;
-  }
+}
 
-  public function post_title()
-  {
+
+public function post_title()
+{
     global $connect;
     if(!empty($this->category))
     {
-      $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
-      $category->execute(array($this->category));
-      $fetch=$category->fetch();
-      $id=$fetch['id'];
-      $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=?');
-      $sql->execute(array($id));
-      $fetch=$sql->fetchAll();
-      return $fetch[$this->i]['title'];
-    }
-    else
-    {
-      if(empty($this->url))
-      {
         if(empty($this->page))
         {
-          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,1');
-          $sql->execute();
-          $fetch=$sql->fetchAll();
-          return $fetch[$this->i]['title'];
+            $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+            $category->execute(array($this->category));
+            $fetch=$category->fetch();
+            $id=$fetch['id'];
+
+            $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC LIMIT 0,2');
+            $sql->execute(array($id));
+            $fetch=$sql->fetchAll();
+            return $fetch[$this->i]['title'];
         }
         else
         {
-          $limit=($this->page-1)*1;
-          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',1');
-          $sql->execute();
-          $fetch=$sql->fetchAll();
-          return $fetch[$this->i]['title'];
+            $limit=($this->page-1)*2;
+            $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+            $category->execute(array($this->category));
+            $fetch=$category->fetch();
+            $id=$fetch['id'];
+
+            $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC LIMIT '.$limit.',2');
+            $sql->execute(array($id));
+            $fetch=$sql->fetchAll();
+            return $fetch[$this->i]['title'];
         }
-      }
-      else
-      {
-        $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
-        $sql->execute(array($this->url));
-        $fetch=$sql->fetchAll();
-        return $fetch[$this->i]['title'];
 
-      }
 
     }
+    else
+    {
+        if(empty($this->url))
+        {
+            if(empty($this->page))
+            {
+                $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,2');
+                $sql->execute();
+                $fetch=$sql->fetchAll();
+                return $fetch[$this->i]['title'];
+            }
+            else
+            {
+                $limit=($this->page-1)*2;
+                $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',2');
+                $sql->execute();
+                $fetch=$sql->fetchAll();
+                return $fetch[$this->i]['title'];
+            }
 
-  }
+        }
+        else
+        {
+            $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
+            $sql->execute(array($this->url));
+            $fetch=$sql->fetchAll();
+            return $fetch[$this->i]['title'];
+        }
+    }
 
-  public function post_content()
-  {
+}
+
+public function post_content()
+{
     global $connect;
     if(!empty($this->category))
     {
-      $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
-      $category->execute(array($this->category));
-      $fetch=$category->fetch();
-      $id=$fetch['id'];
-      $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=?');
-      $sql->execute(array($id));
-      $fetch=$sql->fetchAll();
-      return $fetch[$this->i]['content'];
+        if(empty($this->page))
+        {
+            $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+            $category->execute(array($this->category));
+            $fetch=$category->fetch();
+            $id=$fetch['id'];
+
+            $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC LIMIT 0,2');
+            $sql->execute(array($id));
+            $fetch=$sql->fetchAll();
+            return $fetch[$this->i]['content'];
+        }
+        else
+        {
+            $limit=($this->page-1)*2;
+            $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+            $category->execute(array($this->category));
+            $fetch=$category->fetch();
+            $id=$fetch['id'];
+
+            $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC LIMIT '.$limit.',2');
+            $sql->execute(array($id));
+            $fetch=$sql->fetchAll();
+            return $fetch[$this->i]['content'];
+        }
     }
     else
     {
-    }
-    if(empty($this->url))
-    {
-      if(empty($this->page))
-      {
-        $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,1');
-        $sql->execute();
-        $fetch=$sql->fetchAll();
-        return $fetch[$this->i]['content'];
-      }
-      else
-      {
-        $limit=($this->page-1)*1;
-        $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',1');
-        $sql->execute();
-        $fetch=$sql->fetchAll();
-        return $fetch[$this->i]['content'];
-      }
-    }
-    else
-    {
-      $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
-      $sql->execute(array($this->url));
-      $fetch=$sql->fetchAll();
-      return $fetch[$this->i]['content'];
+        if(empty($this->url))
+        {
+            if(empty($this->page))
+            {
+                $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,2');
+                $sql->execute();
+                $fetch=$sql->fetchAll();
+                return $fetch[$this->i]['content'];
+            }
+            else
+            {
+                $limit=($this->page-1)*2;
+                $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC  LIMIT '.$limit.',2');
+                $sql->execute();
+                $fetch=$sql->fetchAll();
+                return $fetch[$this->i]['content'];
+            }
 
+        }
+        else
+        {
+            $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
+            $sql->execute(array($this->url));
+            $fetch=$sql->fetchAll();
+            return $fetch[$this->i]['content'];
+        }
     }
-  }
 
-  public function post_url()
-  {
+
+}
+public function post_url()
+{
     global $connect;
     if(!empty($this->category))
     {
-      $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
-      $category->execute(array($this->category));
-      $fetch=$category->fetch();
-      $id=$fetch['id'];
-      $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=?');
-      $sql->execute(array($id));
-      $fetch=$sql->fetchAll();
-      return $fetch[$this->i]['url'];
+        if(empty($this->page))
+        {
+            $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+            $category->execute(array($this->category));
+            $fetch=$category->fetch();
+            $id=$fetch['id'];
+
+            $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC LIMIT 0,2');
+            $sql->execute(array($id));
+            $fetch=$sql->fetchAll();
+            return URL.'/'.$fetch[$this->i]['url'];
+        }
+        else
+        {
+            $limit=($this->page-1)*2;
+            $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+            $category->execute(array($this->category));
+            $fetch=$category->fetch();
+            $id=$fetch['id'];
+
+            $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC LIMIT '.$limit.',2');
+            $sql->execute(array($id));
+            $fetch=$sql->fetchAll();
+            return URL.'/'.$fetch[$this->i]['url'];
+        }
     }
     else
     {
-    }
-    if(empty($this->url))
-    {
-      if(empty($this->page))
-      {
-        $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,1');
-        $sql->execute();
-        $fetch=$sql->fetchAll();
-        return $fetch[$this->i]['url'];
-      }
-      else
-      {
-        $limit=($this->page-1)*1;
-        $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT '.$limit.',1');
-        $sql->execute();
-        $fetch=$sql->fetchAll();
-        return $fetch[$this->i]['url'];
-      }
-    }
-    else
-    {
-      $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
-      $sql->execute(array($this->url));
-      $fetch=$sql->fetchAll();
-      return $fetch[$this->i]['url'];
+        if(empty($this->url))
+        {
+            if(empty($this->page))
+            {
+                $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC LIMIT 0,2');
+                $sql->execute();
+                $fetch=$sql->fetchAll();
+                return URL.'/'.$fetch[$this->i]['url'];
+            }
+            else
+            {
+                $limit=($this->page-1)*2;
+                $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC  LIMIT '.$limit.',2');
+                $sql->execute();
+                $fetch=$sql->fetchAll();
+                return URL.'/'.$fetch[$this->i]['url'];
+            }
 
+        }
+        else
+        {
+            $sql=$connect->prepare('SELECT * FROM post WHERE url=?');
+            $sql->execute(array($this->url));
+            $fetch=$sql->fetchAll();
+            return URL.'/'.$fetch[$this->i]['url'];
+        }
     }
 
-  }
+
+}
+
 
   public function have_menu()
   {
@@ -270,32 +342,96 @@ public function have_posts()
     }
 }
 
-public function paging($page)
-{
-  global $connect;
-  $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC');
-  $sql->execute();
-  $row = $sql->rowCount();
-  $k=1;
-  if($page<=ceil($row/$k))
+  public function paging($page)
   {
-    return $this->page=$page;
+      global $connect;
+      if(empty($this->category))
+      {
+          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC');
+          $sql->execute();
+          $row=$sql->rowCount();
+          $k=2;
+          if($page<=ceil($row/$k) && $page>0)
+          {
+              return $this->page=$page;
+          }
+          else
+          {
+              return false;
+          }
+      }
+      else
+      {
+          $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+          $category->execute(array($this->category));
+          $fetch=$category->fetch();
+          $id=$fetch['id'];
+          $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC');
+          $sql->execute(array($id));
+          $row=$sql->rowCount();
+          $k=1;
+          if($page<=ceil($row/$k) && $page>0)
+          {
+              return $this->page=$page;
+          }
+          else
+          {
+              return false;
+          }
+      }
+
   }
-  else
+
+  public function total_page()
   {
-    return false;
+      global $connect;
+      if(empty($this->category))
+      {
+          $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC');
+          $sql->execute();
+          $row=$sql->rowCount();
+          $k=2;
+          return ceil($row/$k);
+      }
+      else
+      {
+          $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+          $category->execute(array($this->category));
+          $fetch=$category->fetch();
+          $id=$fetch['id'];
+          $sql=$connect->prepare('SELECT * FROM post WHERE menu_id=? ORDER BY id DESC');
+          $sql->execute(array($id));
+          $row=$sql->rowCount();
+          $k=2;
+          return ceil($row/$k);
+      }
+
   }
-}
+  public function get_menu($ename)
+  {
+      global $connect;
+      $category=$connect->prepare('SELECT * FROM category WHERE ename=?');
+      $category->execute(array($ename));
+      if($category->rowCount()>0)
+      {
+          return true;
+      }
+      else
+      {
+          return false;
+      }
+  }
 
-public function total_page()
-{
-  global $connect;
-  $sql=$connect->prepare('SELECT * FROM post ORDER BY id DESC');
-  $sql->execute();
-  $row = $sql->rowCount();
-  $k=1;
-  return ceil($row/$k);
-
-}
+  public function paging_url()
+  {
+      if(empty($this->category))
+      {
+          return URL.'/page/';
+      }
+      else
+      {
+          return URL.'/category/'.$this->category.'/page/';
+      }
+  }
 
 }
