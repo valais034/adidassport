@@ -18,7 +18,6 @@ $user_data = get_userdata();
     <link rel="stylesheet" href="<?php echo PATH; ?>styles/styles.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-
 <script type="text/javascript" src="relative/path/to/your/javascript.js"></script>
 <script>
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
