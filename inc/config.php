@@ -19,5 +19,6 @@ define("ADMIN_PASSWORD","135790");
 define("PATH","http://localhost/adidassport");
 //define("PATH","http://localhost:8888/myFiles/ecommerce/");
 
+
 require_once 'functions.php';
 require_once 'actions.php';
