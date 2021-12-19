@@ -550,7 +550,7 @@ function send_email($email){
     $fetch = mysqli_fetch_array($query);
     $user_hash = $fetch['hash'];
     $to = $email;
-    $subject = "لینک بازیابی کلمه عبور زنبیل";
+    $subject = "لینک بازیابی کلمه عبور ";
     $txt = "برای بازیابی کلمه‌ی عبور خود، روی لینک زیر کلیک کنید:";
     $txt .= "<br>" . "<a href='http://es92.ir/adidassport/users/reset.php?email=" . $email . "&hash=" . $user_hash . "'>بازیابی کلمه عبور</a>";
     $headers = "From: info@xanbil.com";
