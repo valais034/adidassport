@@ -562,4 +562,4 @@ function send_email($email){
         return false;
     }
 }
-//az inja be baad vase complete-blog-php
+
