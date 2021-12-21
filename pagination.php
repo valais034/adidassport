@@ -32,7 +32,7 @@ $sidebar_posts = get_posts(3);
                 <div class="col-lg-8 col-12">
                     <?php
 
-                    $total_records_per_page = 10;
+                    $total_records_per_page = 5;
                     $offset = ($page_no-1) * $total_records_per_page;
                     $previous_page = $page_no - 1;
                     $next_page = $page_no + 1;
@@ -95,7 +95,7 @@ $sidebar_posts = get_posts(3);
                                 </li>
 
                                 <?php
-                                if ($total_no_of_pages <= 10){
+                                if ($total_no_of_pages <= 5){
                                     for ($counter = 1; $counter <= $total_no_of_pages; $counter++){
                                         if ($counter == $page_no) {
                                             echo "<li class='active'><a>$counter</a></li>";
@@ -104,7 +104,7 @@ $sidebar_posts = get_posts(3);
                                         }
                                     }
                                 }
-                                elseif($total_no_of_pages > 10){
+                                elseif($total_no_of_pages > 5){
 
                                     if($page_no <= 4) {
                                         for ($counter = 1; $counter < 8; $counter++){
