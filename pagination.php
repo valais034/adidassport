@@ -86,7 +86,6 @@ $sidebar_posts = get_posts(3);
 
                         <div style="width:700px; margin:0 auto;">
 
-                            <h3>صفحه بندی </h3>
 
                             <ul class="pagination">
 
