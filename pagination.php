@@ -81,7 +81,7 @@ $sidebar_posts = get_posts(3);
                         </div>
 
                         <div style='padding: 10px 20px 0px; border-top: dotted 1px #CCC;'>
-                            <strong>Page <?php echo $page_no." of ".$total_no_of_pages; ?></strong>
+                            <strong>صفحه <?php echo $page_no." از ".$total_no_of_pages; ?></strong>
                         </div>
 
                         <div style="width:700px; margin:0 auto;">
@@ -90,7 +90,7 @@ $sidebar_posts = get_posts(3);
                             <ul class="pagination">
 
                                 <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
-                                    <a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Previous</a>
+                                    <a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>قبلی</a>
                                 </li>
 
                                 <?php
@@ -151,10 +151,10 @@ $sidebar_posts = get_posts(3);
                                 ?>
 
                                 <li <?php if($page_no >= $total_no_of_pages){ echo "class='disabled'"; } ?>>
-                                    <a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Next</a>
+                                    <a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>بعدی</a>
                                 </li>
                                 <?php if($page_no < $total_no_of_pages){
-                                    echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
+                                    echo "<li><a href='?page_no=$total_no_of_pages'>آخرین &rsaquo;&rsaquo;</a></li>";
                                 } ?>
                             </ul>
 
