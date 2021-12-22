@@ -3,6 +3,7 @@ require_once 'sections/header.php';
 ?>
 <?php
 $products= get_products(6);
+$sidebar_products = get_products(4);
 ?>
 
 
@@ -159,68 +160,68 @@ $products= get_products(6);
                         <aside>
                             <div class="widget widget-search primary-bg px-3">
                                 <div class="widget-header">
-                                    <h5>Search keywords</h5>
+                                    <h5>جستجو در محصولات</h5>
                                 </div>
                                 <form action="/" class="search-wrapper">
-                                    <input type="text" name="s" placeholder="Your Search...">
+                                    <input type="text" name="s" placeholder="جستجو...">
                                     <button type="submit"><i class="icofont-search-2"></i></button>
                                 </form>
                             </div>
 
                             <div class="widget widget-category primary-bg px-3">
                                 <div class="widget-header">
-                                    <h5>All Categories</h5>
+                                    <h5>دسته بندی ها</h5>
                                 </div>
                                 <div class="widget-wrapper">
                                     <ul class="lab-ul shop-menu">
                                         <li>
-                                            <a href="#0">Apple</a>
+                                            <a href="#0" >کفش</a>
                                             <ul class="lab-ul shop-submenu">
-                                                <li><a href="#">Apple 1</a></li>
-                                                <li><a href="#">Apple 2</a></li>
-                                                <li><a href="#">Apple 3</a></li>
+                                                <li><a href="#">کفش چرم</a></li>
+                                                <li><a href="#">کفش جیر</a></li>
+                                                <li><a href="#">کفش اسپرت</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#0">Orange</a>
+                                        <li><a href="#0">کیف</a>
                                             <ul class="lab-ul shop-submenu">
-                                                <li><a href="#">Orange 1</a></li>
+                                                <li><a href="#">کیف چرم</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#0">Tomato</a>
+                                        <li><a href="#0">لباس</a>
                                             <ul class="lab-ul shop-submenu">
-                                                <li><a href="#">Tomato 1</a></li>
-                                                <li><a href="#">Tomato 2</a></li>
+                                                <li><a href="#">پیراهن</a></li>
+                                                <li><a href="#">شلوار</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#0">Honey</a>
+                                        <li><a href="#0">کلاه</a>
                                             <ul class="lab-ul shop-submenu">
-                                                <li><a href="#">Honey 1</a></li>
-                                                <li><a href="#">Honey 2</a></li>
-                                                <li><a href="#">Honey 3</a></li>
-                                                <li><a href="#">Honey 4</a></li>
-                                                <li><a href="#">Honey 5</a></li>
+                                                <li><a href="#">کلاه 1</a></li>
+                                                <li><a href="#">کلاه 2</a></li>
+                                                <li><a href="#">کلاه 3</a></li>
+                                                <li><a href="#">کلاه 4</a></li>
+                                                <li><a href="#">کلاه 5</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#0">Banana</a>
+                                        <li><a href="#0">کاپشن</a>
                                             <ul class="lab-ul shop-submenu">
-                                                <li><a href="#">Banana 1</a></li>
-                                                <li><a href="#">Banana 2</a></li>
+                                                <li><a href="#">کاپشن 1</a></li>
+                                                <li><a href="#">کاپشن 2</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#0">Blueberry</a>
+                                        <li><a href="#0">شلوارک</a>
                                             <ul class="lab-ul shop-submenu">
-                                                <li><a href="#">Blueberry 1</a></li>
-                                                <li><a href="#">Blueberry 2</a></li>
-                                                <li><a href="#">Blueberry 3</a></li>
+                                                <li><a href="#">شلوارک 1</a></li>
+                                                <li><a href="#">شلوارک 2</a></li>
+                                                <li><a href="#">شلوارک 3</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#0">Lettuce</a>
+                                        <li><a href="#0">تی شرت</a>
                                             <ul class="lab-ul shop-submenu">
-                                                <li><a href="#">Lettuce 1</a></li>
-                                                <li><a href="#">Lettuce 2</a></li>
-                                                <li><a href="#">Lettuce 3</a></li>
-                                                <li><a href="#">Lettuce 4</a></li>
-                                                <li><a href="#">Lettuce 5</a></li>
+                                                <li><a href="#">تی شرت 1</a></li>
+                                                <li><a href="#">تی شرت 2</a></li>
+                                                <li><a href="#">تی شرت 3</a></li>
+                                                <li><a href="#">تی شرت 4</a></li>
+                                                <li><a href="#">تی شرت 5</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -229,17 +230,17 @@ $products= get_products(6);
 
                             <div class="widget widget-post primary-bg px-3">
                                 <div class="widget-header">
-                                    <h5>Latests Products</h5>
+                                    <h5>آخرین محصولات</h5>
                                 </div>
+                                <?php while ($sidebar_product = mysqli_fetch_array($sidebar_products)) { ?>
                                 <ul class="lab-ul widget-wrapper">
                                     <li class="d-flex flex-wrap justify-content-between">
                                         <div class="post-thumb">
-                                            <a href="post.php"><img src="assets/images/shop/02.jpg"
-                                                                    alt="product"></a>
+                                            <a href="product.php?product-id=<?php echo $sidebar_product['id'] ?>"><img src="assets/images/product/<?php echo $sidebar_product['product_image'] ?>" alt=""></a>
                                         </div>
                                         <div class="post-content ps-3">
                                             <a href="post.php">
-                                                <h6>Organic Orange</h6>
+                                                <h6><a href="product.php?product-id=<?php echo $sidebar_product['id'] ?>"><?php echo $sidebar_product['product_name'] ?></a></h6>
                                             </a>
                                             <div class="rating">
                                                 <span><a href="#"><i class="far fa-star"></i></a></span>
@@ -248,66 +249,11 @@ $products= get_products(6);
                                                 <span><a href="#"><i class="far fa-star"></i></a></span>
                                                 <span><a href="#"><i class="far fa-star"></i></a></span>
                                             </div>
-                                            <h6>$59.9</h6>
+                                            <h6><?php echo $sidebar_product['product_price'] ?> تومان</h6>
                                         </div>
                                     </li>
-                                    <li class="d-flex flex-wrap justify-content-between">
-                                        <div class="post-thumb">
-                                            <a href="post.php"><img src="assets/images/shop/03.jpg"
-                                                                    alt="product"></a>
-                                        </div>
-                                        <div class="post-content ps-3">
-                                            <a href="post.php">
-                                                <h6>Organic Orange</h6>
-                                            </a>
-                                            <div class="rating">
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                            </div>
-                                            <h6>$59.9</h6>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex flex-wrap justify-content-between">
-                                        <div class="post-thumb">
-                                            <a href="post.php"><img src="assets/images/shop/04.jpg"
-                                                                    alt="product"></a>
-                                        </div>
-                                        <div class="post-content ps-3">
-                                            <a href="post.php">
-                                                <h6>Organic Orange</h6>
-                                            </a>
-                                            <div class="rating">
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                            </div>
-                                            <h6>$59.9</h6>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex flex-wrap justify-content-between">
-                                        <div class="post-thumb">
-                                            <a href="post.php"><img src="assets/images/shop/05.jpg"
-                                                                    alt="product"></a>
-                                        </div>
-                                        <div class="post-content ps-3">
-                                            <a href="post.php">
-                                                <h6>Organic Orange</h6>
-                                            </a>
-                                            <div class="rating">
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                                <span><a href="#"><i class="far fa-star"></i></a></span>
-                                            </div>
-                                            <h6>$59.9</h6>
-                                        </div>
-                                    </li>
+
+                                    <?php } ?>
                                 </ul>
                             </div>
                         </aside>
