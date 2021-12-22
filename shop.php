@@ -4,6 +4,8 @@ require_once 'sections/header.php';
 <?php
 $products= get_products(6);
 $sidebar_products = get_products(4);
+$number_of_products = mysqli_query($db, "SELECT * FROM products");
+echo mysqli_num_rows($number_of_products);
 ?>
 
 
@@ -67,7 +69,7 @@ $sidebar_products = get_products(4);
                     <div class="col-lg-9 col-12">
                         <article>
                             <div class="shop-title d-flex flex-wrap justify-content-between">
-                                <p>نمایش <?php echo mysqli_num_rows($products) ?> از <?php echo mysqli_num_rows($products) ?> محصول</p>
+                                <p>نمایش 6 از <?php echo mysqli_num_rows($number_of_products) ?> محصول</p>
                                 <div class="product-view-mode">
                                     <a class="active" data-target="grids"><i class="fas fa-th"></i></a>
                                     <a data-target="lists"><i class="fas fa-th-list"></i></a>
