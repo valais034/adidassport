@@ -769,12 +769,12 @@ $posts = get_posts(3);
                         <div class="speaker-item">
                             <div class="speaker-inner">
                                 <div class="speaker-thumb">
-                                    <img src="assets/images/speakers/01.jpg" alt="speaker">
+                                    <img src="assets/images/speakers/02.png" alt="speaker">
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.php">نمایندگی شماره 1</a> </h5>
-                                        <p>تمامی محصولات</p>
+                                        <h5><a href="#">نمایندگی شماره 1</a> </h5>
+                                        <p>آقای علی مرادی</p>
                                     </div>
                                     <div class="spkr-content-details">
                                         <p>یکی از برترین و کامل ترین فروشگاه های آدیداس در سراسر کشور</p>
@@ -794,12 +794,12 @@ $posts = get_posts(3);
                         <div class="speaker-item">
                             <div class="speaker-inner">
                                 <div class="speaker-thumb">
-                                    <img src="assets/images/speakers/02.jpg" alt="speaker">
+                                    <img src="assets/images/speakers/03.png" alt="speaker">
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.php">نمایندگی شماره 2 </a> </h5>
-                                        <p>کیف و کفش</p>
+                                        <h5><a href="#">نمایندگی شماره 2 </a> </h5>
+                                        <p>آقای رضا مسعودی</p>
                                     </div>
                                     <div class="spkr-content-details">
                                         <p>یکی از نمایندگی های جامع محصولات آدیداس و برترین فروشنده در حوزه کیف و کفش</p>
@@ -819,12 +819,12 @@ $posts = get_posts(3);
                         <div class="speaker-item">
                             <div class="speaker-inner">
                                 <div class="speaker-thumb">
-                                    <img src="assets/images/speakers/03.jpg" alt="speaker">
+                                    <img src="assets/images/speakers/06.png" alt="speaker">
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.php">نمایندگی شماره 3</a> </h5>
-                                        <p>کیف و کفش و لباس اسپرت</p>
+                                        <h5><a href="#">نمایندگی شماره 3</a> </h5>
+                                        <p>آقای علی غضنفری</p>
                                     </div>
                                     <div class="spkr-content-details">
                                         <p>این نمایندگی دارای محصولات متنوعی شامل کیف، کفش، لباس و اکسسوری می باشد و همواره تلاش میکند تنوع خود را بیش تر کند.</p>
@@ -844,12 +844,12 @@ $posts = get_posts(3);
                         <div class="speaker-item">
                             <div class="speaker-inner">
                                 <div class="speaker-thumb">
-                                    <img src="assets/images/speakers/04.jpg" alt="speaker">
+                                    <img src="assets/images/speakers/03.png" alt="speaker">
                                 </div>
                                 <div class="speaker-content">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.php">نمایندگی شماره 4</a> </h5>
-                                        <p>کفش اسپرت</p>
+                                        <h5><a href="#">نمایندگی شماره 4</a> </h5>
+                                        <p>آقای رضا مسعودی</p>
                                     </div>
                                     <div class="spkr-content-details">
                                         <p>تنوعی کامل از کفش های اسپرت و کلاسیک آدیداس، به همراه اکسسوری های آدیداس</p>
@@ -865,56 +865,7 @@ $posts = get_posts(3);
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12">
-                        <div class="speaker-item">
-                            <div class="speaker-inner">
-                                <div class="speaker-thumb">
-                                    <img src="assets/images/speakers/05.jpg" alt="speaker">
-                                </div>
-                                <div class="speaker-content">
-                                    <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.php">نمایندگی شماره 5</a> </h5>
-                                        <p>لباس اسپرت زنانه و مردانه</p>
-                                    </div>
-                                    <div class="spkr-content-details">
-                                        <p>این نمایندگی تنوعی کامل از لباس های مردانه و زنانه آدیداس را عرضه می کند.</p>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                                            <li><a href="#"><i class="icofont-instagram"></i></a></li>
-                                            <li><a href="#"><i class="icofont-dribble"></i></a></li>
-                                            <li><a href="#"><i class="icofont-vimeo"></i></a></li>
-                                            <li><a href="#"><i class="icofont-behance"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-12">
-                        <div class="speaker-item">
-                            <div class="speaker-inner">
-                                <div class="speaker-thumb">
-                                    <img src="assets/images/speakers/06.jpg" alt="speaker">
-                                </div>
-                                <div class="speaker-content">
-                                    <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.php">نمایندگی شماره 6</a> </h5>
-                                        <p>تمامی محصولات</p>
-                                    </div>
-                                    <div class="spkr-content-details">
-                                        <p>این نمایندگی نیز جزو کامل ترین نمایندگی های آدیداس در سطح کشور است.</p>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                                            <li><a href="#"><i class="icofont-instagram"></i></a></li>
-                                            <li><a href="#"><i class="icofont-dribble"></i></a></li>
-                                            <li><a href="#"><i class="icofont-vimeo"></i></a></li>
-                                            <li><a href="#"><i class="icofont-behance"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="download-button text-center mt-5">
                     <a class="lab-btn">مشاهده نمایندگی های بیشتر...</a>
